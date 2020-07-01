@@ -45,16 +45,116 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="frmBanhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBanhang.Designer.cs">
+      <DependentUpon>frmBanhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangnhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangnhap.Designer.cs">
       <DependentUpon>frmDangnhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHienthihoadonban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHienthihoadonban.Designer.cs">
+      <DependentUpon>frmHienthihoadonban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHienthinhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHienthinhanvien.Designer.cs">
+      <DependentUpon>frmHienthinhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInhoadonbanhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInhoadonbanhang.Designer.cs">
+      <DependentUpon>frmInhoadonbanhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoainhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoainhanvien.Designer.cs">
+      <DependentUpon>frmLoainhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaisanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaisanpham.Designer.cs">
+      <DependentUpon>frmLoaisanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManghinhchinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManghinhchinh.Designer.cs">
+      <DependentUpon>frmManghinhchinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhacungcap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhacungcap.Designer.cs">
+      <DependentUpon>frmNhacungcap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanvien.Designer.cs">
+      <DependentUpon>frmNhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhaphang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhaphang.Designer.cs">
+      <DependentUpon>frmNhaphang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanpham.Designer.cs">
+      <DependentUpon>frmSanpham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBanhang.resx">
+      <DependentUpon>frmBanhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangnhap.resx">
       <DependentUpon>frmDangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHienthihoadonban.resx">
+      <DependentUpon>frmHienthihoadonban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHienthinhanvien.resx">
+      <DependentUpon>frmHienthinhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInhoadonbanhang.resx">
+      <DependentUpon>frmInhoadonbanhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoainhanvien.resx">
+      <DependentUpon>frmLoainhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaisanpham.resx">
+      <DependentUpon>frmLoaisanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManghinhchinh.resx">
+      <DependentUpon>frmManghinhchinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhacungcap.resx">
+      <DependentUpon>frmNhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanvien.resx">
+      <DependentUpon>frmNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhaphang.resx">
+      <DependentUpon>frmNhaphang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSanpham.resx">
+      <DependentUpon>frmSanpham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +180,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DTO\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

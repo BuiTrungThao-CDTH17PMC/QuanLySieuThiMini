@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLySieuThiMini
 {
-    public partial class frmDangnhap : Form
+    public partial class frmManghinhchinh : Form
     {
-        public frmDangnhap()
+        public frmManghinhchinh()
         {
             InitializeComponent();
+        }
+
+        private void hàngHóaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

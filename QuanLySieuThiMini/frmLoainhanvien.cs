@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLySieuThiMini
 {
-    public partial class frmDangnhap : Form
+    public partial class frmLoainhanvien : Form
     {
-        public frmDangnhap()
+        public frmLoainhanvien()
         {
             InitializeComponent();
         }
