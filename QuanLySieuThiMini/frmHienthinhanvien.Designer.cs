@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthinhanvien));
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtTimnhanvien = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnTimnhanvien = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvHienthinhanvien = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +40,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTimnhanvien = new System.Windows.Forms.Button();
+            this.txtTimnhanvien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelEx2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienthinhanvien)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx2
@@ -68,55 +69,6 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnTimnhanvien);
-            this.panel1.Controls.Add(this.txtTimnhanvien);
-            this.panel1.Controls.Add(this.labelX1);
-            this.panel1.Location = new System.Drawing.Point(6, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(676, 58);
-            this.panel1.TabIndex = 0;
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelX1.Location = new System.Drawing.Point(25, 14);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(146, 26);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Tìm kiếm nhân viên ";
-            // 
-            // txtTimnhanvien
-            // 
-            // 
-            // 
-            // 
-            this.txtTimnhanvien.Border.Class = "TextBoxBorder";
-            this.txtTimnhanvien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTimnhanvien.Location = new System.Drawing.Point(177, 14);
-            this.txtTimnhanvien.Name = "txtTimnhanvien";
-            this.txtTimnhanvien.PreventEnterBeep = true;
-            this.txtTimnhanvien.Size = new System.Drawing.Size(331, 26);
-            this.txtTimnhanvien.TabIndex = 1;
-            // 
-            // btnTimnhanvien
-            // 
-            this.btnTimnhanvien.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnTimnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimnhanvien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimnhanvien.Location = new System.Drawing.Point(540, 14);
-            this.btnTimnhanvien.Name = "btnTimnhanvien";
-            this.btnTimnhanvien.Size = new System.Drawing.Size(75, 26);
-            this.btnTimnhanvien.TabIndex = 2;
-            this.btnTimnhanvien.Text = "Tìm";
-            this.btnTimnhanvien.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -205,6 +157,55 @@
             this.Column7.ReadOnly = true;
             this.Column7.Width = 150;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnTimnhanvien);
+            this.panel1.Controls.Add(this.txtTimnhanvien);
+            this.panel1.Controls.Add(this.labelX1);
+            this.panel1.Location = new System.Drawing.Point(6, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(676, 58);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnTimnhanvien
+            // 
+            this.btnTimnhanvien.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnTimnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimnhanvien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimnhanvien.Location = new System.Drawing.Point(540, 14);
+            this.btnTimnhanvien.Name = "btnTimnhanvien";
+            this.btnTimnhanvien.Size = new System.Drawing.Size(75, 26);
+            this.btnTimnhanvien.TabIndex = 2;
+            this.btnTimnhanvien.Text = "Tìm";
+            this.btnTimnhanvien.UseVisualStyleBackColor = false;
+            // 
+            // txtTimnhanvien
+            // 
+            // 
+            // 
+            // 
+            this.txtTimnhanvien.Border.Class = "TextBoxBorder";
+            this.txtTimnhanvien.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTimnhanvien.Location = new System.Drawing.Point(177, 14);
+            this.txtTimnhanvien.Name = "txtTimnhanvien";
+            this.txtTimnhanvien.PreventEnterBeep = true;
+            this.txtTimnhanvien.Size = new System.Drawing.Size(331, 26);
+            this.txtTimnhanvien.TabIndex = 1;
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelX1.Location = new System.Drawing.Point(25, 14);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(146, 26);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Tìm kiếm nhân viên ";
+            // 
             // frmHienthinhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -214,16 +215,16 @@
             this.Controls.Add(this.panelEx2);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHienthinhanvien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiện thị nhân viên";
             this.panelEx2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienthinhanvien)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,5 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
