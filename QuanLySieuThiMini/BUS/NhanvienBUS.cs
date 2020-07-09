@@ -35,6 +35,10 @@ namespace QuanLySieuThiMini.BUS
         {
             return nvd.Tableloainhanvien();
         }
+        public int Kiemtratontai(string tdn)
+        {
+            return nvd.Kiemtratontai(tdn);
+        }
     }
 
 }

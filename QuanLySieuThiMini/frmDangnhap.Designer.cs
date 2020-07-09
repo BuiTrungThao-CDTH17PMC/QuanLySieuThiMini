@@ -57,6 +57,7 @@
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.Size = new System.Drawing.Size(225, 26);
             this.txtMatkhau.TabIndex = 2;
+            this.txtMatkhau.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -113,6 +114,7 @@
             this.btnDangnhap.TabIndex = 5;
             this.btnDangnhap.Text = "Đăng nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // btnThoat
             // 
@@ -145,6 +147,7 @@
             // 
             // frmDangnhap
             // 
+            this.AcceptButton = this.btnDangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;

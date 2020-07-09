@@ -57,9 +57,9 @@ namespace QuanLySieuThiMini.DTO
             get { return SDT; }
             set { SDT = value; }
         }
-        private bool GIOITINH;
+        private int GIOITINH;
 
-        public bool GIOITINH1
+        public int GIOITINH1
         {
             get { return GIOITINH; }
             set { GIOITINH = value; }

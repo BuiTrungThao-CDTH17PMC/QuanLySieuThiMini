@@ -96,13 +96,14 @@ namespace QuanLySieuThiMini
         }
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
-            if(Kiemtradulieu())
+            int num = nvb.Kiemtratontai(txtTentaikhoan.Text);
+            if (Kiemtradulieu() && num < 0)
             {
                 DTO.Nhanvien nv = new DTO.Nhanvien();
                 nv.TENNV1 = txtTennhanvien.Text;
                 nv.DIACHI1 = txtDiachinv.Text;
                 nv.SDT1 = txtSodienthoainv.Text;
-                //nv.GIOITINH1 = Int32.Parse(rdbGioitinhnam.Checked?(1:0));
+                nv.GIOITINH1 = rdbGioitinhnam.Checked?1:0;
                 nv.LOAINV1 = Int32.Parse(cbbLoainhanvien.SelectedValue.ToString());
                 nv.MATKHAU1 = txtMatkhau.Text;
                 nv.TENTK1 = txtTentaikhoan.Text;
@@ -150,7 +151,7 @@ namespace QuanLySieuThiMini
                 nv.TENNV1 = txtTennhanvien.Text;
                 nv.DIACHI1 = txtDiachinv.Text;
                 nv.SDT1 = txtSodienthoainv.Text;
-                //nv.GIOITINH1 = rdbGioitinhnam.Checked?(1:0);
+                nv.GIOITINH1 = rdbGioitinhnam.Checked?1:0;
                 nv.LOAINV1 = Int32.Parse(cbbLoainhanvien.SelectedValue.ToString());
                 nv.MATKHAU1 = txtMatkhau.Text;
                 nv.TENTK1 = txtTentaikhoan.Text;
@@ -167,7 +168,6 @@ namespace QuanLySieuThiMini
 
         private void btnDongnhanvien_Click(object sender, EventArgs e)
         {
-            //if(MessageBox.Show("Bạn có muốn thoát ?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation))
             this.Close();
         }
         public void ResertControll()

@@ -13,12 +13,10 @@ namespace QuanLySieuThiMini.DAO
         DAO.DataConnection dc;
         SqlDataAdapter dr;
         SqlCommand cmd;
-        //
         public LoaisanphamDAO()
         {
             dc = new DataConnection();
         }
-        //
         public DataTable Tableloaisanpham()
         {
             string sql = "select * from LOAISANPHAM";
@@ -30,7 +28,6 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
         }
-        //
         public bool Themloaisanpham(DTO.Loaisanpham lsp)
         {
             string sql = "INSERT INTO LOAISANPHAM(TENLOAI)values (@TENLOAI)";
@@ -49,7 +46,6 @@ namespace QuanLySieuThiMini.DAO
             }
             return true;
         }
-        //
         public bool Sualoaisanpham(DTO.Loaisanpham lsp)
         {
             string sql = "UPDATE LOAISANPHAM SET TENLOAI=@TENLOAI WHERE MALOAI = @MALOAI";
@@ -59,7 +55,7 @@ namespace QuanLySieuThiMini.DAO
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@MALOAI", SqlDbType.Int).Value = lsp.MALOAI1;
-                cmd.Parameters.Add("@TENLOAI", SqlDbType.NText).Value = lsp.TENLOAI1;
+                cmd.Parameters.Add("@TENLOAI", SqlDbType.NVarChar).Value = lsp.TENLOAI1;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

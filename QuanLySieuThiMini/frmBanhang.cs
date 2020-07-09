@@ -16,5 +16,11 @@ namespace QuanLySieuThiMini
         {
             InitializeComponent();
         }
+
+        private void btnChonkhachhang_Click(object sender, EventArgs e)
+        {
+            frmHienthikhachhang htkh = new frmHienthikhachhang();
+            htkh.ShowDialog();
+        }
     }
 }

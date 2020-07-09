@@ -59,8 +59,8 @@ namespace QuanLySieuThiMini.DAO
         {
             string sql = "UPDATE NHANVIEN SET TENNV=@TENNV, DIACHI=@DIACHI, TENTK=@TENTAIKHOAN, MATKHAU=@MATKHAU, SDT=@SDT, GIOITINH=@GIOITINH, LOAINV=@LOAINV WHERE MANV = @MANV";
             SqlConnection con = dc.getConnect();
-            //try
-            //{
+            try
+            {
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@MANV", SqlDbType.Int).Value = nv.MANV1;
@@ -73,14 +73,14 @@ namespace QuanLySieuThiMini.DAO
                 cmd.Parameters.Add("@LOAINV", SqlDbType.Int).Value = nv.LOAINV1;
                 cmd.ExecuteNonQuery();
                 con.Close();
-           // }
-            //catch (Exception e)
-            //{
-                //return false;
-            //}
+           }
+            catch (Exception e)
+            {
+                return false;
+            }
             return true;
         }
-        //
+       
         public DataTable Timkiemnhanvien (string tnv)
         {
             string sql = "SELECT * FROM NHANVIEN WHERE TENNV LIKE N'%" + tnv + "%'";
@@ -103,6 +103,26 @@ namespace QuanLySieuThiMini.DAO
             dr.Fill(dt);
             con.Close();
             return dt;
+        }
+        public int Kiemtratontai(string tdn)
+        {
+
+            string sql = "SELECT COUNT(*) FROM NHANVIEN WHERE TENTK = @TENDANGNHAP";
+            SqlConnection con = dc.getConnect();
+            int num;
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@TENDANGNHAP", SqlDbType.VarChar).Value = tdn;
+                num = (int)cmd.ExecuteScalar();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+            return num;
         }
     } 
 }

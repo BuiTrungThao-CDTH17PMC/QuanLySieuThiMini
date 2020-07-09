@@ -45,15 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DangnhapBUS.cs" />
+    <Compile Include="BUS\KhachhangBUS.cs" />
     <Compile Include="BUS\LoaisanphamBUS.cs" />
     <Compile Include="BUS\NhanvienBUS.cs" />
+    <Compile Include="BUS\SanphamBUS.cs" />
+    <Compile Include="DAO\DangnhapDAO.cs" />
     <Compile Include="DAO\DataConnect.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\KhachhangDAO.cs" />
     <Compile Include="DAO\LoaisanphamDAO.cs" />
     <Compile Include="DAO\NhanvienDAO.cs" />
+    <Compile Include="DAO\SanphamDAO.cs" />
+    <Compile Include="DTO\Khachhang.cs" />
     <Compile Include="DTO\Loainhanvien.cs" />
     <Compile Include="DTO\Loaisanpham.cs" />
     <Compile Include="DTO\Nhanvien.cs" />
+    <Compile Include="DTO\Sanpham.cs" />
     <Compile Include="frmBanhang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,17 +79,23 @@
     <Compile Include="frmHienthihoadonban.Designer.cs">
       <DependentUpon>frmHienthihoadonban.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHienthinhanvien.cs">
+    <Compile Include="frmHienthikhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHienthinhanvien.Designer.cs">
-      <DependentUpon>frmHienthinhanvien.cs</DependentUpon>
+    <Compile Include="frmHienthikhachhang.Designer.cs">
+      <DependentUpon>frmHienthikhachhang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInhoadonbanhang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInhoadonbanhang.Designer.cs">
       <DependentUpon>frmInhoadonbanhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachhang.Designer.cs">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoainhanvien.cs">
       <SubType>Form</SubType>
@@ -137,11 +150,14 @@
     <EmbeddedResource Include="frmHienthihoadonban.resx">
       <DependentUpon>frmHienthihoadonban.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHienthinhanvien.resx">
-      <DependentUpon>frmHienthinhanvien.cs</DependentUpon>
+    <EmbeddedResource Include="frmHienthikhachhang.resx">
+      <DependentUpon>frmHienthikhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInhoadonbanhang.resx">
       <DependentUpon>frmInhoadonbanhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachhang.resx">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoainhanvien.resx">
       <DependentUpon>frmLoainhanvien.cs</DependentUpon>

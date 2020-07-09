@@ -35,6 +35,7 @@
             this.TSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Loaisanpham = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Nhacungcap = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_Sanpham = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Khachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.ngườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Dangxuat = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Thoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMI_Sanpham = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +97,28 @@
             this.TSMI_Loaisanpham.Name = "TSMI_Loaisanpham";
             this.TSMI_Loaisanpham.Size = new System.Drawing.Size(189, 26);
             this.TSMI_Loaisanpham.Text = "Loại sản phẩm";
+            this.TSMI_Loaisanpham.Click += new System.EventHandler(this.TSMI_Loaisanpham_Click);
             // 
             // TSMI_Nhacungcap
             // 
             this.TSMI_Nhacungcap.Name = "TSMI_Nhacungcap";
             this.TSMI_Nhacungcap.Size = new System.Drawing.Size(189, 26);
             this.TSMI_Nhacungcap.Text = "Nhà cung cấp";
+            this.TSMI_Nhacungcap.Click += new System.EventHandler(this.TSMI_Nhacungcap_Click);
+            // 
+            // TSMI_Sanpham
+            // 
+            this.TSMI_Sanpham.Name = "TSMI_Sanpham";
+            this.TSMI_Sanpham.Size = new System.Drawing.Size(189, 26);
+            this.TSMI_Sanpham.Text = "Sản phẩm";
+            this.TSMI_Sanpham.Click += new System.EventHandler(this.TSMI_Sanpham_Click);
             // 
             // TSMI_Khachhang
             // 
             this.TSMI_Khachhang.Name = "TSMI_Khachhang";
             this.TSMI_Khachhang.Size = new System.Drawing.Size(168, 26);
             this.TSMI_Khachhang.Text = "Khách hàng";
+            this.TSMI_Khachhang.Click += new System.EventHandler(this.TSMI_Khachhang_Click);
             // 
             // hóaĐơnToolStripMenuItem
             // 
@@ -169,13 +179,7 @@
             this.TSMI_Thoat.Name = "TSMI_Thoat";
             this.TSMI_Thoat.Size = new System.Drawing.Size(156, 26);
             this.TSMI_Thoat.Text = "Thoát";
-            // 
-            // TSMI_Sanpham
-            // 
-            this.TSMI_Sanpham.Name = "TSMI_Sanpham";
-            this.TSMI_Sanpham.Size = new System.Drawing.Size(189, 26);
-            this.TSMI_Sanpham.Text = "Sản phẩm";
-            this.TSMI_Sanpham.Click += new System.EventHandler(this.TSMI_Sanpham_Click_1);
+            this.TSMI_Thoat.Click += new System.EventHandler(this.TSMI_Thoat_Click);
             // 
             // frmManghinhchinh
             // 

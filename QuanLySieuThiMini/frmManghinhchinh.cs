@@ -35,10 +35,29 @@ namespace QuanLySieuThiMini
             frmsp.ShowDialog();
         }
 
-        private void TSMI_Sanpham_Click_1(object sender, EventArgs e)
+        private void TSMI_Khachhang_Click(object sender, EventArgs e)
         {
-            frmSanpham frmsp = new frmSanpham();
-            frmsp.ShowDialog();
+            frmKhachhang kh = new frmKhachhang();
+            kh.ShowDialog();
+        }
+
+        private void TSMI_Loaisanpham_Click(object sender, EventArgs e)
+        {
+            frmLoaisanpham lsp = new frmLoaisanpham();
+            lsp.ShowDialog();
+        }
+
+        private void TSMI_Nhacungcap_Click(object sender, EventArgs e)
+        {
+            frmNhacungcap ncc = new frmNhacungcap();
+            ncc.ShowDialog();
+        }
+
+        private void TSMI_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmDangnhap dn = new frmDangnhap();
+            dn.Close();
         }
     }
 }
