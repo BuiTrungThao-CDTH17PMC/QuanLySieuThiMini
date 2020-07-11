@@ -38,7 +38,7 @@
             this.TSMI_Sanpham = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Khachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hóaĐơnNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_Hoadonbanhang = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,18 +123,19 @@
             // hóaĐơnToolStripMenuItem
             // 
             this.hóaĐơnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hóaĐơnNhậpToolStripMenuItem});
+            this.TSMI_Hoadonbanhang});
             this.hóaĐơnToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hóaĐơnToolStripMenuItem.Name = "hóaĐơnToolStripMenuItem";
             this.hóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
             this.hóaĐơnToolStripMenuItem.Text = "Hóa đơn";
             // 
-            // hóaĐơnNhậpToolStripMenuItem
+            // TSMI_Hoadonbanhang
             // 
-            this.hóaĐơnNhậpToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hóaĐơnNhậpToolStripMenuItem.Name = "hóaĐơnNhậpToolStripMenuItem";
-            this.hóaĐơnNhậpToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
-            this.hóaĐơnNhậpToolStripMenuItem.Text = "Hóa đơn nhập";
+            this.TSMI_Hoadonbanhang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TSMI_Hoadonbanhang.Name = "TSMI_Hoadonbanhang";
+            this.TSMI_Hoadonbanhang.Size = new System.Drawing.Size(217, 26);
+            this.TSMI_Hoadonbanhang.Text = "Hóa đơn bán hàng";
+            this.TSMI_Hoadonbanhang.Click += new System.EventHandler(this.TSMI_Hoadonbanhang_Click);
             // 
             // báoCáoToolStripMenuItem
             // 
@@ -210,7 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem TSMI;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Khachhang;
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hóaĐơnNhậpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_Hoadonbanhang;
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoBánHàngToolStripMenuItem;

@@ -30,77 +30,52 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthihoadonban));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDanhsachhoadonban = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChitiethoadonban = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvDanhsachhoadonban = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.MAHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIEMSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIATIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChitiethoadonban)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 6);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 647);
+            this.panel1.Size = new System.Drawing.Size(835, 743);
             this.panel1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvDanhsachhoadonban);
-            this.groupBox1.Location = new System.Drawing.Point(8, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(819, 388);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách hóa đơn bán ";
-            // 
-            // dgvDanhsachhoadonban
-            // 
-            this.dgvDanhsachhoadonban.AllowUserToAddRows = false;
-            this.dgvDanhsachhoadonban.AllowUserToDeleteRows = false;
-            this.dgvDanhsachhoadonban.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDanhsachhoadonban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhsachhoadonban.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dgvDanhsachhoadonban.Location = new System.Drawing.Point(6, 25);
-            this.dgvDanhsachhoadonban.Name = "dgvDanhsachhoadonban";
-            this.dgvDanhsachhoadonban.ReadOnly = true;
-            this.dgvDanhsachhoadonban.Size = new System.Drawing.Size(807, 357);
-            this.dgvDanhsachhoadonban.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvChitiethoadonban);
-            this.groupBox2.Location = new System.Drawing.Point(3, 399);
+            this.groupBox2.Location = new System.Drawing.Point(6, 416);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(819, 243);
+            this.groupBox2.Size = new System.Drawing.Size(819, 322);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn bán";
@@ -112,124 +87,200 @@
             this.dgvChitiethoadonban.BackgroundColor = System.Drawing.Color.White;
             this.dgvChitiethoadonban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChitiethoadonban.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13});
+            this.MAHD,
+            this.MASP,
+            this.TENSP,
+            this.SOLUONG,
+            this.GIATIEN,
+            this.GIAMGIA});
             this.dgvChitiethoadonban.Location = new System.Drawing.Point(6, 25);
             this.dgvChitiethoadonban.Name = "dgvChitiethoadonban";
             this.dgvChitiethoadonban.ReadOnly = true;
-            this.dgvChitiethoadonban.Size = new System.Drawing.Size(807, 212);
+            this.dgvChitiethoadonban.Size = new System.Drawing.Size(807, 291);
             this.dgvChitiethoadonban.TabIndex = 0;
             // 
-            // Column1
+            // groupBox1
             // 
-            this.Column1.HeaderText = "Mã hóa đơn";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 120;
+            this.groupBox1.Controls.Add(this.dgvDanhsachhoadonban);
+            this.groupBox1.Location = new System.Drawing.Point(8, 65);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(819, 351);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách hóa đơn bán ";
             // 
-            // Column2
+            // dgvDanhsachhoadonban
             // 
-            this.Column2.HeaderText = "Mã nhân viên";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 120;
+            this.dgvDanhsachhoadonban.AllowUserToAddRows = false;
+            this.dgvDanhsachhoadonban.AllowUserToDeleteRows = false;
+            this.dgvDanhsachhoadonban.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDanhsachhoadonban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhsachhoadonban.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MAHDX,
+            this.MANV,
+            this.TENNV,
+            this.TENKH,
+            this.NGAYLAP,
+            this.DIEMSUDUNG,
+            this.TONGTIEN});
+            this.dgvDanhsachhoadonban.Location = new System.Drawing.Point(6, 25);
+            this.dgvDanhsachhoadonban.Name = "dgvDanhsachhoadonban";
+            this.dgvDanhsachhoadonban.ReadOnly = true;
+            this.dgvDanhsachhoadonban.Size = new System.Drawing.Size(807, 320);
+            this.dgvDanhsachhoadonban.TabIndex = 0;
+            this.dgvDanhsachhoadonban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachhoadonban_CellClick);
             // 
-            // Column3
+            // label1
             // 
-            this.Column3.HeaderText = "Tên nhân viên ";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tìm kiếm hóa đơn";
             // 
-            // Column4
+            // panel2
             // 
-            this.Column4.HeaderText = "Tên khách hàng";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(8, 7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(819, 52);
+            this.panel2.TabIndex = 4;
             // 
-            // Column5
+            // dateTimePicker1
             // 
-            this.Column5.HeaderText = "Ngày/Giờ lập";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 13);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(258, 26);
+            this.dateTimePicker1.TabIndex = 4;
             // 
-            // Column6
+            // MAHDX
             // 
-            this.Column6.HeaderText = "Số điểm sự dụng";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.MAHDX.DataPropertyName = "MAHDX";
+            this.MAHDX.HeaderText = "Mã hóa đơn";
+            this.MAHDX.Name = "MAHDX";
+            this.MAHDX.ReadOnly = true;
+            this.MAHDX.Width = 120;
             // 
-            // Column7
+            // MANV
             // 
-            this.Column7.HeaderText = "Tổng tiền";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.Name = "MANV";
+            this.MANV.ReadOnly = true;
+            this.MANV.Width = 120;
             // 
-            // Column8
+            // TENNV
             // 
-            this.Column8.HeaderText = "Mã hóa đơn bán";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 150;
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Tên nhân viên ";
+            this.TENNV.Name = "TENNV";
+            this.TENNV.ReadOnly = true;
+            this.TENNV.Width = 150;
             // 
-            // Column9
+            // TENKH
             // 
-            this.Column9.HeaderText = "Mã sản phẩm";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 120;
+            this.TENKH.DataPropertyName = "MAKH";
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.Name = "TENKH";
+            this.TENKH.ReadOnly = true;
+            this.TENKH.Width = 150;
             // 
-            // Column10
+            // NGAYLAP
             // 
-            this.Column10.HeaderText = "Tên sản phẩm";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 200;
+            this.NGAYLAP.DataPropertyName = "NGAYLAP";
+            this.NGAYLAP.HeaderText = "Ngày/Giờ lập";
+            this.NGAYLAP.Name = "NGAYLAP";
+            this.NGAYLAP.ReadOnly = true;
+            this.NGAYLAP.Width = 150;
             // 
-            // Column11
+            // DIEMSUDUNG
             // 
-            this.Column11.HeaderText = "Số lượng";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
+            this.DIEMSUDUNG.DataPropertyName = "SODIEMSUDUNG";
+            this.DIEMSUDUNG.HeaderText = "Số điểm sự dụng";
+            this.DIEMSUDUNG.Name = "DIEMSUDUNG";
+            this.DIEMSUDUNG.ReadOnly = true;
             // 
-            // Column12
+            // TONGTIEN
             // 
-            this.Column12.HeaderText = "Giá tiền ";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 110;
+            this.TONGTIEN.DataPropertyName = "TONGTIEN";
+            this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.ReadOnly = true;
             // 
-            // Column13
+            // MAHD
             // 
-            this.Column13.HeaderText = "Giảm giá";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 110;
+            this.MAHD.DataPropertyName = "MAHDX";
+            this.MAHD.HeaderText = "Mã hóa đơn bán";
+            this.MAHD.Name = "MAHD";
+            this.MAHD.ReadOnly = true;
+            this.MAHD.Width = 150;
+            // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.Name = "MASP";
+            this.MASP.ReadOnly = true;
+            this.MASP.Width = 120;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.ReadOnly = true;
+            this.TENSP.Width = 200;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            // 
+            // GIATIEN
+            // 
+            this.GIATIEN.DataPropertyName = "GIATIEN";
+            this.GIATIEN.HeaderText = "Giá tiền ";
+            this.GIATIEN.Name = "GIATIEN";
+            this.GIATIEN.ReadOnly = true;
+            this.GIATIEN.Width = 110;
+            // 
+            // GIAMGIA
+            // 
+            this.GIAMGIA.DataPropertyName = "GIAMGIA";
+            this.GIAMGIA.HeaderText = "Giảm giá";
+            this.GIAMGIA.Name = "GIAMGIA";
+            this.GIAMGIA.ReadOnly = true;
+            this.GIAMGIA.Width = 110;
             // 
             // frmHienthihoadonban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(843, 665);
+            this.ClientSize = new System.Drawing.Size(843, 751);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHienthihoadonban";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiện thị hóa đơn bán hàng";
+            this.Load += new System.EventHandler(this.frmHienthihoadonban_Load);
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChitiethoadonban)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,18 +292,21 @@
         private System.Windows.Forms.DataGridView dgvDanhsachhoadonban;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChitiethoadonban;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIEMSUDUNG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIATIEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
     }
 }

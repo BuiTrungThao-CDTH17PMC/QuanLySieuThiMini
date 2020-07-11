@@ -59,5 +59,11 @@ namespace QuanLySieuThiMini
             frmDangnhap dn = new frmDangnhap();
             dn.Close();
         }
+
+        private void TSMI_Hoadonbanhang_Click(object sender, EventArgs e)
+        {
+            frmHienthihoadonban hdbh = new frmHienthihoadonban();
+            hdbh.ShowDialog();
+        }
     }
 }
