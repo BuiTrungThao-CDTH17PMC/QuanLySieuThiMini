@@ -49,7 +49,6 @@
     <Compile Include="BUS\LoaisanphamBUS.cs" />
     <Compile Include="BUS\NhanvienBUS.cs" />
     <Compile Include="DAO\DataConnect.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoaisanphamDAO.cs" />
     <Compile Include="DAO\NhacungcapDAO.cs" />
     <Compile Include="DAO\NhanvienDAO.cs" />

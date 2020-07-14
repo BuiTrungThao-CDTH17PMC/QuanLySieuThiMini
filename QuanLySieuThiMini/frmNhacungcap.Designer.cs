@@ -40,9 +40,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnThemnhacungcap = new System.Windows.Forms.Button();
             this.dgvNhacungcap = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSuanhacungcap = new System.Windows.Forms.Button();
             this.btnDongnhacungcap = new System.Windows.Forms.Button();
@@ -57,6 +54,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.MANCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).BeginInit();
@@ -120,9 +121,10 @@
             this.dgvNhacungcap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNhacungcap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhacungcap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4});
+            this.MANCC,
+            this.TENNCC,
+            this.DIACHI,
+            this.SDT});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,38 +151,7 @@
             this.dgvNhacungcap.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvNhacungcap.Size = new System.Drawing.Size(713, 252);
             this.dgvNhacungcap.TabIndex = 0;
-            this.dgvNhacungcap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhacungcap_CellContentClick);
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "Tên nhà cung cấp";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 280;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "Địa chỉ";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 250;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column4.HeaderText = "Số điện thoại";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
+            this.dgvNhacungcap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhacungcap_CellClick);
             // 
             // panel3
             // 
@@ -232,9 +203,8 @@
             this.btnLuunhacungcap.Name = "btnLuunhacungcap";
             this.btnLuunhacungcap.Size = new System.Drawing.Size(135, 35);
             this.btnLuunhacungcap.TabIndex = 2;
-            this.btnLuunhacungcap.Text = "Lưu";
+            this.btnLuunhacungcap.Text = "Thêm";
             this.btnLuunhacungcap.UseVisualStyleBackColor = false;
-            this.btnLuunhacungcap.Click += new System.EventHandler(this.btnLuunhacungcap_Click);
             // 
             // btnHuynhacungcap
             // 
@@ -244,7 +214,7 @@
             this.btnHuynhacungcap.Location = new System.Drawing.Point(525, 13);
             this.btnHuynhacungcap.Margin = new System.Windows.Forms.Padding(6);
             this.btnHuynhacungcap.Name = "btnHuynhacungcap";
-            this.btnHuynhacungcap.Size = new System.Drawing.Size(135, 35);
+            this.btnHuynhacungcap.Size = new System.Drawing.Size(161, 35);
             this.btnHuynhacungcap.TabIndex = 1;
             this.btnHuynhacungcap.Text = "Hủy thao tác";
             this.btnHuynhacungcap.UseVisualStyleBackColor = false;
@@ -292,7 +262,6 @@
             this.txtTennhacungcap.Name = "txtTennhacungcap";
             this.txtTennhacungcap.Size = new System.Drawing.Size(417, 35);
             this.txtTennhacungcap.TabIndex = 3;
-         
             // 
             // label4
             // 
@@ -345,6 +314,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhà cung cấp";
             // 
+            // MANCC
+            // 
+            this.MANCC.DataPropertyName = "MANCC";
+            this.MANCC.HeaderText = "Mã nhà cung cấp";
+            this.MANCC.Name = "MANCC";
+            this.MANCC.ReadOnly = true;
+            this.MANCC.Visible = false;
+            this.MANCC.Width = 200;
+            // 
+            // TENNCC
+            // 
+            this.TENNCC.DataPropertyName = "TENNCC";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.TENNCC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TENNCC.HeaderText = "Tên nhà cung cấp";
+            this.TENNCC.Name = "TENNCC";
+            this.TENNCC.ReadOnly = true;
+            this.TENNCC.Width = 280;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 250;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 200;
+            // 
             // frmNhacungcap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -359,6 +371,7 @@
             this.Name = "frmNhacungcap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà cung cấp";
+            this.Load += new System.EventHandler(this.frmNhacungcap_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).EndInit();
@@ -391,8 +404,9 @@
         private System.Windows.Forms.Button btnThemnhacungcap;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvNhacungcap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNCC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
     }
 }

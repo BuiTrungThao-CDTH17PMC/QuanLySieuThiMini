@@ -23,8 +23,9 @@ namespace QuanLySieuThiMini.DAO
         {
             string sql = "select * from NHACUNGCAP";
             SqlConnection con = dc.getConnect();
-            dr = new SqlDataAdapter(sql,con);
             con.Open();
+            dr = new SqlDataAdapter(sql,con);
+            
             DataTable dt = new DataTable();
             dr.Fill(dt);
             con.Close();
@@ -33,7 +34,7 @@ namespace QuanLySieuThiMini.DAO
         //
         public bool Themnhacungcap(DTO.Nhacungcap ncc)
         {
-            string sql = "INSERT INTO NHACUNGCAP(MANCC,TENNCC,DIACHI,SDT)values (@MANCC,@TENNCC,@DIACHI,@SDT)";
+            string sql = "INSERT INTO NHACUNGCAP(TENNCC,DIACHI,SDT)values(@TENNCC,@DIACHI,@SDT)";
             SqlConnection con = dc.getConnect();
             try
             {
