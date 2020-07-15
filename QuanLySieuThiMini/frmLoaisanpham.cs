@@ -19,19 +19,17 @@ namespace QuanLySieuThiMini
             InitializeComponent();
             lspb = new BUS.LoaisanphamBUS();
         }
-        //
         public void Hienthiloaisanpham()
         {
             DataTable dt = lspb.Tableloaisanpham();
             dgvLoaisanpham.DataSource = dt;
         }
-        //
         private void frmLoaisanpham_Load(object sender, EventArgs e)
         {
             Hienthiloaisanpham();
             btnSualoaisp.Enabled = false;
+            btnXoaloaisp.Enabled = false;
         }
-        //
         public bool Kiemtradulieu()
         {
             if (string.IsNullOrEmpty(txtTenloaisp.Text))
@@ -41,7 +39,6 @@ namespace QuanLySieuThiMini
             }
             return true;
         }
-        //
         private void btnThemloaisp_Click(object sender, EventArgs e)
         {
             if(Kiemtradulieu())
@@ -51,9 +48,9 @@ namespace QuanLySieuThiMini
 
                 if (lspb.Themloaisanpham(lsp))
                     Hienthiloaisanpham();
+                txtTenloaisp.Text = "";
             }
         }
-        //
         int ID;
         private void dgvLoaisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -64,10 +61,11 @@ namespace QuanLySieuThiMini
                 ID =Int32.Parse(dgvLoaisanpham.Rows[index].Cells["MALOAISP"].Value.ToString());
                 txtTenloaisp.Text = dgvLoaisanpham.Rows[index].Cells["TENLOAISP"].Value.ToString();
                 btnSualoaisp.Enabled = true;
+                btnXoaloaisp.Enabled = true;
                 btnThemloaisp.Enabled = false;
+                txtTenloaisp.Text = "";
             }
         }
-        //
         private void btnSualoaisp_Click(object sender, EventArgs e)
         {
             if (Kiemtradulieu())
@@ -78,6 +76,10 @@ namespace QuanLySieuThiMini
 
                 if (lspb.Sualoaisanpham(lsp))
                     Hienthiloaisanpham();
+                btnThemloaisp.Enabled = true;
+                btnSualoaisp.Enabled = false;
+                btnXoaloaisp.Enabled = false;
+                txtTenloaisp.Text = "";
             }
         }
 
@@ -85,12 +87,28 @@ namespace QuanLySieuThiMini
         {
             btnThemloaisp.Enabled = true;
             btnSualoaisp.Enabled = false;
+            btnXoaloaisp.Enabled = false;
             txtTenloaisp.Text = "";
         }
 
         private void btnDongloaisp_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnXoaloaisp_Click(object sender, EventArgs e)
+        {
+            if (Kiemtradulieu())
+            {
+                DTO.Loaisanpham lsp = new DTO.Loaisanpham();
+                lsp.MALOAI1 = ID;
+                if (lspb.Xoaloaisanpham(lsp))
+                    Hienthiloaisanpham();
+                btnThemloaisp.Enabled = true;
+                btnSualoaisp.Enabled = false;
+                btnXoaloaisp.Enabled = false;
+                txtTenloaisp.Text = "";
+            }
         }
     }
 }

@@ -180,7 +180,7 @@
             // 
             // txtTimkiemkh
             // 
-            this.txtTimkiemkh.Location = new System.Drawing.Point(225, 12);
+            this.txtTimkiemkh.Location = new System.Drawing.Point(234, 12);
             this.txtTimkiemkh.Name = "txtTimkiemkh";
             this.txtTimkiemkh.Size = new System.Drawing.Size(305, 29);
             this.txtTimkiemkh.TabIndex = 7;
@@ -211,18 +211,19 @@
             // 
             // btnXoakh
             // 
-            this.btnXoakh.Location = new System.Drawing.Point(92, 28);
+            this.btnXoakh.Location = new System.Drawing.Point(196, 28);
             this.btnXoakh.Name = "btnXoakh";
-            this.btnXoakh.Size = new System.Drawing.Size(75, 29);
+            this.btnXoakh.Size = new System.Drawing.Size(86, 29);
             this.btnXoakh.TabIndex = 6;
             this.btnXoakh.Text = "Xóa";
             this.btnXoakh.UseVisualStyleBackColor = true;
+            this.btnXoakh.Click += new System.EventHandler(this.btnXoakh_Click);
             // 
             // btnDongkh
             // 
-            this.btnDongkh.Location = new System.Drawing.Point(596, 28);
+            this.btnDongkh.Location = new System.Drawing.Point(587, 28);
             this.btnDongkh.Name = "btnDongkh";
-            this.btnDongkh.Size = new System.Drawing.Size(75, 29);
+            this.btnDongkh.Size = new System.Drawing.Size(84, 29);
             this.btnDongkh.TabIndex = 5;
             this.btnDongkh.Text = "Đóng";
             this.btnDongkh.UseVisualStyleBackColor = true;
@@ -230,9 +231,9 @@
             // 
             // btnThemkh
             // 
-            this.btnThemkh.Location = new System.Drawing.Point(199, 28);
+            this.btnThemkh.Location = new System.Drawing.Point(90, 28);
             this.btnThemkh.Name = "btnThemkh";
-            this.btnThemkh.Size = new System.Drawing.Size(75, 29);
+            this.btnThemkh.Size = new System.Drawing.Size(86, 29);
             this.btnThemkh.TabIndex = 4;
             this.btnThemkh.Text = "Thêm";
             this.btnThemkh.UseVisualStyleBackColor = true;
@@ -240,7 +241,7 @@
             // 
             // btnHuythaotac
             // 
-            this.btnHuythaotac.Location = new System.Drawing.Point(439, 28);
+            this.btnHuythaotac.Location = new System.Drawing.Point(430, 28);
             this.btnHuythaotac.Name = "btnHuythaotac";
             this.btnHuythaotac.Size = new System.Drawing.Size(141, 29);
             this.btnHuythaotac.TabIndex = 3;
@@ -250,9 +251,9 @@
             // 
             // btnSuakh
             // 
-            this.btnSuakh.Location = new System.Drawing.Point(308, 28);
+            this.btnSuakh.Location = new System.Drawing.Point(302, 28);
             this.btnSuakh.Name = "btnSuakh";
-            this.btnSuakh.Size = new System.Drawing.Size(75, 29);
+            this.btnSuakh.Size = new System.Drawing.Size(81, 29);
             this.btnSuakh.TabIndex = 2;
             this.btnSuakh.Text = "Sửa";
             this.btnSuakh.UseVisualStyleBackColor = true;

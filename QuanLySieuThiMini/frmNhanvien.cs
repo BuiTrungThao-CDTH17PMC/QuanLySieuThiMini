@@ -28,6 +28,7 @@ namespace QuanLySieuThiMini
             Hienthinhanvien();
             Hienthicbbloainhanvien();
             btnSuanhanvien.Enabled = false;
+            btnXoanhanvien.Enabled = false;
         }
         private void txtTimnhanvien_TextChanged(object sender, EventArgs e)
         {
@@ -97,7 +98,7 @@ namespace QuanLySieuThiMini
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
             int num = nvb.Kiemtratontai(txtTentaikhoan.Text);
-            if (Kiemtradulieu() && num < 0)
+            if (Kiemtradulieu())
             {
                 DTO.Nhanvien nv = new DTO.Nhanvien();
                 nv.TENNV1 = txtTennhanvien.Text;
@@ -118,6 +119,7 @@ namespace QuanLySieuThiMini
         {
             int index = e.RowIndex;
             btnSuanhanvien.Enabled = true;
+            btnXoanhanvien.Enabled = true;
             btnThemnhanvien.Enabled = false;
             try 
             {
@@ -162,6 +164,7 @@ namespace QuanLySieuThiMini
                 }
                 ResertControll();
                 btnSuanhanvien.Enabled = false;
+                btnXoanhanvien.Enabled = false;
                 btnThemnhanvien.Enabled = true;
             }
         }
@@ -184,6 +187,24 @@ namespace QuanLySieuThiMini
             ResertControll();
             btnThemnhanvien.Enabled = true;
             btnSuanhanvien.Enabled = false;
+            btnXoanhanvien.Enabled = false;
+        }
+
+        private void btnXoanhanvien_Click(object sender, EventArgs e)
+        {
+            if (Kiemtradulieu())
+            {
+                DTO.Nhanvien nv = new DTO.Nhanvien();
+                nv.MANV1 = ID;
+                if (nvb.Xoanhanvien(nv))
+                {
+                    Hienthinhanvien();
+                }
+                ResertControll();
+                btnSuanhanvien.Enabled = false;
+                btnXoanhanvien.Enabled = false;
+                btnThemnhanvien.Enabled = true;
+            }
         }
     }
 }

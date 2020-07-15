@@ -113,7 +113,7 @@ namespace QuanLySieuThiMini
                 sp.DONGIA1 = Int32.Parse(txtDongia.Text);
                 sp.MALOAI1 = Int32.Parse(cbbLoaisanpham.SelectedValue.ToString());
                 sp.MANCC1 = Int32.Parse(cbbNhacungcap.SelectedValue.ToString());
-                if (spb.Themsanpham(sp))
+                if (spb.Suasanpham(sp))
                 {
                     Hienthisanpham();
                 }

@@ -43,5 +43,13 @@ namespace QuanLySieuThiMini.DTO
             get { return SDT; }
             set { SDT = value; }
         }
+        private int XOA;
+
+        public int XOA1
+        {
+            get { return XOA; }
+            set { XOA = value; }
+        }
+
     }
 }

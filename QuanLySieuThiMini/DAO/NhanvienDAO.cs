@@ -13,15 +13,13 @@ namespace QuanLySieuThiMini.DAO
         DAO.DataConnection dc;
         SqlDataAdapter dr;
         SqlCommand cmd;
-        //
         public NhanvienDAO()
         {
             dc = new DataConnection();
         }
-        //
         public DataTable Tablenhanvien()
         {
-            string sql = "select * from NHANVIEN";
+            string sql = "SELECT * FROM NHANVIEN WHERE XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql,con);
             con.Open();
@@ -30,10 +28,9 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
         }
-        //
         public bool Themnhanvien(DTO.Nhanvien nv)
         {
-            string sql = "INSERT INTO NHANVIEN(TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH)values (@TENNV,@DIACHI,@LOAINV,@TENTAIKHOAN,@MATKHAU,@SDT,@GIOITINH)";
+            string sql = "INSERT INTO NHANVIEN(TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH)VALUES(@TENNV,@DIACHI,@LOAINV,@TENTAIKHOAN,@MATKHAU,@SDT,@GIOITINH)";
             SqlConnection con = dc.getConnect();
             try
             {
@@ -54,7 +51,6 @@ namespace QuanLySieuThiMini.DAO
             }
             return true;
         }
-        //
         public bool Suanhanvien(DTO.Nhanvien nv)
         {
             string sql = "UPDATE NHANVIEN SET TENNV=@TENNV, DIACHI=@DIACHI, TENTK=@TENTAIKHOAN, MATKHAU=@MATKHAU, SDT=@SDT, GIOITINH=@GIOITINH, LOAINV=@LOAINV WHERE MANV = @MANV";
@@ -80,10 +76,9 @@ namespace QuanLySieuThiMini.DAO
             }
             return true;
         }
-       
         public DataTable Timkiemnhanvien (string tnv)
         {
-            string sql = "SELECT * FROM NHANVIEN WHERE TENNV LIKE N'%" + tnv + "%'";
+            string sql = "SELECT * FROM NHANVIEN WHERE XOA = 0 AND TENNV LIKE N'%" + tnv + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -92,10 +87,9 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
         }
-        //
         public DataTable Tableloainhanvien()
         {
-            string sql = "SELECT * FROM LOAINHANVIEN";
+            string sql = "SELECT * FROM LOAINHANVIEN WHERE XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -123,6 +117,24 @@ namespace QuanLySieuThiMini.DAO
                 return 0;
             }
             return num;
+        }
+        public bool Xoanhanvien(DTO.Nhanvien nv)
+        {
+            string sql = "UPDATE NHANVIEN SET XOA = 1 WHERE MANV = @MANV";
+            SqlConnection con = dc.getConnect();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MANV", SqlDbType.Int).Value = nv.MANV1;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
     } 
 }

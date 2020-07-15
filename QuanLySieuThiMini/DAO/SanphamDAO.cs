@@ -52,10 +52,10 @@ namespace QuanLySieuThiMini.DAO
         }
         public bool Themsanpham(DTO.Sanpham sp)
         {
-            string sql = "INSERT INTO SANPHAM(TENSP,MALOAI,MANCC,SOLUONG,DONGIA,HINHANH) VALUES(@TENSP,@MALOAI,@MANCC,@SOLUONG,@DONGIA,@HINHANH)";
+            string sql = "INSERT INTO SANPHAM(TENSP,MALOAI,MANCC,SOLUONG,DONGIA,HINHANH)VALUES(@TENSP,@MALOAI,@MANCC,@SOLUONG,@DONGIA,@HINHANH)";
             SqlConnection con = dc.getConnect();
-            try
-            {
+           // try
+            //{
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@TENSP", SqlDbType.NVarChar).Value = sp.TENSP1;
@@ -66,18 +66,18 @@ namespace QuanLySieuThiMini.DAO
                 cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
                 cmd.ExecuteNonQuery();
                 con.Close();
-            }catch(Exception e)
-            {
-                return false;
-            }
+           // }catch(Exception e)
+            //{
+                //return false;
+           // }
             return true;
         }
         public bool Suasanpham(DTO.Sanpham sp)
         {
-            string sql = "UPDATE SANPHAM SET TENSP = @TENSP, MALOAI = @MALOAI, MANCC = @MANCC, SOLUONG = @SOLUONG, DONGIA = @DONGIA, HINHANH = @HINHANH WHERE MASP = @MASP";
+            string sql = "UPDATE SANPHAM SET TENSP=@TENSP, MALOAI=@MALOAI, MANCC=@MANCC, SOLUONG=@SOLUONG, DONGIA=@DONGIA, HINHANH=@HINHANH WHERE MASP=@MASP";
             SqlConnection con = dc.getConnect();
-            try
-            {
+            //try
+            //{
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@MASP", SqlDbType.Int).Value = sp.MASP1;
@@ -89,11 +89,11 @@ namespace QuanLySieuThiMini.DAO
                 cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
                 cmd.ExecuteNonQuery();
                 con.Close();
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            //}
+            //catch (Exception e)
+            //{
+                //return false;
+            //}
             return true;
         }
         public DataTable Timkiemsanpham(string tsp)
