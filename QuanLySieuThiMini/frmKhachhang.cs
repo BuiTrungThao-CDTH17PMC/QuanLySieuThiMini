@@ -81,12 +81,14 @@ namespace QuanLySieuThiMini
         {
             Hienthikhachhang();
             btnSuakh.Enabled = false;
+            btnXoakh.Enabled = false;
         }
         int ID;
         private void dgvHienthikhachhang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             btnSuakh.Enabled = true;
+            btnXoakh.Enabled = true;
             btnThemkh.Enabled = false;
             try 
             {
@@ -117,6 +119,7 @@ namespace QuanLySieuThiMini
                 }
                 btnThemkh.Enabled = true;
                 btnSuakh.Enabled = false;
+                btnXoakh.Enabled = false;
                 ResertControll();
             }
         }
@@ -131,16 +134,40 @@ namespace QuanLySieuThiMini
             ResertControll();
             btnThemkh.Enabled = true;
             btnSuakh.Enabled = false;
+            btnXoakh.Enabled = false;
         }
-
         private void btnDongkh_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void txtTimkiemkh_TextChanged(object sender, EventArgs e)
         {
-            
+            string tkh = txtTimkiemkh.Text;
+            if(!String.IsNullOrEmpty(txtTimkiemkh.Text))
+            {
+                DataTable dt = khb.Timkiemkhachhang(tkh);
+                dgvHienthikhachhang.DataSource = dt;
+            }
+            else
+            {
+                Hienthikhachhang();
+            }
+        }
+        private void btnXoakh_Click(object sender, EventArgs e)
+        {
+            if (Kiemtradulieu())
+            {
+                DTO.Khachhang kh = new DTO.Khachhang();
+                kh.MAKH1 = ID;
+                if (khb.Xoakhachhang(kh))
+                {
+                    Hienthikhachhang();
+                }
+                btnThemkh.Enabled = true;
+                btnSuakh.Enabled = false;
+                btnXoakh.Enabled = false;
+                ResertControll();
+            }
         }
 
     }

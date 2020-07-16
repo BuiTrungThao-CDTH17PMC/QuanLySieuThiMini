@@ -22,5 +22,12 @@ namespace QuanLySieuThiMini.DTO
             get { return TENLOAI; }
             set { TENLOAI = value; }
         }
+        private int XOA;
+
+        public int XOA1
+        {
+            get { return XOA; }
+            set { XOA = value; }
+        }
     }
 }

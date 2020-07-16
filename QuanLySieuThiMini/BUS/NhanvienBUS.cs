@@ -39,6 +39,10 @@ namespace QuanLySieuThiMini.BUS
         {
             return nvd.Kiemtratontai(tdn);
         }
+        public bool Xoanhanvien(DTO.Nhanvien nv)
+        {
+            return nvd.Xoanhanvien(nv);
+        }
     }
 
 }
