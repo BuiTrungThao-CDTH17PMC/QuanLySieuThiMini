@@ -74,7 +74,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public bool Suasanpham(DTO.Sanpham sp)
         {
-            string sql = "UPDATE SANPHAM SET TENSP=@TENSP, MALOAI=@MALOAI, MANCC=@MANCC, SOLUONG=@SOLUONG, DONGIA=@DONGIA, HINHANH=@HINHANH WHERE MASP=@MASP";
+            string sql = "UPDATE SANPHAM SET TENSP=@TENSP, MALOAI=@MALOAI, MANCC=@MANCC, SOLUONG=@SOLUONG, DONGIA=@DONGIA WHERE MASP=@MASP";
             SqlConnection con = dc.getConnect();
             //try
             //{
@@ -86,7 +86,7 @@ namespace QuanLySieuThiMini.DAO
                 cmd.Parameters.Add("@MANCC", SqlDbType.Int).Value = sp.MANCC1;
                 cmd.Parameters.Add("@SOLUONG", SqlDbType.Int).Value = sp.SOLUONG1;
                 cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = sp.DONGIA1;
-                cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
+                //cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
                 cmd.ExecuteNonQuery();
                 con.Close();
             //}
