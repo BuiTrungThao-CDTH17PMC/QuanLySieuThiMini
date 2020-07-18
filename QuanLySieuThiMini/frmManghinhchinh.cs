@@ -22,13 +22,6 @@ namespace QuanLySieuThiMini
             frmBanhang frmbh = new frmBanhang();
             frmbh.ShowDialog();
         }
-
-        private void TSMI_Nhanvien_Click(object sender, EventArgs e)
-        {
-            frmNhanvien frmnv = new frmNhanvien();
-            frmnv.ShowDialog();
-        }
-
         private void TSMI_Sanpham_Click(object sender, EventArgs e)
         {
             frmSanpham frmsp = new frmSanpham();
@@ -64,6 +57,18 @@ namespace QuanLySieuThiMini
         {
             frmHienthihoadonban hdbh = new frmHienthihoadonban();
             hdbh.ShowDialog();
+        }
+
+        private void TSMI_Loainhanvien_Click(object sender, EventArgs e)
+        {
+            frmLoainhanvien lnv = new frmLoainhanvien();
+            lnv.Show();
+        }
+
+        private void TSMI_Nhanvien_Click_1(object sender, EventArgs e)
+        {
+            frmNhanvien frmnv = new frmNhanvien();
+            frmnv.ShowDialog();
         }
     }
 }

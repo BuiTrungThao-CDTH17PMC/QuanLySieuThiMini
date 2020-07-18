@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tablesanpham()
         {
-            string sql = "SELECT MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC";
+            string sql = "SELECT MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC AND SP.XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
