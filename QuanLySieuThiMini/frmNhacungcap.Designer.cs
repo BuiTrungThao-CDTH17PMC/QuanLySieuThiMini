@@ -61,6 +61,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.MANCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhacungcap)).BeginInit();
@@ -101,7 +106,7 @@
             this.txtTimnhacungcap.Location = new System.Drawing.Point(315, 12);
             this.txtTimnhacungcap.Margin = new System.Windows.Forms.Padding(6);
             this.txtTimnhacungcap.Name = "txtTimnhacungcap";
-            this.txtTimnhacungcap.Size = new System.Drawing.Size(268, 29);
+            this.txtTimnhacungcap.Size = new System.Drawing.Size(268, 34);
             this.txtTimnhacungcap.TabIndex = 7;
             this.txtTimnhacungcap.TextChanged += new System.EventHandler(this.txtTimnhacungcap_TextChanged);
             // 
@@ -111,7 +116,7 @@
             this.label5.Location = new System.Drawing.Point(72, 15);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 21);
+            this.label5.Size = new System.Drawing.Size(183, 27);
             this.label5.TabIndex = 6;
             this.label5.Text = "Tìm nhà cung cấp";
             // 
@@ -324,7 +329,7 @@
             this.txtSdtnhacungcap.Location = new System.Drawing.Point(215, 116);
             this.txtSdtnhacungcap.Margin = new System.Windows.Forms.Padding(6);
             this.txtSdtnhacungcap.Name = "txtSdtnhacungcap";
-            this.txtSdtnhacungcap.Size = new System.Drawing.Size(268, 29);
+            this.txtSdtnhacungcap.Size = new System.Drawing.Size(268, 35);
             this.txtSdtnhacungcap.TabIndex = 5;
             // 
             // txtDcnhacungcap
@@ -332,7 +337,7 @@
             this.txtDcnhacungcap.Location = new System.Drawing.Point(215, 75);
             this.txtDcnhacungcap.Margin = new System.Windows.Forms.Padding(6);
             this.txtDcnhacungcap.Name = "txtDcnhacungcap";
-            this.txtDcnhacungcap.Size = new System.Drawing.Size(417, 29);
+            this.txtDcnhacungcap.Size = new System.Drawing.Size(417, 35);
             this.txtDcnhacungcap.TabIndex = 4;
             // 
             // txtTennhacungcap
@@ -340,7 +345,7 @@
             this.txtTennhacungcap.Location = new System.Drawing.Point(215, 34);
             this.txtTennhacungcap.Margin = new System.Windows.Forms.Padding(6);
             this.txtTennhacungcap.Name = "txtTennhacungcap";
-            this.txtTennhacungcap.Size = new System.Drawing.Size(417, 29);
+            this.txtTennhacungcap.Size = new System.Drawing.Size(417, 35);
             this.txtTennhacungcap.TabIndex = 3;
             // 
             // label4
@@ -349,7 +354,7 @@
             this.label4.Location = new System.Drawing.Point(33, 119);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 21);
+            this.label4.Size = new System.Drawing.Size(137, 27);
             this.label4.TabIndex = 2;
             this.label4.Text = "Số điện thoại";
             // 
@@ -359,7 +364,7 @@
             this.label3.Location = new System.Drawing.Point(33, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 21);
+            this.label3.Size = new System.Drawing.Size(81, 27);
             this.label3.TabIndex = 1;
             this.label3.Text = "Địa chỉ";
             // 
@@ -369,7 +374,7 @@
             this.label2.Location = new System.Drawing.Point(33, 37);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 21);
+            this.label2.Size = new System.Drawing.Size(182, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên nhà cung cấp";
             // 
@@ -390,13 +395,63 @@
             this.label1.Location = new System.Drawing.Point(25, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 36);
+            this.label1.Size = new System.Drawing.Size(250, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhà cung cấp";
             // 
+            // MANCC
+            // 
+            this.MANCC.DataPropertyName = "MANCC";
+            this.MANCC.HeaderText = "Mã nhà cung cấp";
+            this.MANCC.Name = "MANCC";
+            this.MANCC.ReadOnly = true;
+            this.MANCC.Visible = false;
+            // 
+            // XOA
+            // 
+            this.XOA.DataPropertyName = "XOA";
+            this.XOA.HeaderText = "Xóa nhà cung cấp";
+            this.XOA.Name = "XOA";
+            this.XOA.ReadOnly = true;
+            this.XOA.Visible = false;
+            // 
+            // TENNCC
+            // 
+            this.TENNCC.DataPropertyName = "TENNCC";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.TENNCC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TENNCC.HeaderText = "Tên nhà cung cấp";
+            this.TENNCC.Name = "TENNCC";
+            this.TENNCC.ReadOnly = true;
+            this.TENNCC.Width = 280;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DIACHI.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 250;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDT.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 150;
+            // 
             // frmNhacungcap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 622);
             this.Controls.Add(this.panel1);
