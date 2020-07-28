@@ -15,7 +15,7 @@ namespace QuanLySieuThiMini.DAO
 
         public DataConnection()
         {
-            conStr = @"Data Source=DESKTOP-8GNIKAI\SQLEXPRESS;Initial Catalog=CSDLSieuThiMini;Integrated Security=True";
+            conStr = @"Data Source=DESKTOP-7KJPPJF\SQLEXPRESS;Initial Catalog=CSDLSieuThiMini;Integrated Security=True";
         }
         public SqlConnection getConnect()
         {
