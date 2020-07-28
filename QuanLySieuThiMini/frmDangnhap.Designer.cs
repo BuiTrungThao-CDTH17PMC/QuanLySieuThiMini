@@ -161,6 +161,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDangnhap";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
             this.panel1.ResumeLayout(false);

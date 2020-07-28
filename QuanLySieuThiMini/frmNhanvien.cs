@@ -7,22 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace QuanLySieuThiMini
 {
     public partial class frmNhanvien : Form
     {
         BUS.NhanvienBUS nvb;
+        int ID;
+
         public frmNhanvien()
         {
             InitializeComponent();
             nvb = new BUS.NhanvienBUS();
         }
+
         public void Hienthinhanvien ()
         {
             DataTable dt = nvb.Tablenhanvien();
             dgvHienthinhanvien.DataSource = dt;
         }
+
         private void frmNhanvien_Load(object sender, EventArgs e)
         {
             Hienthinhanvien();
@@ -30,6 +35,7 @@ namespace QuanLySieuThiMini
             btnSuanhanvien.Enabled = false;
             btnXoanhanvien.Enabled = false;
         }
+
         private void txtTimnhanvien_TextChanged(object sender, EventArgs e)
         {
             string value = txtTimnhanvien.Text;
@@ -41,6 +47,7 @@ namespace QuanLySieuThiMini
             else
                 Hienthinhanvien();
         }
+
         public void Hienthicbbloainhanvien()
         {
             DataTable dt = nvb.Tableloainhanvien();
@@ -48,6 +55,7 @@ namespace QuanLySieuThiMini
             cbbLoainhanvien.DisplayMember = "TENLOAI";
             cbbLoainhanvien.ValueMember = "MALOAI";
         }
+
         public bool Kiemtradulieu()
         {
             if (string.IsNullOrEmpty(txtTennhanvien.Text))
@@ -87,6 +95,7 @@ namespace QuanLySieuThiMini
             }
             return true;
         }
+
         public bool Kiemtraso(string text)
         {
             int num = 0;
@@ -95,6 +104,7 @@ namespace QuanLySieuThiMini
             else 
                 return false;
         }
+
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
             int num = nvb.Kiemtratontai(txtTentaikhoan.Text);
@@ -106,7 +116,7 @@ namespace QuanLySieuThiMini
                 nv.SDT1 = txtSodienthoainv.Text;
                 nv.GIOITINH1 = rdbGioitinhnam.Checked?1:0;
                 nv.LOAINV1 = Int32.Parse(cbbLoainhanvien.SelectedValue.ToString());
-                nv.MATKHAU1 = txtMatkhau.Text;
+                nv.MATKHAU1 = Mahoa(txtMatkhau.Text);
                 nv.TENTK1 = txtTentaikhoan.Text;
                 if(nvb.Themnhanvien(nv))
                 {
@@ -114,7 +124,7 @@ namespace QuanLySieuThiMini
                 }
             }
         }
-        int ID;
+        
         private void dgvHienthinhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -144,6 +154,7 @@ namespace QuanLySieuThiMini
             {
             }
         }
+
         private void btnSuanhanvien_Click(object sender, EventArgs e)
         {
             if (Kiemtradulieu())
@@ -155,7 +166,7 @@ namespace QuanLySieuThiMini
                 nv.SDT1 = txtSodienthoainv.Text;
                 nv.GIOITINH1 = rdbGioitinhnam.Checked?1:0;
                 nv.LOAINV1 = Int32.Parse(cbbLoainhanvien.SelectedValue.ToString());
-                nv.MATKHAU1 = txtMatkhau.Text;
+                nv.MATKHAU1 = Mahoa(txtMatkhau.Text);
                 nv.TENTK1 = txtTentaikhoan.Text;
 
                 if (nvb.Suanhanvien(nv))
@@ -173,6 +184,7 @@ namespace QuanLySieuThiMini
         {
             this.Close();
         }
+
         public void ResertControll()
         {
             txtTennhanvien.Text = "";
@@ -182,6 +194,7 @@ namespace QuanLySieuThiMini
             txtTentaikhoan.Text = "";
             txtXacnhanmatkhau.Text = "";
         }
+
         private void btnHuythaotacnv_Click(object sender, EventArgs e)
         {
             ResertControll();
@@ -205,6 +218,19 @@ namespace QuanLySieuThiMini
                 btnXoanhanvien.Enabled = false;
                 btnThemnhanvien.Enabled = true;
             }
+        }
+
+        public string Mahoa(string value)
+        {
+            MD5 md = MD5.Create();
+            byte[] inputbyte = System.Text.Encoding.ASCII.GetBytes(value);
+            byte[] mahoa = md.ComputeHash(inputbyte);
+            StringBuilder bd = new StringBuilder();
+            for (int i = 0; i < mahoa.Length; i++)
+            {
+                bd.Append(mahoa[i].ToString("X2"));
+            }
+            return bd.ToString();
         }
     }
 }

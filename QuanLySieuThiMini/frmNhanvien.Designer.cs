@@ -34,6 +34,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvHienthinhanvien = new System.Windows.Forms.DataGridView();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.LOAINV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTimnhanvien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -61,15 +70,6 @@
             this.txtDiachinv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTennhanvien = new System.Windows.Forms.TextBox();
-            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.LOAINV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienthinhanvien)).BeginInit();
@@ -135,6 +135,79 @@
             this.dgvHienthinhanvien.TabIndex = 4;
             this.dgvHienthinhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthinhanvien_CellClick);
             // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.Name = "MANV";
+            this.MANV.ReadOnly = true;
+            this.MANV.Visible = false;
+            this.MANV.Width = 120;
+            // 
+            // TENNV
+            // 
+            this.TENNV.DataPropertyName = "TENNV";
+            this.TENNV.HeaderText = "Tên nhân viên";
+            this.TENNV.Name = "TENNV";
+            this.TENNV.ReadOnly = true;
+            this.TENNV.Width = 150;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 300;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 150;
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GIOITINH";
+            this.GIOITINH.HeaderText = "Giới tính(Nam)";
+            this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.ReadOnly = true;
+            // 
+            // LOAINV
+            // 
+            this.LOAINV.DataPropertyName = "LOAINV";
+            this.LOAINV.HeaderText = "Là nhân viên";
+            this.LOAINV.Name = "LOAINV";
+            this.LOAINV.ReadOnly = true;
+            this.LOAINV.Width = 110;
+            // 
+            // TENTK
+            // 
+            this.TENTK.DataPropertyName = "TENTK";
+            this.TENTK.HeaderText = "Tài khoản đăng nhập";
+            this.TENTK.Name = "TENTK";
+            this.TENTK.ReadOnly = true;
+            this.TENTK.Width = 150;
+            // 
+            // MATKHAU
+            // 
+            this.MATKHAU.DataPropertyName = "MATKHAU";
+            this.MATKHAU.HeaderText = "Mật khẩu";
+            this.MATKHAU.Name = "MATKHAU";
+            this.MATKHAU.ReadOnly = true;
+            this.MATKHAU.Visible = false;
+            this.MATKHAU.Width = 150;
+            // 
+            // XOA
+            // 
+            this.XOA.DataPropertyName = "XOA";
+            this.XOA.HeaderText = "XOA";
+            this.XOA.Name = "XOA";
+            this.XOA.ReadOnly = true;
+            this.XOA.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -191,7 +264,7 @@
             // 
             this.btnXoanhanvien.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnXoanhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoanhanvien.Location = new System.Drawing.Point(52, 28);
+            this.btnXoanhanvien.Location = new System.Drawing.Point(143, 28);
             this.btnXoanhanvien.Name = "btnXoanhanvien";
             this.btnXoanhanvien.Size = new System.Drawing.Size(111, 33);
             this.btnXoanhanvien.TabIndex = 5;
@@ -203,7 +276,7 @@
             // 
             this.btnThemnhanvien.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnThemnhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemnhanvien.Location = new System.Drawing.Point(170, 28);
+            this.btnThemnhanvien.Location = new System.Drawing.Point(26, 28);
             this.btnThemnhanvien.Name = "btnThemnhanvien";
             this.btnThemnhanvien.Size = new System.Drawing.Size(111, 33);
             this.btnThemnhanvien.TabIndex = 4;
@@ -215,7 +288,7 @@
             // 
             this.btnSuanhanvien.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnSuanhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuanhanvien.Location = new System.Drawing.Point(288, 28);
+            this.btnSuanhanvien.Location = new System.Drawing.Point(260, 28);
             this.btnSuanhanvien.Name = "btnSuanhanvien";
             this.btnSuanhanvien.Size = new System.Drawing.Size(111, 33);
             this.btnSuanhanvien.TabIndex = 3;
@@ -239,7 +312,7 @@
             // 
             this.btnHuythaotacnv.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnHuythaotacnv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuythaotacnv.Location = new System.Drawing.Point(406, 28);
+            this.btnHuythaotacnv.Location = new System.Drawing.Point(378, 28);
             this.btnHuythaotacnv.Name = "btnHuythaotacnv";
             this.btnHuythaotacnv.Size = new System.Drawing.Size(131, 33);
             this.btnHuythaotacnv.TabIndex = 0;
@@ -341,7 +414,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 175);
+            this.label6.Location = new System.Drawing.Point(31, 173);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 21);
             this.label6.TabIndex = 9;
@@ -421,79 +494,6 @@
             this.txtTennhanvien.Name = "txtTennhanvien";
             this.txtTennhanvien.Size = new System.Drawing.Size(306, 29);
             this.txtTennhanvien.TabIndex = 0;
-            // 
-            // MANV
-            // 
-            this.MANV.DataPropertyName = "MANV";
-            this.MANV.HeaderText = "Mã nhân viên";
-            this.MANV.Name = "MANV";
-            this.MANV.ReadOnly = true;
-            this.MANV.Visible = false;
-            this.MANV.Width = 120;
-            // 
-            // TENNV
-            // 
-            this.TENNV.DataPropertyName = "TENNV";
-            this.TENNV.HeaderText = "Tên nhân viên";
-            this.TENNV.Name = "TENNV";
-            this.TENNV.ReadOnly = true;
-            this.TENNV.Width = 150;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 300;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 150;
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GIOITINH";
-            this.GIOITINH.HeaderText = "Giới tính(Nam)";
-            this.GIOITINH.Name = "GIOITINH";
-            this.GIOITINH.ReadOnly = true;
-            // 
-            // LOAINV
-            // 
-            this.LOAINV.DataPropertyName = "LOAINV";
-            this.LOAINV.HeaderText = "Là nhân viên";
-            this.LOAINV.Name = "LOAINV";
-            this.LOAINV.ReadOnly = true;
-            this.LOAINV.Width = 110;
-            // 
-            // TENTK
-            // 
-            this.TENTK.DataPropertyName = "TENTK";
-            this.TENTK.HeaderText = "Tài khoản đăng nhập";
-            this.TENTK.Name = "TENTK";
-            this.TENTK.ReadOnly = true;
-            this.TENTK.Width = 150;
-            // 
-            // MATKHAU
-            // 
-            this.MATKHAU.DataPropertyName = "MATKHAU";
-            this.MATKHAU.HeaderText = "Mật khẩu";
-            this.MATKHAU.Name = "MATKHAU";
-            this.MATKHAU.ReadOnly = true;
-            this.MATKHAU.Visible = false;
-            this.MATKHAU.Width = 150;
-            // 
-            // XOA
-            // 
-            this.XOA.DataPropertyName = "XOA";
-            this.XOA.HeaderText = "XOA";
-            this.XOA.Name = "XOA";
-            this.XOA.ReadOnly = true;
-            this.XOA.Visible = false;
             // 
             // frmNhanvien
             // 

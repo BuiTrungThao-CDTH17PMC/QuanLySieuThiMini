@@ -30,13 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthihoadonban));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvChitiethoadonban = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDanhsachhoadonban = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvChitiethoadonban = new System.Windows.Forms.DataGridView();
+            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIATIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvDanhsachhoadonban = new System.Windows.Forms.DataGridView();
             this.MAHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,18 +50,12 @@
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIEMSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIATIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChitiethoadonban)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +69,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(835, 743);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(8, 7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(819, 52);
+            this.panel2.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 13);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(258, 26);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(56, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tìm kiếm hóa đơn";
             // 
             // groupBox2
             // 
@@ -98,6 +127,53 @@
             this.dgvChitiethoadonban.ReadOnly = true;
             this.dgvChitiethoadonban.Size = new System.Drawing.Size(807, 291);
             this.dgvChitiethoadonban.TabIndex = 0;
+            // 
+            // MAHD
+            // 
+            this.MAHD.DataPropertyName = "MAHDX";
+            this.MAHD.HeaderText = "Mã hóa đơn bán";
+            this.MAHD.Name = "MAHD";
+            this.MAHD.ReadOnly = true;
+            this.MAHD.Width = 150;
+            // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.Name = "MASP";
+            this.MASP.ReadOnly = true;
+            this.MASP.Width = 120;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.ReadOnly = true;
+            this.TENSP.Width = 200;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            // 
+            // GIATIEN
+            // 
+            this.GIATIEN.DataPropertyName = "GIATIEN";
+            this.GIATIEN.HeaderText = "Giá tiền ";
+            this.GIATIEN.Name = "GIATIEN";
+            this.GIATIEN.ReadOnly = true;
+            this.GIATIEN.Width = 110;
+            // 
+            // GIAMGIA
+            // 
+            this.GIAMGIA.DataPropertyName = "GIAMGIA";
+            this.GIAMGIA.HeaderText = "Giảm giá";
+            this.GIAMGIA.Name = "GIAMGIA";
+            this.GIAMGIA.ReadOnly = true;
+            this.GIAMGIA.Width = 110;
             // 
             // groupBox1
             // 
@@ -129,35 +205,6 @@
             this.dgvDanhsachhoadonban.Size = new System.Drawing.Size(807, 320);
             this.dgvDanhsachhoadonban.TabIndex = 0;
             this.dgvDanhsachhoadonban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachhoadonban_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tìm kiếm hóa đơn";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(8, 7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(819, 52);
-            this.panel2.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Location = new System.Drawing.Point(234, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 26);
-            this.dateTimePicker1.TabIndex = 4;
             // 
             // MAHDX
             // 
@@ -213,53 +260,6 @@
             this.TONGTIEN.Name = "TONGTIEN";
             this.TONGTIEN.ReadOnly = true;
             // 
-            // MAHD
-            // 
-            this.MAHD.DataPropertyName = "MAHDX";
-            this.MAHD.HeaderText = "Mã hóa đơn bán";
-            this.MAHD.Name = "MAHD";
-            this.MAHD.ReadOnly = true;
-            this.MAHD.Width = 150;
-            // 
-            // MASP
-            // 
-            this.MASP.DataPropertyName = "MASP";
-            this.MASP.HeaderText = "Mã sản phẩm";
-            this.MASP.Name = "MASP";
-            this.MASP.ReadOnly = true;
-            this.MASP.Width = 120;
-            // 
-            // TENSP
-            // 
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.Name = "TENSP";
-            this.TENSP.ReadOnly = true;
-            this.TENSP.Width = 200;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.ReadOnly = true;
-            // 
-            // GIATIEN
-            // 
-            this.GIATIEN.DataPropertyName = "GIATIEN";
-            this.GIATIEN.HeaderText = "Giá tiền ";
-            this.GIATIEN.Name = "GIATIEN";
-            this.GIATIEN.ReadOnly = true;
-            this.GIATIEN.Width = 110;
-            // 
-            // GIAMGIA
-            // 
-            this.GIAMGIA.DataPropertyName = "GIAMGIA";
-            this.GIAMGIA.HeaderText = "Giảm giá";
-            this.GIAMGIA.Name = "GIAMGIA";
-            this.GIAMGIA.ReadOnly = true;
-            this.GIAMGIA.Width = 110;
-            // 
             // frmHienthihoadonban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -270,17 +270,19 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHienthihoadonban";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiện thị hóa đơn bán hàng";
             this.Load += new System.EventHandler(this.frmHienthihoadonban_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChitiethoadonban)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
