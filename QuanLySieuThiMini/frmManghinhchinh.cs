@@ -12,21 +12,32 @@ namespace QuanLySieuThiMini
 {
     public partial class frmManghinhchinh : Form
     {
+        string tennv,tenlnv;
+        int mnv;
+
         public frmManghinhchinh()
         {
             InitializeComponent();
+            
+        }
+
+        public frmManghinhchinh( string tnv,string tlnv,int manv):this()
+        {
+            tennv = tnv;
+            mnv = manv;
+            tenlnv = tlnv;
         }
 
         private void frmManghinhchinh_Load(object sender, EventArgs e)
         {
-            frmBanhang frmbh = new frmBanhang();
-            frmbh.ShowDialog();
-        }
-
-        private void TSMI_Nhanvien_Click(object sender, EventArgs e)
-        {
-            frmNhanvien frmnv = new frmNhanvien();
-            frmnv.ShowDialog();
+            if(tenlnv != "Nhân viên trưởng")
+            {
+                TSMI_Quanlynhanvien.Enabled = false;
+                TSMI_Quanlysanpham.Enabled = false;
+                TSMI_Baocaobanhang.Enabled = false;
+                TSMI_Baocaonhaphang.Enabled = false;
+            }
+            
         }
 
         private void TSMI_Sanpham_Click(object sender, EventArgs e)
@@ -53,17 +64,28 @@ namespace QuanLySieuThiMini
             ncc.ShowDialog();
         }
 
-        private void TSMI_Thoat_Click(object sender, EventArgs e)
+        private void TSMI_Loainhanvien_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmDangnhap dn = new frmDangnhap();
-            dn.Close();
+            frmLoainhanvien lnv = new frmLoainhanvien();
+            lnv.ShowDialog();
         }
 
-        private void TSMI_Hoadonbanhang_Click(object sender, EventArgs e)
+        private void TSMI_Nhanvien_Click_1(object sender, EventArgs e)
         {
-            frmHienthihoadonban hdbh = new frmHienthihoadonban();
-            hdbh.ShowDialog();
+            frmNhanvien frmnv = new frmNhanvien();
+            frmnv.ShowDialog();
+        }
+
+        private void TSMI_Danhsachhoadonban_Click(object sender, EventArgs e)
+        {
+            frmHienthihoadonban hdb = new frmHienthihoadonban();
+            hdb.ShowDialog();
+        }
+
+        private void TSMI_Banhang_Click(object sender, EventArgs e)
+        {
+            frmBanhang bh = new frmBanhang(tennv,mnv);
+            bh.ShowDialog();
         }
     }
 }

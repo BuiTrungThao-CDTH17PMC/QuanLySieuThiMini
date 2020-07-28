@@ -13,6 +13,10 @@ namespace QuanLySieuThiMini
     public partial class frmHienthikhachhang : Form
     {
         BUS.KhachhangBUS khb;
+
+        public delegate void truyendulieu(string tkh,string mkh);
+        public truyendulieu truyen;
+
         public frmHienthikhachhang()
         {
             InitializeComponent();
@@ -36,6 +40,21 @@ namespace QuanLySieuThiMini
                 DataTable dt = khb.Timkiemkhachhang(value);
                 dgvChonkhachhang.DataSource = dt;
             }
+        }
+
+        private void dgvChonkhachhang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if(index >= 0)
+            {
+                string mkh = dgvChonkhachhang.Rows[index].Cells["MAKH"].Value.ToString();
+                string tkh = dgvChonkhachhang.Rows[index].Cells["TENKH"].Value.ToString();
+
+                truyen(tkh,mkh);
+
+                this.Close();
+            }
+            
         }
     }
 }

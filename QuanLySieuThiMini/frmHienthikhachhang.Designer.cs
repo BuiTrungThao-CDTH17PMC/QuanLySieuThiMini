@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthikhachhang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTimkiemkhachhang = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvChonkhachhang = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTimkiemkhachhang = new System.Windows.Forms.TextBox();
             this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(836, 464);
             this.panel1.TabIndex = 0;
+            // 
+            // txtTimkiemkhachhang
+            // 
+            this.txtTimkiemkhachhang.Location = new System.Drawing.Point(166, 13);
+            this.txtTimkiemkhachhang.Name = "txtTimkiemkhachhang";
+            this.txtTimkiemkhachhang.Size = new System.Drawing.Size(331, 29);
+            this.txtTimkiemkhachhang.TabIndex = 2;
+            this.txtTimkiemkhachhang.TextChanged += new System.EventHandler(this.txtTimkiemkhachhang_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tìm kiếm";
             // 
             // groupBox1
             // 
@@ -83,23 +100,7 @@
             this.dgvChonkhachhang.ReadOnly = true;
             this.dgvChonkhachhang.Size = new System.Drawing.Size(814, 377);
             this.dgvChonkhachhang.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // txtTimkiemkhachhang
-            // 
-            this.txtTimkiemkhachhang.Location = new System.Drawing.Point(166, 13);
-            this.txtTimkiemkhachhang.Name = "txtTimkiemkhachhang";
-            this.txtTimkiemkhachhang.Size = new System.Drawing.Size(331, 29);
-            this.txtTimkiemkhachhang.TabIndex = 2;
-            this.txtTimkiemkhachhang.TextChanged += new System.EventHandler(this.txtTimkiemkhachhang_TextChanged);
+            this.dgvChonkhachhang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChonkhachhang_CellClick);
             // 
             // MAKH
             // 
@@ -150,7 +151,9 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHienthikhachhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
