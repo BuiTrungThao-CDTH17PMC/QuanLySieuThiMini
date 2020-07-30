@@ -16,7 +16,7 @@ namespace QuanLySieuThiMini
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNhacungcap());
+            Application.Run(new frmDangnhap());
         }
     }
 }
