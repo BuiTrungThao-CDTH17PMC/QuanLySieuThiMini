@@ -36,5 +36,10 @@ namespace QuanLySieuThiMini.BUS
         {
             return hdxd.Themchitiethoadonxuat(cthdx);
         }
+
+        public DataTable Tabletheongay(string date)
+        {
+            return hdxd.Tabletheongay(date);
+        }
     }
 }

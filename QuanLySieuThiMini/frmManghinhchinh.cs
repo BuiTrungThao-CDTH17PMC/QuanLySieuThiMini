@@ -87,5 +87,18 @@ namespace QuanLySieuThiMini
             frmBanhang bh = new frmBanhang(tennv,mnv);
             bh.ShowDialog();
         }
+
+        private void TSMI_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TSMI_Dangxuat_Click(object sender, EventArgs e)
+        {
+           
+            //this.Close();
+            //frmDangnhap dn = new frmDangnhap();
+            //dn.ShowDialog();
+        }
     }
 }

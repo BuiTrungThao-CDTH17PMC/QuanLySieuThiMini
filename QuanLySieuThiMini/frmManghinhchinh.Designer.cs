@@ -62,8 +62,8 @@
             this.quảnLýToolStripMenuItem,
             this.hóaĐơnToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
-            this.ngườiDùngToolStripMenuItem,
-            this.TSMI_Banhang});
+            this.TSMI_Banhang,
+            this.ngườiDùngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
@@ -220,12 +220,14 @@
             this.TSMI_Dangxuat.Name = "TSMI_Dangxuat";
             this.TSMI_Dangxuat.Size = new System.Drawing.Size(156, 26);
             this.TSMI_Dangxuat.Text = "Đăng xuất";
+            this.TSMI_Dangxuat.Click += new System.EventHandler(this.TSMI_Dangxuat_Click);
             // 
             // TSMI_Thoat
             // 
             this.TSMI_Thoat.Name = "TSMI_Thoat";
             this.TSMI_Thoat.Size = new System.Drawing.Size(156, 26);
             this.TSMI_Thoat.Text = "Thoát";
+            this.TSMI_Thoat.Click += new System.EventHandler(this.TSMI_Thoat_Click);
             // 
             // TSMI_Banhang
             // 

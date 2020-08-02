@@ -12,7 +12,6 @@ namespace QuanLySieuThiMini.DAO
     {
         DataConnection dc;
         SqlCommand cmd;
-        SqlDataAdapter da;
 
         public BanhangDAO()
         {
@@ -30,23 +29,10 @@ namespace QuanLySieuThiMini.DAO
             return maxhd + 1;
         }
 
-        //public DataTable Laysanpham(int masp)
-        //{
-        //    string sql = "SELECT MASP,TENSP,DONGIA FROM SANPHAM WHERE MASP = "+ masp;
-        //    SqlConnection con = dc.getConnect();
-        //    da = new SqlDataAdapter(sql, con);
-        //    con.Open();
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    con.Close();
-        //    return dt;
-
-        //}
-
         public List<DTO.Chitiethoadonxuat> Laysanpham(int masp)
         {
             List<DTO.Chitiethoadonxuat> list = new List<DTO.Chitiethoadonxuat>();
-            string sql = "SELECT MASP,TENSP,DONGIA FROM SANPHAM WHERE MASP = " + masp;
+            string sql = "SELECT MASP,TENSP,DONGIA,GIAMGIA FROM SANPHAM WHERE MASP = " + masp;
             SqlConnection con = dc.getConnect();
             cmd = new SqlCommand(sql, con);
             con.Open();
@@ -58,9 +44,28 @@ namespace QuanLySieuThiMini.DAO
                 cthd.MASP1 = Int32.Parse(dr["MASP"].ToString());
                 cthd.TENSP1 = dr["TENSP"].ToString();
                 cthd.GIATIEN1 = Int32.Parse(dr["DONGIA"].ToString());
+                cthd.GIAMGIA1 = Int32.Parse(dr["GIAMGIA"].ToString());
                 list.Add(cthd);
             }
             return list;
+        }
+
+        public bool Trusoluong(int masp, int soluongmua)
+        {
+            try
+            {
+                string sql = "UPDATE SANPHAM SET SOLUONG = SOLUONG - " + soluongmua + " WHERE MASP = " + masp;
+                SqlConnection con = dc.getConnect();
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }catch
+            {
+                return false;
+            }
+            return true;
+            
         }
 
         
