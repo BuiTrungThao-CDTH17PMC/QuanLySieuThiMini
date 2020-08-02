@@ -41,5 +41,9 @@ namespace QuanLySieuThiMini.BUS
         {
             return spd.Timkiemsanpham(tsp);
         }
+        public bool Xoasanpham(DTO.Sanpham sp)
+        {
+            return spd.Xoasanpham(sp);
+        }
     }
 }

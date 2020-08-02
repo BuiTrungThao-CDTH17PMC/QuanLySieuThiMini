@@ -13,6 +13,7 @@ namespace QuanLySieuThiMini
     public partial class frmNhacungcap : Form
     {
         BUS.NhacungcapBUS nccb;
+
         public frmNhacungcap()
         {
             InitializeComponent();

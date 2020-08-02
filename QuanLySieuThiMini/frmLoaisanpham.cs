@@ -63,7 +63,7 @@ namespace QuanLySieuThiMini
                 btnSualoaisp.Enabled = true;
                 btnXoaloaisp.Enabled = true;
                 btnThemloaisp.Enabled = false;
-                txtTenloaisp.Text = "";
+              
             }
         }
         private void btnSualoaisp_Click(object sender, EventArgs e)

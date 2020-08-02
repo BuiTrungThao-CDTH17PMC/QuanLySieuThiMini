@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tablesanpham()
         {
-            string sql = "SELECT MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC";
+            string sql = "SELECT MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC AND SP.XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -30,7 +30,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tableloaisanpham()
         {
-            string sql = "select * from LOAISANPHAM";
+            string sql = "SELECT * FROM LOAISANPHAM WHERE XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -41,7 +41,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tablenhacungcap()
         {
-            string sql = "SELECT * FROM NHACUNGCAP";
+            string sql = "SELECT * FROM NHACUNGCAP WHERE XOA = 0";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -52,10 +52,10 @@ namespace QuanLySieuThiMini.DAO
         }
         public bool Themsanpham(DTO.Sanpham sp)
         {
-            string sql = "INSERT INTO SANPHAM(TENSP,MALOAI,MANCC,SOLUONG,DONGIA,HINHANH)VALUES(@TENSP,@MALOAI,@MANCC,@SOLUONG,@DONGIA,@HINHANH)";
+            string sql = "INSERT INTO SANPHAM(TENSP,MALOAI,MANCC,SOLUONG,DONGIA)VALUES(@TENSP,@MALOAI,@MANCC,@SOLUONG,@DONGIA)";
             SqlConnection con = dc.getConnect();
-           // try
-            //{
+           try
+            {
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@TENSP", SqlDbType.NVarChar).Value = sp.TENSP1;
@@ -63,21 +63,21 @@ namespace QuanLySieuThiMini.DAO
                 cmd.Parameters.Add("@MANCC", SqlDbType.Int).Value = sp.MANCC1;
                 cmd.Parameters.Add("@SOLUONG", SqlDbType.Int).Value = sp.SOLUONG1;
                 cmd.Parameters.Add("@DONGIA", SqlDbType.Int).Value = sp.DONGIA1;
-                cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
+                //cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
                 cmd.ExecuteNonQuery();
                 con.Close();
-           // }catch(Exception e)
-            //{
-                //return false;
-           // }
+            }catch(Exception e)
+            {
+                return false;
+            }
             return true;
         }
         public bool Suasanpham(DTO.Sanpham sp)
         {
             string sql = "UPDATE SANPHAM SET TENSP=@TENSP, MALOAI=@MALOAI, MANCC=@MANCC, SOLUONG=@SOLUONG, DONGIA=@DONGIA WHERE MASP=@MASP";
             SqlConnection con = dc.getConnect();
-            //try
-            //{
+            try
+            {
                 cmd = new SqlCommand(sql, con);
                 con.Open();
                 cmd.Parameters.Add("@MASP", SqlDbType.Int).Value = sp.MASP1;
@@ -89,11 +89,11 @@ namespace QuanLySieuThiMini.DAO
                 //cmd.Parameters.Add("@HINHANH", SqlDbType.NVarChar).Value = sp.HINHANH1;
                 cmd.ExecuteNonQuery();
                 con.Close();
-            //}
-            //catch (Exception e)
-            //{
-                //return false;
-            //}
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
             return true;
         }
         public DataTable Timkiemsanpham(string tsp)
@@ -106,6 +106,24 @@ namespace QuanLySieuThiMini.DAO
             dr.Fill(dt);
             con.Close();
             return dt;
+        }
+        public bool Xoasanpham(DTO.Sanpham sp)
+        {
+            string sql = "UPDATE SANPHAM SET XOA = 1 WHERE MASP=@MASP";
+            SqlConnection con = dc.getConnect();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MASP", SqlDbType.Int).Value = sp.MASP1;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

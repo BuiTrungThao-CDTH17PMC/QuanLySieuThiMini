@@ -13,11 +13,13 @@ namespace QuanLySieuThiMini.DAO
     {
         DAO.DataConnection dc;
         SqlCommand cmd;
-        SqlDataAdapter dr;
+        SqlDataAdapter da;
+
         public DangnhapDAO()
         {
             dc = new DataConnection();
         }
+
         public int Kiemtradangnhap(string tdn, string mk)
         {
 
@@ -38,6 +40,27 @@ namespace QuanLySieuThiMini.DAO
                 return 0;
             }
             return num;
+        }
+
+        public List<DTO.Quyennhanvien> Quyennhanvien(string tdn)
+        {
+            List<DTO.Quyennhanvien> list = new List<DTO.Quyennhanvien>();
+            string sql = "SELECT TENNV, MANV, TENLOAI FROM  NHANVIEN, LOAINHANVIEN    WHERE TENTK = '" + tdn + "' AND LOAINV = MALOAI";
+            SqlConnection con = dc.getConnect();
+            cmd = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if(dr.Read())
+            {
+                DTO.Quyennhanvien qnv = new DTO.Quyennhanvien();
+                qnv.MANV1 = Int32.Parse( dr["MANV"].ToString());
+                qnv.TENNV1 = dr["TENNV"].ToString();
+                qnv.TENLOAINV1 = dr["TENLOAI"].ToString();
+                list.Add(qnv);
+
+            }
+            con.Close();
+            return list;
         }
     }
 }

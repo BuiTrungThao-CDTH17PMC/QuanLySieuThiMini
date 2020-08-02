@@ -20,7 +20,7 @@ namespace QuanLySieuThiMini.DAO
         public DataTable Danhsachhoadonxuat(string nbd, string nkt)
         {
 
-            string sql = "SELECT MAHDX,NGAYLAP,TONGTIEN FROM HOADONXUAT WHERE  NGAYLAP BETWEEN '" + nbd + "'AND'" + nkt + "'";
+            string sql = "SELECT MAHDX,NGAYLAP,TONGTIEN, TENNV FROM HOADONXUAT WHERE  NGAYLAP BETWEEN '" + nbd + "'AND'" + nkt + "'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

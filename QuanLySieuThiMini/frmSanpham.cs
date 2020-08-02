@@ -43,6 +43,7 @@ namespace QuanLySieuThiMini
             Hienloaisanpham();
             Hiennhacungcap();
             btnSuasp.Enabled = false;
+            btnXoasanpham.Enabled = false;
         }
         public bool Kiemtraso(string text)
         {
@@ -119,6 +120,7 @@ namespace QuanLySieuThiMini
                 }
                 btnThemmoisp.Enabled = true;
                 btnSuasp.Enabled = false;
+                btnXoasanpham.Enabled = false;
             }
         }
         private void dgvHienthisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,6 +137,7 @@ namespace QuanLySieuThiMini
                     cbbLoaisanpham.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MALOAI"].Value.ToString());
                     cbbNhacungcap.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MANCC"].Value.ToString());
                     btnSuasp.Enabled = true;
+                    btnXoasanpham.Enabled = true;
                     btnThemmoisp.Enabled = false;
                 }
             }
@@ -167,7 +170,21 @@ namespace QuanLySieuThiMini
         {
             ResertCotroll();
             btnSuasp.Enabled = false;
+            btnXoasanpham.Enabled = false;
             btnThemmoisp.Enabled =true;
+        }
+
+        private void btnXoasanpham_Click(object sender, EventArgs e)
+        {
+            DTO.Sanpham sp = new DTO.Sanpham();
+            sp.MASP1 = ID;
+            if (spb.Xoasanpham(sp))
+            {
+                Hienthisanpham();
+            }
+            btnThemmoisp.Enabled = true;
+            btnSuasp.Enabled = false;
+            btnXoasanpham.Enabled = false;
         }
     }
 }
