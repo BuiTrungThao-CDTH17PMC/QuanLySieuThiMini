@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthihoadonban));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaylap = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvChitiethoadonban = new System.Windows.Forms.DataGridView();
@@ -50,6 +50,7 @@
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIEMSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,21 +74,25 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.btnThoat);
+            this.panel2.Controls.Add(this.dtpNgaylap);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(8, 7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(819, 52);
             this.panel2.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dtpNgaylap
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Location = new System.Drawing.Point(234, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 26);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpNgaylap.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaylap.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaylap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaylap.Location = new System.Drawing.Point(234, 13);
+            this.dtpNgaylap.Name = "dtpNgaylap";
+            this.dtpNgaylap.Size = new System.Drawing.Size(258, 26);
+            this.dtpNgaylap.TabIndex = 4;
+            this.dtpNgaylap.Value = new System.DateTime(2020, 7, 31, 0, 0, 0, 0);
+            this.dtpNgaylap.ValueChanged += new System.EventHandler(this.dtpNgaylap_ValueChanged);
             // 
             // label1
             // 
@@ -260,6 +265,19 @@
             this.TONGTIEN.Name = "TONGTIEN";
             this.TONGTIEN.ReadOnly = true;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Location = new System.Drawing.Point(550, 13);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(106, 26);
+            this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextColor = System.Drawing.Color.Black;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmHienthihoadonban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -295,7 +313,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvChitiethoadonban;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgaylap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHDX;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
@@ -310,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIATIEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
+        private DevComponents.DotNetBar.ButtonX btnThoat;
     }
 }

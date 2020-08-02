@@ -38,9 +38,6 @@
     <Reference Include="AForge.Video.DirectShow">
       <HintPath>..\..\Release\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
-    <Reference Include="BarcodeLib">
-      <HintPath>..\..\..\Downloads\BarcodeLib.dll</HintPath>
-    </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +49,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>..\..\..\Downloads\ReadQRCode_Realtime\ReadQRCode_Realtime\bin\Debug\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\..\..\Downloads\ReadQRCode_Realtime\ReadQRCode_Realtime\bin\Debug\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BanhangBUS.cs" />

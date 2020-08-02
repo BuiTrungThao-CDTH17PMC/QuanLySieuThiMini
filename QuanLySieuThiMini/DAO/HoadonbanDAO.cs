@@ -39,7 +39,17 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
        }
-
+       public DataTable Tabletheongay(string date)
+       {
+           string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
+           SqlConnection con = dc.getConnect();
+           dr = new SqlDataAdapter(sql, con);
+           con.Open();
+           DataTable dt = new DataTable();
+           dr.Fill(dt);
+           con.Close();
+           return dt;
+       }
        public bool Themhoadonxuat(DTO.Hoadonxuat hdx)
        {
            string sql = "INSERT INTO HOADONXUAT(MANV,TENNV,NGAYLAP,SODIEMSUDUNG,TONGTIEN,MAKH)VALUES(@MANV, @TENNV, @NGAYLAP, @SODIEMSUDUNG, @TONGTIEN, @MAKH)";
@@ -79,11 +89,12 @@ namespace QuanLySieuThiMini.DAO
                cmd.Parameters.Add("@GIAMGIA", SqlDbType.Int).Value = cthdx.GIAMGIA1;
                cmd.ExecuteNonQuery();
                con.Close();
-           }catch(Exception e)
+           }
+           catch (Exception e)
            {
                return false;
            }
-           return true;
+               return true;
        }
     }
 }

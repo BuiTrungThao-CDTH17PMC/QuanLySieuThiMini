@@ -29,12 +29,12 @@ namespace QuanLySieuThiMini.DTO
             get { return TENNV; }
             set { TENNV = value; }
         }
-        private int MAKH;
+        private int MAKH ;
 
         public int MAKH1
         {
             get { return MAKH; }
-            set { MAKH = value; }
+            set { MAKH  = value; }
         }
         private DateTime NGAYLAP;
 
