@@ -38,5 +38,16 @@ namespace QuanLySieuThiMini
                 dgvChitiethoadonban.DataSource = dt;
             }
         }
+
+        private void dtpNgaylap_ValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = hdxb.Tabletheongay(dtpNgaylap.Value.ToString("yyyy/MM/dd"));
+            dgvDanhsachhoadonban.DataSource = dt;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

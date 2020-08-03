@@ -20,7 +20,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tablekhachhang()
         {
-            string sql = "SELECT * FROM  KHACHHANG";
+            string sql = "SELECT * FROM  KHACHHANG WHERE XOA = 0 ";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -73,7 +73,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemkhachhang(string tkh)
         {
-            string sql = "SELECT * FROM KHACHHANG WHERE TENKH LIKE N'%" + tkh + "%'";
+            string sql = "SELECT * FROM KHACHHANG WHERE  XOA = 0 AND TENKH LIKE N'%" + tkh + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
@@ -81,6 +81,24 @@ namespace QuanLySieuThiMini.DAO
             dr.Fill(dt);
             con.Close();
             return dt;
+        }
+        public bool Xoakhachhang(DTO.Khachhang kh)
+        {
+            string sql = "UPDATE KHACHHANG SET XOA = 1 WHERE MAKH = @MAKH";
+            SqlConnection con = dc.getConnect();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("@MAKH", SqlDbType.Int).Value = kh.MAKH1;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

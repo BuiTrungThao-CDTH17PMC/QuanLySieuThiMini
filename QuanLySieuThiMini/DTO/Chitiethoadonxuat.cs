@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace QuanLySieuThiMini.DTO
 {
-    public class Sanpham
+    public class Chitiethoadonxuat
     {
+        private int MAHDX;
+
+        public int MAHDX1
+        {
+            get { return MAHDX; }
+            set { MAHDX = value; }
+        }
         private int MASP;
 
         public int MASP1
@@ -22,20 +29,6 @@ namespace QuanLySieuThiMini.DTO
             get { return TENSP; }
             set { TENSP = value; }
         }
-        private int MALOAI;
-
-        public int MALOAI1
-        {
-            get { return MALOAI; }
-            set { MALOAI = value; }
-        }
-        private int MANCC;
-
-        public int MANCC1
-        {
-            get { return MANCC; }
-            set { MANCC = value; }
-        }
         private int SOLUONG;
 
         public int SOLUONG1
@@ -43,26 +36,12 @@ namespace QuanLySieuThiMini.DTO
             get { return SOLUONG; }
             set { SOLUONG = value; }
         }
-        private int DONGIA;
+        private int GIATIEN;
 
-        public int DONGIA1
+        public int GIATIEN1
         {
-            get { return DONGIA; }
-            set { DONGIA = value; }
-        }
-        private string HINHANH;
-
-        public string HINHANH1
-        {
-            get { return HINHANH; }
-            set { HINHANH = value; }
-        }
-        private int XOA;
-
-        public int XOA1
-        {
-            get { return XOA; }
-            set { XOA = value; }
+            get { return GIATIEN; }
+            set { GIATIEN = value; }
         }
         private int GIAMGIA;
 
@@ -71,6 +50,5 @@ namespace QuanLySieuThiMini.DTO
             get { return GIAMGIA; }
             set { GIAMGIA = value; }
         }
-
     }
 }

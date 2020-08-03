@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInhoadonbanhang));
-            this.Label9 = new System.Windows.Forms.Label();
             this.lblEmpName = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
@@ -63,27 +62,18 @@
             this.dgw = new System.Windows.Forms.DataGridView();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.Label3 = new System.Windows.Forms.Label();
-            this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Label9
-            // 
-            this.Label9.Location = new System.Drawing.Point(190, 113);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(93, 13);
-            this.Label9.TabIndex = 1;
-            this.Label9.Text = "Giờ";
-            this.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblEmpName
             // 
             this.lblEmpName.AutoSize = true;
-            this.lblEmpName.Location = new System.Drawing.Point(81, 113);
+            this.lblEmpName.Location = new System.Drawing.Point(90, 127);
             this.lblEmpName.Name = "lblEmpName";
             this.lblEmpName.Size = new System.Drawing.Size(40, 13);
             this.lblEmpName.TabIndex = 1;
@@ -91,9 +81,9 @@
             // 
             // Label7
             // 
-            this.Label7.Location = new System.Drawing.Point(177, 98);
+            this.Label7.Location = new System.Drawing.Point(193, 107);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(103, 13);
+            this.Label7.Size = new System.Drawing.Size(114, 14);
             this.Label7.TabIndex = 1;
             this.Label7.Text = "Ngày";
             this.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -101,7 +91,7 @@
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(4, 113);
+            this.Label6.Location = new System.Drawing.Point(3, 127);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(66, 13);
             this.Label6.TabIndex = 1;
@@ -110,7 +100,7 @@
             // lblInvoice
             // 
             this.lblInvoice.AutoSize = true;
-            this.lblInvoice.Location = new System.Drawing.Point(81, 98);
+            this.lblInvoice.Location = new System.Drawing.Point(90, 108);
             this.lblInvoice.Name = "lblInvoice";
             this.lblInvoice.Size = new System.Drawing.Size(49, 13);
             this.lblInvoice.TabIndex = 1;
@@ -119,7 +109,7 @@
             // Label4
             // 
             this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(4, 98);
+            this.Label4.Location = new System.Drawing.Point(4, 108);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(48, 13);
             this.Label4.TabIndex = 1;
@@ -128,9 +118,9 @@
             // lblCustomer
             // 
             this.lblCustomer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(5, 85);
+            this.lblCustomer.Location = new System.Drawing.Point(3, 88);
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(255, 13);
+            this.lblCustomer.Size = new System.Drawing.Size(280, 14);
             this.lblCustomer.TabIndex = 0;
             this.lblCustomer.Text = "Khách hàng";
             this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,7 +129,7 @@
             // 
             this.Label16.AutoSize = true;
             this.Label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label16.Location = new System.Drawing.Point(77, 67);
+            this.Label16.Location = new System.Drawing.Point(86, 74);
             this.Label16.Name = "Label16";
             this.Label16.Size = new System.Drawing.Size(0, 13);
             this.Label16.TabIndex = 0;
@@ -148,7 +138,7 @@
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(56, 34);
+            this.Label2.Location = new System.Drawing.Point(73, 38);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(201, 13);
             this.Label2.TabIndex = 0;
@@ -158,7 +148,7 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(51, 17);
+            this.Label1.Location = new System.Drawing.Point(68, 19);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(213, 14);
             this.Label1.TabIndex = 0;
@@ -167,7 +157,7 @@
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(11, 293);
+            this.lblLine.Location = new System.Drawing.Point(12, 324);
             this.lblLine.Name = "lblLine";
             this.lblLine.Size = new System.Drawing.Size(295, 13);
             this.lblLine.TabIndex = 44;
@@ -177,7 +167,7 @@
             // 
             this.lblThank.AutoSize = true;
             this.lblThank.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThank.Location = new System.Drawing.Point(92, 322);
+            this.lblThank.Location = new System.Drawing.Point(97, 357);
             this.lblThank.Name = "lblThank";
             this.lblThank.Size = new System.Drawing.Size(136, 13);
             this.lblThank.TabIndex = 45;
@@ -186,7 +176,7 @@
             // lblOR
             // 
             this.lblOR.AutoSize = true;
-            this.lblOR.Location = new System.Drawing.Point(36, 309);
+            this.lblOR.Location = new System.Drawing.Point(40, 342);
             this.lblOR.Name = "lblOR";
             this.lblOR.Size = new System.Drawing.Size(251, 13);
             this.lblOR.TabIndex = 45;
@@ -195,9 +185,9 @@
             // lblChange
             // 
             this.lblChange.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChange.Location = new System.Drawing.Point(203, 252);
+            this.lblChange.Location = new System.Drawing.Point(226, 279);
             this.lblChange.Name = "lblChange";
-            this.lblChange.Size = new System.Drawing.Size(80, 16);
+            this.lblChange.Size = new System.Drawing.Size(89, 18);
             this.lblChange.TabIndex = 42;
             this.lblChange.Text = "0.00";
             this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,9 +195,9 @@
             // lblSubtotal
             // 
             this.lblSubtotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.Location = new System.Drawing.Point(203, 199);
+            this.lblSubtotal.Location = new System.Drawing.Point(226, 220);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(80, 13);
+            this.lblSubtotal.Size = new System.Drawing.Size(89, 14);
             this.lblSubtotal.TabIndex = 42;
             this.lblSubtotal.Text = "0.00";
             this.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -215,9 +205,9 @@
             // lblCash
             // 
             this.lblCash.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCash.Location = new System.Drawing.Point(203, 234);
+            this.lblCash.Location = new System.Drawing.Point(226, 259);
             this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(80, 15);
+            this.lblCash.Size = new System.Drawing.Size(89, 17);
             this.lblCash.TabIndex = 42;
             this.lblCash.Text = "0.00";
             this.lblCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -226,7 +216,7 @@
             // 
             this.change.AutoSize = true;
             this.change.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change.Location = new System.Drawing.Point(3, 252);
+            this.change.Location = new System.Drawing.Point(3, 279);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(73, 18);
             this.change.TabIndex = 43;
@@ -236,7 +226,7 @@
             // 
             this.subTotal.AutoSize = true;
             this.subTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotal.Location = new System.Drawing.Point(3, 199);
+            this.subTotal.Location = new System.Drawing.Point(3, 220);
             this.subTotal.Name = "subTotal";
             this.subTotal.Size = new System.Drawing.Size(67, 13);
             this.subTotal.TabIndex = 43;
@@ -246,7 +236,7 @@
             // 
             this.Cash.AutoSize = true;
             this.Cash.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cash.Location = new System.Drawing.Point(3, 234);
+            this.Cash.Location = new System.Drawing.Point(3, 259);
             this.Cash.Name = "Cash";
             this.Cash.Size = new System.Drawing.Size(60, 13);
             this.Cash.TabIndex = 43;
@@ -255,9 +245,9 @@
             // lblVat
             // 
             this.lblVat.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVat.Location = new System.Drawing.Point(203, 183);
+            this.lblVat.Location = new System.Drawing.Point(226, 202);
             this.lblVat.Name = "lblVat";
-            this.lblVat.Size = new System.Drawing.Size(80, 13);
+            this.lblVat.Size = new System.Drawing.Size(89, 14);
             this.lblVat.TabIndex = 40;
             this.lblVat.Text = "0.00";
             this.lblVat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,7 +256,7 @@
             // 
             this.vat.AutoSize = true;
             this.vat.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vat.Location = new System.Drawing.Point(3, 184);
+            this.vat.Location = new System.Drawing.Point(3, 203);
             this.vat.Name = "vat";
             this.vat.Size = new System.Drawing.Size(75, 13);
             this.vat.TabIndex = 41;
@@ -275,9 +265,9 @@
             // lblTotal
             // 
             this.lblTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(203, 217);
+            this.lblTotal.Location = new System.Drawing.Point(226, 240);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(80, 13);
+            this.lblTotal.Size = new System.Drawing.Size(89, 14);
             this.lblTotal.TabIndex = 40;
             this.lblTotal.Text = "0.00";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,7 +276,7 @@
             // 
             this.TotalAmount.AutoSize = true;
             this.TotalAmount.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalAmount.Location = new System.Drawing.Point(3, 217);
+            this.TotalAmount.Location = new System.Drawing.Point(3, 240);
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Size = new System.Drawing.Size(74, 13);
             this.TotalAmount.TabIndex = 41;
@@ -311,14 +301,14 @@
             this.dgw.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgw.ColumnHeadersHeight = 24;
             this.dgw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ItemQuantity,
             this.Description,
             this.UnitPrice,
+            this.ItemQuantity,
             this.Amount});
             this.dgw.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgw.EnableHeadersVisualStyles = false;
             this.dgw.GridColor = System.Drawing.Color.White;
-            this.dgw.Location = new System.Drawing.Point(3, 129);
+            this.dgw.Location = new System.Drawing.Point(3, 143);
             this.dgw.MultiSelect = false;
             this.dgw.Name = "dgw";
             this.dgw.ReadOnly = true;
@@ -342,7 +332,7 @@
             this.dgw.RowTemplate.Height = 18;
             this.dgw.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgw.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgw.Size = new System.Drawing.Size(316, 50);
+            this.dgw.Size = new System.Drawing.Size(351, 55);
             this.dgw.TabIndex = 39;
             // 
             // Panel1
@@ -361,7 +351,6 @@
             this.Panel1.Controls.Add(this.lblTotal);
             this.Panel1.Controls.Add(this.TotalAmount);
             this.Panel1.Controls.Add(this.dgw);
-            this.Panel1.Controls.Add(this.Label9);
             this.Panel1.Controls.Add(this.lblEmpName);
             this.Panel1.Controls.Add(this.Label7);
             this.Panel1.Controls.Add(this.Label6);
@@ -376,33 +365,23 @@
             this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel1.Location = new System.Drawing.Point(2, 3);
             this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(322, 358);
+            this.Panel1.Size = new System.Drawing.Size(358, 396);
             this.Panel1.TabIndex = 2;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(95, 52);
+            this.Label3.Location = new System.Drawing.Point(117, 57);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(115, 13);
             this.Label3.TabIndex = 0;
             this.Label3.Text = "============";
             // 
-            // ItemQuantity
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ItemQuantity.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ItemQuantity.FillWeight = 7.575758F;
-            this.ItemQuantity.HeaderText = "SL";
-            this.ItemQuantity.Name = "ItemQuantity";
-            this.ItemQuantity.ReadOnly = true;
-            this.ItemQuantity.Width = 30;
-            // 
             // Description
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Description.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Description.DefaultCellStyle = dataGridViewCellStyle3;
             this.Description.FillWeight = 69.97607F;
             this.Description.HeaderText = "Tên SP";
             this.Description.Name = "Description";
@@ -411,15 +390,25 @@
             // 
             // UnitPrice
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "#,##0.00";
-            dataGridViewCellStyle5.NullValue = null;
-            this.UnitPrice.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "#,##0.00";
+            dataGridViewCellStyle4.NullValue = null;
+            this.UnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
             this.UnitPrice.FillWeight = 131.1945F;
             this.UnitPrice.HeaderText = "Giá";
             this.UnitPrice.Name = "UnitPrice";
             this.UnitPrice.ReadOnly = true;
-            this.UnitPrice.Width = 60;
+            this.UnitPrice.Width = 70;
+            // 
+            // ItemQuantity
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ItemQuantity.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ItemQuantity.FillWeight = 7.575758F;
+            this.ItemQuantity.HeaderText = "SL";
+            this.ItemQuantity.Name = "ItemQuantity";
+            this.ItemQuantity.ReadOnly = true;
+            this.ItemQuantity.Width = 25;
             // 
             // Amount
             // 
@@ -435,13 +424,13 @@
             // 
             // frmInhoadonbanhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 365);
+            this.ClientSize = new System.Drawing.Size(361, 403);
             this.Controls.Add(this.Panel1);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInhoadonbanhang";
@@ -456,7 +445,6 @@
 
         #endregion
 
-        internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.Label lblEmpName;
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.Label Label6;
@@ -481,10 +469,10 @@
         internal System.Windows.Forms.Label TotalAmount;
         internal System.Windows.Forms.DataGridView dgw;
         internal System.Windows.Forms.Panel Panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQuantity;
+        internal System.Windows.Forms.Label Label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        internal System.Windows.Forms.Label Label3;
     }
 }

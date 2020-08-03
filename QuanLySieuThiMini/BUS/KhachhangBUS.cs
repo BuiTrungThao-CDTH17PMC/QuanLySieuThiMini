@@ -30,5 +30,9 @@ namespace QuanLySieuThiMini.BUS
         {
             return khd.Timkiemkhachhang(tkh);
         }
+        public bool Xoakhachhang(DTO.Khachhang kh)
+        {
+            return khd.Xoakhachhang(kh);
+        }
     }
 }

@@ -128,6 +128,7 @@
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // panel1
             // 
@@ -160,6 +161,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDangnhap";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
             this.panel1.ResumeLayout(false);

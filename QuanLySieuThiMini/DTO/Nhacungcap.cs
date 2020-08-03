@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace QuanLySieuThiMini.DTO
 {
-    public class Khachhang
+    class Nhacungcap
     {
-        private int MAKH;
+        private int MANCC;
 
-        public int MAKH1
+        public int MANCC1
         {
-            get { return MAKH; }
-            set { MAKH = value; }
+            get { return MANCC; }
+            set { MANCC = value; }
         }
-        private string TENKH;
+        private string TENNCC;
 
-        public string TENKH1
+        public string TENNCC1
         {
-            get { return TENKH; }
-            set { TENKH = value; }
+            get { return TENNCC; }
+            set { TENNCC = value; }
         }
         private string DIACHI;
 
@@ -29,13 +29,6 @@ namespace QuanLySieuThiMini.DTO
             get { return DIACHI; }
             set { DIACHI = value; }
         }
-        private int TICHDIEM;
-
-        public int TICHDIEM1
-        {
-            get { return TICHDIEM; }
-            set { TICHDIEM = value; }
-        }
         private string SDT;
 
         public string SDT1
@@ -43,6 +36,7 @@ namespace QuanLySieuThiMini.DTO
             get { return SDT; }
             set { SDT = value; }
         }
+
         private int XOA;
 
         public int XOA1
@@ -50,6 +44,5 @@ namespace QuanLySieuThiMini.DTO
             get { return XOA; }
             set { XOA = value; }
         }
-
     }
 }
