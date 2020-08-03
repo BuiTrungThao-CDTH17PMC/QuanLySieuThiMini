@@ -148,6 +148,7 @@
             this.dgvHienthisanpham.Size = new System.Drawing.Size(795, 320);
             this.dgvHienthisanpham.TabIndex = 0;
             this.dgvHienthisanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthisanpham_CellClick);
+            this.dgvHienthisanpham.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHienthisanpham_CellFormatting);
             // 
             // HINHANH
             // 
@@ -554,7 +555,6 @@
             this.HINHANH.Name = "HINHANH";
             this.HINHANH.ReadOnly = true;
             this.HINHANH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HINHANH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.HINHANH.Width = 150;
             // 
             // MASP
