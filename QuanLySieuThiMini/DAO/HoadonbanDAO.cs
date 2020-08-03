@@ -39,18 +39,18 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
        }
-       public DataTable Tabletheongay(string date)
-       {
-           string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
-           SqlConnection con = dc.getConnect();
-           dr = new SqlDataAdapter(sql, con);
-           con.Open();
-           DataTable dt = new DataTable();
-           dr.Fill(dt);
-           con.Close();
-           return dt;
-       }
-       public bool Themhoadonxuat(DTO.Hoadonxuat hdx)
+        public DataTable Tabletheongay(string date)
+        {
+            string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
+            SqlConnection con = dc.getConnect();
+            dr = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            dr.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public bool Themhoadonxuat(DTO.Hoadonxuat hdx)
        {
            string sql = "INSERT INTO HOADONXUAT(MANV,TENNV,NGAYLAP,SODIEMSUDUNG,TONGTIEN,MAKH)VALUES(@MANV, @TENNV, @NGAYLAP, @SODIEMSUDUNG, @TONGTIEN, @MAKH)";
            SqlConnection con = dc.getConnect();

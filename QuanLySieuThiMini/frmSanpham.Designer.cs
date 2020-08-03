@@ -33,6 +33,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvHienthisanpham = new System.Windows.Forms.DataGridView();
+            this.HINHANH = new System.Windows.Forms.DataGridViewImageColumn();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTimsanpham = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -141,6 +150,80 @@
             this.dgvHienthisanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthisanpham_CellClick);
             this.dgvHienthisanpham.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHienthisanpham_CellFormatting);
             // 
+            // HINHANH
+            // 
+            this.HINHANH.DataPropertyName = "HINHANH";
+            this.HINHANH.HeaderText = "Hình ảnh";
+            this.HINHANH.Name = "HINHANH";
+            this.HINHANH.ReadOnly = true;
+            this.HINHANH.Width = 150;
+            // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.Name = "MASP";
+            this.MASP.ReadOnly = true;
+            this.MASP.Width = 150;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.Name = "TENSP";
+            this.TENSP.ReadOnly = true;
+            this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TENSP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TENSP.Width = 250;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.ReadOnly = true;
+            this.DONGIA.Width = 120;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ReadOnly = true;
+            this.SOLUONG.Width = 120;
+            // 
+            // TENLOAI
+            // 
+            this.TENLOAI.DataPropertyName = "TENLOAI";
+            this.TENLOAI.HeaderText = "Loại sản phẩm";
+            this.TENLOAI.Name = "TENLOAI";
+            this.TENLOAI.ReadOnly = true;
+            this.TENLOAI.Width = 150;
+            // 
+            // TENNCC
+            // 
+            this.TENNCC.DataPropertyName = "TENNCC";
+            this.TENNCC.HeaderText = "Nhà cung cấp";
+            this.TENNCC.Name = "TENNCC";
+            this.TENNCC.ReadOnly = true;
+            this.TENNCC.Width = 150;
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.DataPropertyName = "MALOAI";
+            this.MALOAI.HeaderText = "Mã loai sản phẩm";
+            this.MALOAI.Name = "MALOAI";
+            this.MALOAI.ReadOnly = true;
+            this.MALOAI.Visible = false;
+            // 
+            // MANCC
+            // 
+            this.MANCC.DataPropertyName = "MANCC";
+            this.MANCC.HeaderText = "Mã nhà cung cấp";
+            this.MANCC.Name = "MANCC";
+            this.MANCC.ReadOnly = true;
+            this.MANCC.Visible = false;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtTimsanpham);
@@ -196,7 +279,7 @@
             this.groupBox2.TabStop = false;
             // 
             // btnXoasanpham
-            // 
+
             this.btnXoasanpham.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnXoasanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoasanpham.Location = new System.Drawing.Point(166, 23);
@@ -207,7 +290,7 @@
             this.btnXoasanpham.Text = "Xóa";
             this.btnXoasanpham.UseVisualStyleBackColor = false;
             this.btnXoasanpham.Click += new System.EventHandler(this.btnXoasanpham_Click);
-            // 
+
             // btnHuythaotacsp
             // 
             this.btnHuythaotacsp.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -320,7 +403,7 @@
             this.ptbAnhsanpham.TabStop = false;
             // 
             // btnBrowse
-            // 
+
             this.btnBrowse.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Location = new System.Drawing.Point(489, 259);
@@ -331,7 +414,7 @@
             this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
+
             // txtTenanh
             // 
             this.txtTenanh.BackColor = System.Drawing.Color.White;
@@ -343,8 +426,8 @@
             this.txtTenanh.Size = new System.Drawing.Size(286, 29);
             this.txtTenanh.TabIndex = 9;
             // 
-            // label7
-            // 
+           // label7
+
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(26, 262);
@@ -353,7 +436,7 @@
             this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 8;
             this.label7.Text = "Link ảnh";
-            // 
+
             // label6
             // 
             this.label6.AutoSize = true;
@@ -625,5 +708,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MALOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANCC;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
