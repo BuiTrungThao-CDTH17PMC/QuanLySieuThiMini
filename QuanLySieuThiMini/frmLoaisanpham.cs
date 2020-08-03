@@ -14,6 +14,8 @@ namespace QuanLySieuThiMini
     public partial class frmLoaisanpham : Form
     {
         BUS.LoaisanphamBUS lspb;
+        int ID;
+
         public frmLoaisanpham()
         {
             InitializeComponent();
@@ -51,21 +53,7 @@ namespace QuanLySieuThiMini
                 txtTenloaisp.Text = "";
             }
         }
-        int ID;
-        private void dgvLoaisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
 
-            if(index>=0)
-            {
-                ID =Int32.Parse(dgvLoaisanpham.Rows[index].Cells["MALOAISP"].Value.ToString());
-                txtTenloaisp.Text = dgvLoaisanpham.Rows[index].Cells["TENLOAISP"].Value.ToString();
-                btnSualoaisp.Enabled = true;
-                btnXoaloaisp.Enabled = true;
-                btnThemloaisp.Enabled = false;
-              
-            }
-        }
         private void btnSualoaisp_Click(object sender, EventArgs e)
         {
             if (Kiemtradulieu())
@@ -108,6 +96,20 @@ namespace QuanLySieuThiMini
                 btnSualoaisp.Enabled = false;
                 btnXoaloaisp.Enabled = false;
                 txtTenloaisp.Text = "";
+            }
+        }
+
+        private void dgvLoaisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index >= 0)
+            {
+                ID = Int32.Parse(dgvLoaisanpham.Rows[index].Cells["MALOAISP"].Value.ToString());
+                txtTenloaisp.Text = dgvLoaisanpham.Rows[index].Cells["TENLOAI"].Value.ToString();
+                btnSualoaisp.Enabled = true;
+                btnXoaloaisp.Enabled = true;
+                btnThemloaisp.Enabled = false;
+                
             }
         }
     }

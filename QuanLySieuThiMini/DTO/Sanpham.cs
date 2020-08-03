@@ -64,5 +64,15 @@ namespace QuanLySieuThiMini.DTO
             get { return XOA; }
             set { XOA = value; }
         }
+
+        private int GIAMGIA;
+
+        public int GIAMGIA1
+        {
+            get { return GIAMGIA; }
+            set { GIAMGIA = value; }
+        }
+
+
     }
 }

@@ -82,16 +82,23 @@ namespace QuanLySieuThiMini
             hdb.ShowDialog();
         }
 
-        private void TSMI_Baocaobanhang_Click(object sender, EventArgs e)
-        {
-            frmDoanhthu dt = new frmDoanhthu();
-            dt.ShowDialog();
-        }
-
         private void TSMI_Banhang_Click(object sender, EventArgs e)
         {
             frmBanhang bh = new frmBanhang(tennv,mnv);
             bh.ShowDialog();
+        }
+
+        private void TSMI_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TSMI_Dangxuat_Click(object sender, EventArgs e)
+        {
+           
+            //this.Close();
+            //frmDangnhap dn = new frmDangnhap();
+            //dn.ShowDialog();
         }
     }
 }

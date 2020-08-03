@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using COMExcel = Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace QuanLySieuThiMini.DAO
 {
@@ -29,5 +31,7 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
         }
+
+       
     }
 }

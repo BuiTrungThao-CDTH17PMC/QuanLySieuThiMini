@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using COMExcel = Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application; 
 namespace QuanLySieuThiMini.DTO
 {
     public class Hoadonxuat
@@ -29,12 +30,14 @@ namespace QuanLySieuThiMini.DTO
             get { return TENNV; }
             set { TENNV = value; }
         }
-        private int MAKH;
+        private int MAKH ;
 
         public int MAKH1
         {
             get { return MAKH; }
+
             set { MAKH = value; }
+
         }
         private DateTime NGAYLAP;
 
@@ -58,5 +61,4 @@ namespace QuanLySieuThiMini.DTO
             set { TONGTIEN = value; }
         }
     }
-    
 }

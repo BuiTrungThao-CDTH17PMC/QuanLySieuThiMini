@@ -26,5 +26,10 @@ namespace QuanLySieuThiMini.BUS
         {
             return bhd.Laysanpham(masp);
         }
+        
+        public bool Trusoluong(int masp, int soluongmua)
+        {
+            return bhd.Trusoluong(masp, soluongmua);
+        }
     }
 }

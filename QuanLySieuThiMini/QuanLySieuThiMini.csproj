@@ -32,17 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\AForge.Video.dll</HintPath>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\Release\AForge.Video.dll</HintPath>
     </Reference>
-    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\AForge.Video.DirectShow.dll</HintPath>
-    </Reference>
-    <Reference Include="BarcodeLib, Version=1.0.0.13, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\BarcodeLib.dll</HintPath>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\Release\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -65,6 +59,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>..\..\..\Downloads\ReadQRCode_Realtime\ReadQRCode_Realtime\bin\Debug\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\..\..\Downloads\ReadQRCode_Realtime\ReadQRCode_Realtime\bin\Debug\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BanhangBUS.cs" />

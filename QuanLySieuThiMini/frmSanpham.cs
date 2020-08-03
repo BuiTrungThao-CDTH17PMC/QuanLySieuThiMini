@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QuanLySieuThiMini
 {
     public partial class frmSanpham : Form
     {
         BUS.SanphamBUS spb;
+        OpenFileDialog open;
+        int ID;
+        string duongdan;
+
         public frmSanpham()
         {
             InitializeComponent();
@@ -84,6 +89,11 @@ namespace QuanLySieuThiMini
                 MessageBox.Show("Vui lòng nhập số không nhập ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return false;
             }
+            if (String.IsNullOrEmpty(txtTenanh.Text))
+            {
+                MessageBox.Show("Bạn chưa chọn ảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                return false;
+            }
             return true;
         }
         private void btnThemmoisp_Click(object sender, EventArgs e)
@@ -96,13 +106,13 @@ namespace QuanLySieuThiMini
                 sp.DONGIA1 = Int32.Parse(txtDongia.Text);
                 sp.MALOAI1 = Int32.Parse(cbbLoaisanpham.SelectedValue.ToString());
                 sp.MANCC1 = Int32.Parse(cbbNhacungcap.SelectedValue.ToString());
+                sp.GIAMGIA1 = Int32.Parse(txtGiamgia.Text);
                 if(spb.Themsanpham(sp))
                 {
                     Hienthisanpham();
                 }
             }
         }
-        int ID;
         private void btnSuasp_Click(object sender, EventArgs e)
         {
             if (Kiemtraduulieu())
@@ -114,8 +124,11 @@ namespace QuanLySieuThiMini
                 sp.DONGIA1 = Int32.Parse(txtDongia.Text);
                 sp.MALOAI1 = Int32.Parse(cbbLoaisanpham.SelectedValue.ToString());
                 sp.MANCC1 = Int32.Parse(cbbNhacungcap.SelectedValue.ToString());
+                sp.GIAMGIA1 = Int32.Parse(txtGiamgia.Text);
+                sp.HINHANH1 = @"C:\Users\DELL\Desktop\QuanLySieuThiMini\QuanLySieuThiMini\Resources\Image" + txtTenanh.Text;
                 if (spb.Suasanpham(sp))
                 {
+                    Luuanh();
                     Hienthisanpham();
                 }
                 btnThemmoisp.Enabled = true;
@@ -136,6 +149,7 @@ namespace QuanLySieuThiMini
                     txtDongia.Text = dgvHienthisanpham.Rows[index].Cells["DONGIA"].Value.ToString();
                     cbbLoaisanpham.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MALOAI"].Value.ToString());
                     cbbNhacungcap.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MANCC"].Value.ToString());
+                    txtGiamgia.Text = dgvHienthisanpham.Rows[index].Cells["GIAMGIA"].Value.ToString();
                     btnSuasp.Enabled = true;
                     btnXoasanpham.Enabled = true;
                     btnThemmoisp.Enabled = false;
@@ -185,6 +199,25 @@ namespace QuanLySieuThiMini
             btnThemmoisp.Enabled = true;
             btnSuasp.Enabled = false;
             btnXoasanpham.Enabled = false;
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            open = new OpenFileDialog();
+            open.Filter = "Images(*.jpg)|*.jpg|PNG (*.png)|*.png";
+            if(open.ShowDialog() == DialogResult.OK)
+            {
+                Image img = Image.FromFile(open.FileName);
+                ptbAnhsanpham.Image = img;
+                duongdan = open.FileName;
+                txtTenanh.Text = Path.GetFileName(duongdan);
+
+            }
+        }
+
+        public void Luuanh()
+        {
+            File.Copy(duongdan, Path.Combine(@"C:\Users\DELL\Desktop\QuanLySieuThiMini\QuanLySieuThiMini\Resources\Image", Path.GetFileName(txtTenanh.Text)), true);
         }
     }
 }

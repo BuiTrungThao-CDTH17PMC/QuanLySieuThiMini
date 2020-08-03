@@ -65,7 +65,7 @@ namespace QuanLySieuThiMini
 
         private void btnBaocao_Click(object sender, EventArgs e)
         {
-            export2Excel(dgvDanhsachhoadon, @"C:\Users\butru\Desktop\", "xuatfileExcel");
+            export2Excel(dgvDanhsachhoadon, @"C:\Users\butru\Desktop\", "Baocao");
         }
 
         private void btnDong_Click(object sender, EventArgs e)
