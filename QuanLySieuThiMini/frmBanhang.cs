@@ -58,12 +58,12 @@ namespace QuanLySieuThiMini
             Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
             BarcodeReader readr = new BarcodeReader();
             var resutl = readr.Decode(bitmap);
-            if (resutl != null)
+            if (resutl != null && resutl.ToString() != txtTimsanphambh.Text)
             {
                 txtTimsanphambh.Invoke(new MethodInvoker(delegate()
                 {
                     txtTimsanphambh.Text = resutl.ToString();
-                    //Laysanpham(Int32.Parse(lblMasanpham.Text));
+                    Laysanpham(Int32.Parse(txtTimsanphambh.Text));
                 }));
             }
             ptbCamquetma.Image = bitmap;
@@ -187,7 +187,6 @@ namespace QuanLySieuThiMini
                 hdx.NGAYLAP1 = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
                 if(hdb.Themhoadonxuat(hdx))
                 {
-                    //MessageBox.Show("" + index, "Thong báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DTO.Chitiethoadonxuat cthdx = new DTO.Chitiethoadonxuat();
                     for (int i = 0; i < index; i++)
                     {

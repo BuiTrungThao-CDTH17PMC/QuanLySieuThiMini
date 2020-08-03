@@ -62,7 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.HINHANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HINHANH = new System.Windows.Forms.DataGridViewImageColumn();
             this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,6 +139,7 @@
             this.dgvHienthisanpham.Size = new System.Drawing.Size(795, 320);
             this.dgvHienthisanpham.TabIndex = 0;
             this.dgvHienthisanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthisanpham_CellClick);
+            this.dgvHienthisanpham.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHienthisanpham_CellFormatting);
             // 
             // groupBox3
             // 
@@ -471,7 +472,6 @@
             this.HINHANH.Name = "HINHANH";
             this.HINHANH.ReadOnly = true;
             this.HINHANH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HINHANH.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.HINHANH.Width = 150;
             // 
             // MASP
@@ -615,7 +615,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox txtGiamgia;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HINHANH;
+        private System.Windows.Forms.DataGridViewImageColumn HINHANH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
