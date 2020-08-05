@@ -269,18 +269,18 @@ namespace QuanLySieuThiMini
             //try
             //{
             if (dgvHienthisanpham.Columns[e.ColumnIndex].Name == "HINHANH")
-                {
-                    var s = Path.Combine("..\\..\\Resources\\Images\\");
-                    s = Path.GetFullPath(s);
-                    //MessageBox.Show(s + e.Value.ToString());
-                    e.Value = Bitmap.FromFile(s + e.Value.ToString());
-                    e.FormattingApplied = true;
-                }
+            {
+                var s = Path.Combine("..\\..\\Resources\\Images\\");
+                s = Path.GetFullPath(s);
+                //MessageBox.Show(s + e.Value.ToString());
+                e.Value = Bitmap.FromFile(s + e.Value.ToString());
+                e.FormattingApplied = true;
+            }
             //}catch(Exception ex)
             //{
             //    MessageBox.Show(ex.Message);
             //}
-            
+
         }
     }
 }

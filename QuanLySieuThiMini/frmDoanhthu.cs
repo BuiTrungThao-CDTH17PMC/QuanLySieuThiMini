@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using COMExcel = Microsoft.Office.Interop.Excel;
 using app = Microsoft.Office.Interop.Excel.Application;
+using System.IO;
 
 namespace QuanLySieuThiMini
 {
@@ -21,6 +22,7 @@ namespace QuanLySieuThiMini
             InitializeComponent();
             dtb = new BUS.DoanhthuBUS();
         }
+   
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
@@ -65,7 +67,17 @@ namespace QuanLySieuThiMini
 
         private void btnBaocao_Click(object sender, EventArgs e)
         {
-            export2Excel(dgvDanhsachhoadon, @"C:\Users\butru\Desktop\", "Baocao");
+            if(dgvDanhsachhoadon.RowCount > 0)
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    export2Excel(dgvDanhsachhoadon, save.FileName, " từ " + dtpNgaybatdau.Value.Date.ToString("dd-MM-yyyy") + " đến " + dtpNgayketthuc.Value.Date.ToString("dd-MM-yyyy"));
+                }
+            }else
+            {
+                MessageBox.Show("Bạn chưa có danh sách cần báo cáo");
+            }    
         }
 
         private void btnDong_Click(object sender, EventArgs e)
