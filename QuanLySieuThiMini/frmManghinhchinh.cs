@@ -93,6 +93,12 @@ namespace QuanLySieuThiMini
             this.Close();
         }
 
+        private void TSMI_Baocaobanhang_Click(object sender, EventArgs e)
+        {
+            frmDoanhthu dt = new frmDoanhthu();
+            dt.ShowDialog();
+        }
+
         private void TSMI_Dangxuat_Click(object sender, EventArgs e)
         {
            

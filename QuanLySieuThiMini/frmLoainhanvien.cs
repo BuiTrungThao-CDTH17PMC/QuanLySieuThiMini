@@ -49,7 +49,11 @@ namespace QuanLySieuThiMini
                     Hienthiloainhanvien();
                     txtTenloainhanvien.Text = "";
                 }
-                
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         int ID;
@@ -69,6 +73,10 @@ namespace QuanLySieuThiMini
                     txtTenloainhanvien.Text = "";
                 }
             }
+            else
+            {
+                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         private void dgvHienthiloainv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,6 +95,7 @@ namespace QuanLySieuThiMini
             {
             }
         }
+
         private void btnXoaloainv_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtTenloainhanvien.Text))

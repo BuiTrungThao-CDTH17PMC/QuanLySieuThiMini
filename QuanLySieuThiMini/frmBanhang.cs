@@ -77,7 +77,6 @@ namespace QuanLySieuThiMini
                 cam.Stop();
             }
         }
-       
         //  Load form
         private void frmBanhang_Load(object sender, EventArgs e)
         {
@@ -98,6 +97,8 @@ namespace QuanLySieuThiMini
             htkh.truyen = new frmHienthikhachhang.truyendulieu(laydata);
             htkh.ShowDialog();
         }
+        // Buton tìm sản phẩm
+
         // Hàm kiểm tra số
         public bool Kiemtraso(string text)
         {
@@ -196,19 +197,18 @@ namespace QuanLySieuThiMini
                         cthdx.SOLUONG1 = Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
                         cthdx.GIATIEN1 = Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString());
                         cthdx.GIAMGIA1 = Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString());
-                        if (hdb.Themchitiethoadonxuat(cthdx))
-                        {
-                            dem++;
-                        }
-
                     }
-                    if(dem == index)
+                    if (hdb.Themchitiethoadonxuat(cthdx))
                     {
-                        MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        Trusoluong(dgvBanhang);
-                        lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
-                        Resert();
+                        dem++;
                     }
+                }
+                if(dem == index)
+                {
+                    MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    Trusoluong(dgvBanhang);
+                    lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
+                    Resert();
                 }
             }else
             {
@@ -240,6 +240,7 @@ namespace QuanLySieuThiMini
             return tongtien;
         }
 
+
         private void btnDongbanhang_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -264,5 +265,6 @@ namespace QuanLySieuThiMini
             dgvBanhang.Rows.Clear();
             lblTongtienbh.Text = "0";
         }
+
     }
 }

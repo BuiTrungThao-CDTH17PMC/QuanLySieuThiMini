@@ -52,6 +52,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public bool Themsanpham(DTO.Sanpham sp)
         {
+
             string sql = "INSERT INTO SANPHAM(TENSP,MALOAI,MANCC,SOLUONG,DONGIA,GIAMGIA,HINHANH)VALUES(@TENSP,@MALOAI,@MANCC,@SOLUONG,@DONGIA,@GIAMGIA,@HINHANH)";
             SqlConnection con = dc.getConnect();
            try

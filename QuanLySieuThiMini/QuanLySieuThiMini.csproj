@@ -39,6 +39,16 @@
       <HintPath>..\..\Release\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Downloads\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Downloads\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +69,7 @@
   <ItemGroup>
     <Compile Include="BUS\BanhangBUS.cs" />
     <Compile Include="BUS\DangnhapBUS.cs" />
+    <Compile Include="BUS\DoanhthuBUS.cs" />
     <Compile Include="BUS\HoadonbanBUS.cs" />
     <Compile Include="BUS\KhachhangBUS.cs" />
     <Compile Include="BUS\LoainhanvienBUS.cs" />
@@ -69,6 +80,7 @@
     <Compile Include="DAO\BanhangDAO.cs" />
     <Compile Include="DAO\DangnhapDAO.cs" />
     <Compile Include="DAO\DataConnect.cs" />
+    <Compile Include="DAO\DoanhthuDAO.cs" />
     <Compile Include="DAO\HoadonbanDAO.cs" />
     <Compile Include="DAO\KhachhangDAO.cs" />
     <Compile Include="DAO\LoainhanvienDAO.cs" />
@@ -85,11 +97,24 @@
     <Compile Include="DTO\Nhanvien.cs" />
     <Compile Include="DTO\Quyennhanvien.cs" />
     <Compile Include="DTO\Sanpham.cs" />
+    <Compile Include="Excel.cs" />
     <Compile Include="frmBanhang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBanhang.Designer.cs">
       <DependentUpon>frmBanhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoanhthu.Designer.cs">
+      <DependentUpon>frmDoanhthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaocaodoanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaocaodoanhthu.Designer.cs">
+      <DependentUpon>frmBaocaodoanhthu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangnhap.cs">
       <SubType>Form</SubType>
@@ -168,6 +193,12 @@
     <EmbeddedResource Include="frmBanhang.resx">
       <DependentUpon>frmBanhang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoanhthu.resx">
+      <DependentUpon>frmDoanhthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaocaodoanhthu.resx">
+      <DependentUpon>frmBaocaodoanhthu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangnhap.resx">
       <DependentUpon>frmDangnhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,12 +254,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="zxing.net.0.16.5.nupkg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
