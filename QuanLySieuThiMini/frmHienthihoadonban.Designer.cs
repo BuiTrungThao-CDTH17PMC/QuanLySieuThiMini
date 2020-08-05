@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHienthihoadonban));
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.dtpNgaylap = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -50,7 +52,7 @@
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIEMSUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.panelEx1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,17 +61,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadonban)).BeginInit();
             this.SuspendLayout();
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.panel1);
+            this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx1.Location = new System.Drawing.Point(-3, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(847, 751);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 0;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Location = new System.Drawing.Point(7, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(835, 743);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -81,6 +101,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(819, 52);
             this.panel2.TabIndex = 4;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Location = new System.Drawing.Point(550, 13);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(106, 26);
+            this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextColor = System.Drawing.Color.Black;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // dtpNgaylap
             // 
@@ -130,6 +163,7 @@
             this.dgvChitiethoadonban.Location = new System.Drawing.Point(6, 25);
             this.dgvChitiethoadonban.Name = "dgvChitiethoadonban";
             this.dgvChitiethoadonban.ReadOnly = true;
+            this.dgvChitiethoadonban.RowHeadersWidth = 51;
             this.dgvChitiethoadonban.Size = new System.Drawing.Size(807, 291);
             this.dgvChitiethoadonban.TabIndex = 0;
             // 
@@ -137,6 +171,7 @@
             // 
             this.MAHD.DataPropertyName = "MAHDX";
             this.MAHD.HeaderText = "Mã hóa đơn bán";
+            this.MAHD.MinimumWidth = 6;
             this.MAHD.Name = "MAHD";
             this.MAHD.ReadOnly = true;
             this.MAHD.Width = 150;
@@ -145,6 +180,7 @@
             // 
             this.MASP.DataPropertyName = "MASP";
             this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
             this.MASP.Width = 120;
@@ -153,6 +189,7 @@
             // 
             this.TENSP.DataPropertyName = "TENSP";
             this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.MinimumWidth = 6;
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
             this.TENSP.Width = 200;
@@ -161,13 +198,16 @@
             // 
             this.SOLUONG.DataPropertyName = "SOLUONG";
             this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.ReadOnly = true;
+            this.SOLUONG.Width = 125;
             // 
             // GIATIEN
             // 
             this.GIATIEN.DataPropertyName = "GIATIEN";
             this.GIATIEN.HeaderText = "Giá tiền ";
+            this.GIATIEN.MinimumWidth = 6;
             this.GIATIEN.Name = "GIATIEN";
             this.GIATIEN.ReadOnly = true;
             this.GIATIEN.Width = 110;
@@ -176,6 +216,7 @@
             // 
             this.GIAMGIA.DataPropertyName = "GIAMGIA";
             this.GIAMGIA.HeaderText = "Giảm giá";
+            this.GIAMGIA.MinimumWidth = 6;
             this.GIAMGIA.Name = "GIAMGIA";
             this.GIAMGIA.ReadOnly = true;
             this.GIAMGIA.Width = 110;
@@ -207,14 +248,15 @@
             this.dgvDanhsachhoadonban.Location = new System.Drawing.Point(6, 25);
             this.dgvDanhsachhoadonban.Name = "dgvDanhsachhoadonban";
             this.dgvDanhsachhoadonban.ReadOnly = true;
+            this.dgvDanhsachhoadonban.RowHeadersWidth = 51;
             this.dgvDanhsachhoadonban.Size = new System.Drawing.Size(807, 320);
             this.dgvDanhsachhoadonban.TabIndex = 0;
-            this.dgvDanhsachhoadonban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachhoadonban_CellClick);
             // 
             // MAHDX
             // 
             this.MAHDX.DataPropertyName = "MAHDX";
             this.MAHDX.HeaderText = "Mã hóa đơn";
+            this.MAHDX.MinimumWidth = 6;
             this.MAHDX.Name = "MAHDX";
             this.MAHDX.ReadOnly = true;
             this.MAHDX.Width = 120;
@@ -223,6 +265,7 @@
             // 
             this.MANV.DataPropertyName = "MANV";
             this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.MinimumWidth = 6;
             this.MANV.Name = "MANV";
             this.MANV.ReadOnly = true;
             this.MANV.Width = 120;
@@ -231,6 +274,7 @@
             // 
             this.TENNV.DataPropertyName = "TENNV";
             this.TENNV.HeaderText = "Tên nhân viên ";
+            this.TENNV.MinimumWidth = 6;
             this.TENNV.Name = "TENNV";
             this.TENNV.ReadOnly = true;
             this.TENNV.Width = 150;
@@ -239,6 +283,7 @@
             // 
             this.TENKH.DataPropertyName = "MAKH";
             this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.MinimumWidth = 6;
             this.TENKH.Name = "TENKH";
             this.TENKH.ReadOnly = true;
             this.TENKH.Width = 150;
@@ -247,6 +292,7 @@
             // 
             this.NGAYLAP.DataPropertyName = "NGAYLAP";
             this.NGAYLAP.HeaderText = "Ngày/Giờ lập";
+            this.NGAYLAP.MinimumWidth = 6;
             this.NGAYLAP.Name = "NGAYLAP";
             this.NGAYLAP.ReadOnly = true;
             this.NGAYLAP.Width = 150;
@@ -255,28 +301,19 @@
             // 
             this.DIEMSUDUNG.DataPropertyName = "SODIEMSUDUNG";
             this.DIEMSUDUNG.HeaderText = "Số điểm sự dụng";
+            this.DIEMSUDUNG.MinimumWidth = 6;
             this.DIEMSUDUNG.Name = "DIEMSUDUNG";
             this.DIEMSUDUNG.ReadOnly = true;
+            this.DIEMSUDUNG.Width = 125;
             // 
             // TONGTIEN
             // 
             this.TONGTIEN.DataPropertyName = "TONGTIEN";
             this.TONGTIEN.HeaderText = "Tổng tiền";
+            this.TONGTIEN.MinimumWidth = 6;
             this.TONGTIEN.Name = "TONGTIEN";
             this.TONGTIEN.ReadOnly = true;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Location = new System.Drawing.Point(550, 13);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(106, 26);
-            this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextColor = System.Drawing.Color.Black;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.TONGTIEN.Width = 125;
             // 
             // frmHienthihoadonban
             // 
@@ -284,16 +321,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(843, 751);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHienthihoadonban";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiện thị hóa đơn bán hàng";
             this.Load += new System.EventHandler(this.frmHienthihoadonban_Load);
+            this.panelEx1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -307,14 +347,22 @@
 
         #endregion
 
+        private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvDanhsachhoadonban;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvChitiethoadonban;
         private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.ButtonX btnThoat;
         private System.Windows.Forms.DateTimePicker dtpNgaylap;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvChitiethoadonban;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIATIEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvDanhsachhoadonban;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHDX;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
@@ -322,12 +370,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIEMSUDUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIATIEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
-        private DevComponents.DotNetBar.ButtonX btnThoat;
     }
 }

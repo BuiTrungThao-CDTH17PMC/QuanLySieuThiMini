@@ -32,6 +32,11 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDongloaisp = new DevComponents.DotNetBar.ButtonX();
+            this.btnHuythaotacloaisp = new DevComponents.DotNetBar.ButtonX();
+            this.btnSualoaisp = new DevComponents.DotNetBar.ButtonX();
+            this.btnXoaloaisp = new DevComponents.DotNetBar.ButtonX();
+            this.btnThemloaisp = new DevComponents.DotNetBar.ButtonX();
             this.txtTenloaisp = new System.Windows.Forms.TextBox();
             this.dgvLoaisanpham = new System.Windows.Forms.DataGridView();
             this.MALOAISP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,11 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnThemloaisp = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoaloaisp = new DevComponents.DotNetBar.ButtonX();
-            this.btnSualoaisp = new DevComponents.DotNetBar.ButtonX();
-            this.btnHuythaotacloaisp = new DevComponents.DotNetBar.ButtonX();
-            this.btnDongloaisp = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -100,6 +100,66 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loại sản phẩm";
+            // 
+            // btnDongloaisp
+            // 
+            this.btnDongloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDongloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDongloaisp.Location = new System.Drawing.Point(545, 245);
+            this.btnDongloaisp.Name = "btnDongloaisp";
+            this.btnDongloaisp.Size = new System.Drawing.Size(169, 32);
+            this.btnDongloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDongloaisp.TabIndex = 15;
+            this.btnDongloaisp.Text = "Thoát";
+            this.btnDongloaisp.Click += new System.EventHandler(this.btnDongloaisp_Click);
+            // 
+            // btnHuythaotacloaisp
+            // 
+            this.btnHuythaotacloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnHuythaotacloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnHuythaotacloaisp.Location = new System.Drawing.Point(545, 194);
+            this.btnHuythaotacloaisp.Name = "btnHuythaotacloaisp";
+            this.btnHuythaotacloaisp.Size = new System.Drawing.Size(169, 32);
+            this.btnHuythaotacloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnHuythaotacloaisp.TabIndex = 14;
+            this.btnHuythaotacloaisp.Text = "Hủy thao tác";
+            this.btnHuythaotacloaisp.Click += new System.EventHandler(this.btnHuythaotacloaisp_Click);
+            // 
+            // btnSualoaisp
+            // 
+            this.btnSualoaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSualoaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSualoaisp.Location = new System.Drawing.Point(545, 144);
+            this.btnSualoaisp.Name = "btnSualoaisp";
+            this.btnSualoaisp.Size = new System.Drawing.Size(169, 32);
+            this.btnSualoaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSualoaisp.TabIndex = 13;
+            this.btnSualoaisp.Text = "Sửa";
+            this.btnSualoaisp.Click += new System.EventHandler(this.btnSualoaisp_Click);
+            // 
+            // btnXoaloaisp
+            // 
+            this.btnXoaloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoaloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXoaloaisp.Location = new System.Drawing.Point(545, 93);
+            this.btnXoaloaisp.Name = "btnXoaloaisp";
+            this.btnXoaloaisp.Size = new System.Drawing.Size(169, 32);
+            this.btnXoaloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXoaloaisp.TabIndex = 12;
+            this.btnXoaloaisp.Text = "Xóa";
+            this.btnXoaloaisp.Click += new System.EventHandler(this.btnXoaloaisp_Click);
+            // 
+            // btnThemloaisp
+            // 
+            this.btnThemloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThemloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThemloaisp.Location = new System.Drawing.Point(545, 41);
+            this.btnThemloaisp.Name = "btnThemloaisp";
+            this.btnThemloaisp.Size = new System.Drawing.Size(169, 32);
+            this.btnThemloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThemloaisp.TabIndex = 11;
+            this.btnThemloaisp.Text = "Thêm";
+            this.btnThemloaisp.Click += new System.EventHandler(this.btnThemloaisp_Click);
             // 
             // txtTenloaisp
             // 
@@ -173,66 +233,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Loại sản phẩm";
             // 
-            // btnThemloaisp
-            // 
-            this.btnThemloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThemloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThemloaisp.Location = new System.Drawing.Point(545, 41);
-            this.btnThemloaisp.Name = "btnThemloaisp";
-            this.btnThemloaisp.Size = new System.Drawing.Size(169, 32);
-            this.btnThemloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnThemloaisp.TabIndex = 11;
-            this.btnThemloaisp.Text = "Thêm";
-            this.btnThemloaisp.Click += new System.EventHandler(this.btnThemloaisp_Click);
-            // 
-            // btnXoaloaisp
-            // 
-            this.btnXoaloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoaloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoaloaisp.Location = new System.Drawing.Point(545, 93);
-            this.btnXoaloaisp.Name = "btnXoaloaisp";
-            this.btnXoaloaisp.Size = new System.Drawing.Size(169, 32);
-            this.btnXoaloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnXoaloaisp.TabIndex = 12;
-            this.btnXoaloaisp.Text = "Xóa";
-            this.btnXoaloaisp.Click += new System.EventHandler(this.btnXoaloaisp_Click);
-            // 
-            // btnSualoaisp
-            // 
-            this.btnSualoaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSualoaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSualoaisp.Location = new System.Drawing.Point(545, 144);
-            this.btnSualoaisp.Name = "btnSualoaisp";
-            this.btnSualoaisp.Size = new System.Drawing.Size(169, 32);
-            this.btnSualoaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSualoaisp.TabIndex = 13;
-            this.btnSualoaisp.Text = "Sửa";
-            this.btnSualoaisp.Click += new System.EventHandler(this.btnSualoaisp_Click);
-            // 
-            // btnHuythaotacloaisp
-            // 
-            this.btnHuythaotacloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnHuythaotacloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnHuythaotacloaisp.Location = new System.Drawing.Point(545, 194);
-            this.btnHuythaotacloaisp.Name = "btnHuythaotacloaisp";
-            this.btnHuythaotacloaisp.Size = new System.Drawing.Size(169, 32);
-            this.btnHuythaotacloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnHuythaotacloaisp.TabIndex = 14;
-            this.btnHuythaotacloaisp.Text = "Hủy thao tác";
-            this.btnHuythaotacloaisp.Click += new System.EventHandler(this.btnHuythaotacloaisp_Click);
-            // 
-            // btnDongloaisp
-            // 
-            this.btnDongloaisp.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDongloaisp.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDongloaisp.Location = new System.Drawing.Point(545, 245);
-            this.btnDongloaisp.Name = "btnDongloaisp";
-            this.btnDongloaisp.Size = new System.Drawing.Size(169, 32);
-            this.btnDongloaisp.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDongloaisp.TabIndex = 15;
-            this.btnDongloaisp.Text = "Thoát";
-            this.btnDongloaisp.Click += new System.EventHandler(this.btnDongloaisp_Click);
-            // 
             // frmLoaisanpham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -246,6 +246,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLoaisanpham";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loại sản phẩm";
             this.Load += new System.EventHandler(this.frmLoaisanpham_Load);

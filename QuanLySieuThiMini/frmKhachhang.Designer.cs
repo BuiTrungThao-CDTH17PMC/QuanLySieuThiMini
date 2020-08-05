@@ -34,6 +34,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvHienthikhachhang = new System.Windows.Forms.DataGridView();
+            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TICHDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XOA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtTimkiemkh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,12 +60,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TICHDIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XOA = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelEx1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,6 +141,54 @@
             this.dgvHienthikhachhang.Size = new System.Drawing.Size(677, 239);
             this.dgvHienthikhachhang.TabIndex = 0;
             this.dgvHienthikhachhang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthikhachhang_CellClick);
+            // 
+            // MAKH
+            // 
+            this.MAKH.DataPropertyName = "MAKH";
+            this.MAKH.HeaderText = "Mã khách hàng";
+            this.MAKH.Name = "MAKH";
+            this.MAKH.ReadOnly = true;
+            this.MAKH.Visible = false;
+            // 
+            // TENKH
+            // 
+            this.TENKH.DataPropertyName = "TENKH";
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.Name = "TENKH";
+            this.TENKH.ReadOnly = true;
+            this.TENKH.Width = 200;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Width = 250;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Width = 150;
+            // 
+            // TICHDIEM
+            // 
+            this.TICHDIEM.DataPropertyName = "TICHDIEM";
+            this.TICHDIEM.HeaderText = "Điểm đã tích";
+            this.TICHDIEM.Name = "TICHDIEM";
+            this.TICHDIEM.ReadOnly = true;
+            this.TICHDIEM.Width = 150;
+            // 
+            // XOA
+            // 
+            this.XOA.DataPropertyName = "XOA";
+            this.XOA.HeaderText = "Xóa";
+            this.XOA.Name = "XOA";
+            this.XOA.ReadOnly = true;
+            this.XOA.Visible = false;
             // 
             // panel4
             // 
@@ -346,54 +394,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Khách hàng";
             // 
-            // MAKH
-            // 
-            this.MAKH.DataPropertyName = "MAKH";
-            this.MAKH.HeaderText = "Mã khách hàng";
-            this.MAKH.Name = "MAKH";
-            this.MAKH.ReadOnly = true;
-            this.MAKH.Visible = false;
-            // 
-            // TENKH
-            // 
-            this.TENKH.DataPropertyName = "TENKH";
-            this.TENKH.HeaderText = "Tên khách hàng";
-            this.TENKH.Name = "TENKH";
-            this.TENKH.ReadOnly = true;
-            this.TENKH.Width = 200;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "Địa chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Width = 250;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Width = 150;
-            // 
-            // TICHDIEM
-            // 
-            this.TICHDIEM.DataPropertyName = "TICHDIEM";
-            this.TICHDIEM.HeaderText = "Điểm đã tích";
-            this.TICHDIEM.Name = "TICHDIEM";
-            this.TICHDIEM.ReadOnly = true;
-            this.TICHDIEM.Width = 150;
-            // 
-            // XOA
-            // 
-            this.XOA.DataPropertyName = "XOA";
-            this.XOA.HeaderText = "Xóa";
-            this.XOA.Name = "XOA";
-            this.XOA.ReadOnly = true;
-            this.XOA.Visible = false;
-            // 
             // frmKhachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -407,6 +407,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmKhachhang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.frmKhachhang_Load);

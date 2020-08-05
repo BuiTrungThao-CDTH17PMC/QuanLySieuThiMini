@@ -272,12 +272,12 @@ namespace QuanLySieuThiMini
         private void dgvHienthisanpham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvHienthisanpham.Columns[e.ColumnIndex].Name == "HINHANH")
-                {
-                    var s = Path.Combine("..\\..\\Resources\\Images\\");
-                    s = Path.GetFullPath(s);
-                    e.Value = Bitmap.FromFile(s + e.Value.ToString());
-                    e.FormattingApplied = true;
-                }
+            {
+                var s = Path.Combine("..\\..\\Resources\\Images\\");
+                s = Path.GetFullPath(s);
+                e.Value = Bitmap.FromFile(s + e.Value.ToString());
+                e.FormattingApplied = true;
+            }
         }
     }
 }

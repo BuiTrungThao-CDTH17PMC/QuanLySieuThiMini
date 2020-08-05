@@ -60,12 +60,12 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.TotalAmount = new System.Windows.Forms.Label();
             this.dgw = new System.Windows.Forms.DataGridView();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.Label3 = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Panel1 = new System.Windows.Forms.Panel();
+            this.Label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -335,49 +335,6 @@
             this.dgw.Size = new System.Drawing.Size(351, 55);
             this.dgw.TabIndex = 39;
             // 
-            // Panel1
-            // 
-            this.Panel1.BackColor = System.Drawing.Color.White;
-            this.Panel1.Controls.Add(this.lblThank);
-            this.Panel1.Controls.Add(this.lblOR);
-            this.Panel1.Controls.Add(this.lblChange);
-            this.Panel1.Controls.Add(this.lblSubtotal);
-            this.Panel1.Controls.Add(this.lblCash);
-            this.Panel1.Controls.Add(this.change);
-            this.Panel1.Controls.Add(this.subTotal);
-            this.Panel1.Controls.Add(this.Cash);
-            this.Panel1.Controls.Add(this.lblVat);
-            this.Panel1.Controls.Add(this.vat);
-            this.Panel1.Controls.Add(this.lblTotal);
-            this.Panel1.Controls.Add(this.TotalAmount);
-            this.Panel1.Controls.Add(this.dgw);
-            this.Panel1.Controls.Add(this.lblEmpName);
-            this.Panel1.Controls.Add(this.Label7);
-            this.Panel1.Controls.Add(this.Label6);
-            this.Panel1.Controls.Add(this.lblInvoice);
-            this.Panel1.Controls.Add(this.Label4);
-            this.Panel1.Controls.Add(this.lblCustomer);
-            this.Panel1.Controls.Add(this.Label16);
-            this.Panel1.Controls.Add(this.Label3);
-            this.Panel1.Controls.Add(this.Label2);
-            this.Panel1.Controls.Add(this.Label1);
-            this.Panel1.Controls.Add(this.lblLine);
-            this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panel1.Location = new System.Drawing.Point(2, 3);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(358, 396);
-            this.Panel1.TabIndex = 2;
-            // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(117, 57);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(115, 13);
-            this.Label3.TabIndex = 0;
-            this.Label3.Text = "============";
-            // 
             // Description
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -422,6 +379,49 @@
             this.Amount.ReadOnly = true;
             this.Amount.Width = 70;
             // 
+            // Panel1
+            // 
+            this.Panel1.BackColor = System.Drawing.Color.White;
+            this.Panel1.Controls.Add(this.lblThank);
+            this.Panel1.Controls.Add(this.lblOR);
+            this.Panel1.Controls.Add(this.lblChange);
+            this.Panel1.Controls.Add(this.lblSubtotal);
+            this.Panel1.Controls.Add(this.lblCash);
+            this.Panel1.Controls.Add(this.change);
+            this.Panel1.Controls.Add(this.subTotal);
+            this.Panel1.Controls.Add(this.Cash);
+            this.Panel1.Controls.Add(this.lblVat);
+            this.Panel1.Controls.Add(this.vat);
+            this.Panel1.Controls.Add(this.lblTotal);
+            this.Panel1.Controls.Add(this.TotalAmount);
+            this.Panel1.Controls.Add(this.dgw);
+            this.Panel1.Controls.Add(this.lblEmpName);
+            this.Panel1.Controls.Add(this.Label7);
+            this.Panel1.Controls.Add(this.Label6);
+            this.Panel1.Controls.Add(this.lblInvoice);
+            this.Panel1.Controls.Add(this.Label4);
+            this.Panel1.Controls.Add(this.lblCustomer);
+            this.Panel1.Controls.Add(this.Label16);
+            this.Panel1.Controls.Add(this.Label3);
+            this.Panel1.Controls.Add(this.Label2);
+            this.Panel1.Controls.Add(this.Label1);
+            this.Panel1.Controls.Add(this.lblLine);
+            this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel1.Location = new System.Drawing.Point(2, 3);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(358, 396);
+            this.Panel1.TabIndex = 2;
+            // 
+            // Label3
+            // 
+            this.Label3.AutoSize = true;
+            this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(117, 57);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(115, 13);
+            this.Label3.TabIndex = 0;
+            this.Label3.Text = "============";
+            // 
             // frmInhoadonbanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -434,6 +434,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInhoadonbanhang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In hóa đơn bán hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).EndInit();

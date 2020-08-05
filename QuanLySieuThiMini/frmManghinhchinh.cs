@@ -35,7 +35,6 @@ namespace QuanLySieuThiMini
                 TSMI_Quanlynhanvien.Enabled = false;
                 TSMI_Quanlysanpham.Enabled = false;
                 TSMI_Baocaobanhang.Enabled = false;
-                TSMI_Baocaonhaphang.Enabled = false;
             }
             
         }
