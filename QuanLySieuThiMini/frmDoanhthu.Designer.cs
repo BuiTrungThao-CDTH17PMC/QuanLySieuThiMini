@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDong = new System.Windows.Forms.Button();
+            this.btnDong = new DevComponents.DotNetBar.ButtonX();
             this.txtTongdoanhthu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,42 +40,63 @@
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnIn = new System.Windows.Forms.Button();
+            this.btnIn = new DevComponents.DotNetBar.ButtonX();
+            this.btnThongke = new DevComponents.DotNetBar.ButtonX();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnThongke = new System.Windows.Forms.Button();
             this.dtpNgaybatdau = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayketthuc = new System.Windows.Forms.DateTimePicker();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.panelEx1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhsachhoadon)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panelEx1
+            // 
+            this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.panel1);
+            this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx1.Location = new System.Drawing.Point(1, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(986, 644);
+            this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx1.Style.GradientAngle = 90;
+            this.panelEx1.TabIndex = 0;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnDong);
             this.panel1.Controls.Add(this.txtTongdoanhthu);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(8, 5);
+            this.panel1.Location = new System.Drawing.Point(7, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(972, 625);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(794, 574);
+            this.btnDong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDong.Location = new System.Drawing.Point(789, 574);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(134, 35);
-            this.btnDong.TabIndex = 9;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDong.TabIndex = 10;
+            this.btnDong.Text = "Thoát";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // txtTongdoanhthu
@@ -83,7 +105,7 @@
             this.txtTongdoanhthu.Location = new System.Drawing.Point(216, 571);
             this.txtTongdoanhthu.Name = "txtTongdoanhthu";
             this.txtTongdoanhthu.ReadOnly = true;
-            this.txtTongdoanhthu.Size = new System.Drawing.Size(278, 29);
+            this.txtTongdoanhthu.Size = new System.Drawing.Size(278, 34);
             this.txtTongdoanhthu.TabIndex = 8;
             // 
             // label1
@@ -91,7 +113,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 574);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 21);
+            this.label1.Size = new System.Drawing.Size(175, 27);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tổng doanh thu :";
             // 
@@ -164,9 +186,9 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnIn);
+            this.panel2.Controls.Add(this.btnThongke);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.btnThongke);
             this.panel2.Controls.Add(this.dtpNgaybatdau);
             this.panel2.Controls.Add(this.dtpNgayketthuc);
             this.panel2.Location = new System.Drawing.Point(14, 13);
@@ -177,14 +199,27 @@
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(766, 33);
-            this.btnIn.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnIn.Location = new System.Drawing.Point(752, 33);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(147, 42);
-            this.btnIn.TabIndex = 5;
+            this.btnIn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnIn.TabIndex = 7;
             this.btnIn.Text = "Báo cáo";
-            this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnBaocao_Click);
+            // 
+            // btnThongke
+            // 
+            this.btnThongke.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThongke.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThongke.Location = new System.Drawing.Point(585, 33);
+            this.btnThongke.Name = "btnThongke";
+            this.btnThongke.Size = new System.Drawing.Size(147, 42);
+            this.btnThongke.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThongke.TabIndex = 6;
+            this.btnThongke.Text = "Thống kê";
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // label5
             // 
@@ -194,7 +229,7 @@
             this.label5.Location = new System.Drawing.Point(9, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.Size = new System.Drawing.Size(147, 27);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày kết thúc";
             // 
@@ -206,20 +241,9 @@
             this.label4.Location = new System.Drawing.Point(9, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 21);
+            this.label4.Size = new System.Drawing.Size(140, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày bắt đầu";
-            // 
-            // btnThongke
-            // 
-            this.btnThongke.Location = new System.Drawing.Point(605, 33);
-            this.btnThongke.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnThongke.Name = "btnThongke";
-            this.btnThongke.Size = new System.Drawing.Size(147, 42);
-            this.btnThongke.TabIndex = 2;
-            this.btnThongke.Text = "Thống Kê";
-            this.btnThongke.UseVisualStyleBackColor = true;
-            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // dtpNgaybatdau
             // 
@@ -227,7 +251,7 @@
             this.dtpNgaybatdau.Location = new System.Drawing.Point(201, 16);
             this.dtpNgaybatdau.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dtpNgaybatdau.Name = "dtpNgaybatdau";
-            this.dtpNgaybatdau.Size = new System.Drawing.Size(331, 29);
+            this.dtpNgaybatdau.Size = new System.Drawing.Size(331, 34);
             this.dtpNgaybatdau.TabIndex = 1;
             // 
             // dtpNgayketthuc
@@ -236,7 +260,7 @@
             this.dtpNgayketthuc.Location = new System.Drawing.Point(201, 60);
             this.dtpNgayketthuc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dtpNgayketthuc.Name = "dtpNgayketthuc";
-            this.dtpNgayketthuc.Size = new System.Drawing.Size(331, 29);
+            this.dtpNgayketthuc.Size = new System.Drawing.Size(331, 34);
             this.dtpNgayketthuc.TabIndex = 0;
             // 
             // printDialog1
@@ -245,10 +269,10 @@
             // 
             // frmDoanhthu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 644);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
@@ -256,6 +280,7 @@
             this.Name = "frmDoanhthu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBaocaodoanhthu";
+            this.panelEx1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -268,23 +293,24 @@
 
         #endregion
 
+        private DevComponents.DotNetBar.PanelEx panelEx1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvDanhsachhoadon;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnThongke;
-        private System.Windows.Forms.DateTimePicker dtpNgaybatdau;
-        private System.Windows.Forms.DateTimePicker dtpNgayketthuc;
+        private DevComponents.DotNetBar.ButtonX btnDong;
         private System.Windows.Forms.TextBox txtTongdoanhthu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvDanhsachhoadon;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHDX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
+        private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.ButtonX btnIn;
+        private DevComponents.DotNetBar.ButtonX btnThongke;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpNgaybatdau;
+        private System.Windows.Forms.DateTimePicker dtpNgayketthuc;
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.Button btnDong;
     }
 }
