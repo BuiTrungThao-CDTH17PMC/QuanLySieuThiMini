@@ -80,7 +80,7 @@
             // 
             this.txtTimkiemkhachhang.Location = new System.Drawing.Point(166, 13);
             this.txtTimkiemkhachhang.Name = "txtTimkiemkhachhang";
-            this.txtTimkiemkhachhang.Size = new System.Drawing.Size(331, 35);
+            this.txtTimkiemkhachhang.Size = new System.Drawing.Size(331, 29);
             this.txtTimkiemkhachhang.TabIndex = 2;
             this.txtTimkiemkhachhang.TextChanged += new System.EventHandler(this.txtTimkiemkhachhang_TextChanged);
             // 
@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 27);
+            this.label1.Size = new System.Drawing.Size(82, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm";
             // 
@@ -169,7 +169,7 @@
             // 
             // frmHienthikhachhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(848, 476);
@@ -180,6 +180,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHienthikhachhang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.frmHienthikhachhang_Load);

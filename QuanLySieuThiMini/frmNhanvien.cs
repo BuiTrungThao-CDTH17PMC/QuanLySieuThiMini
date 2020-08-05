@@ -205,19 +205,7 @@ namespace QuanLySieuThiMini
 
         private void btnXoanhanvien_Click(object sender, EventArgs e)
         {
-            if (Kiemtradulieu())
-            {
-                DTO.Nhanvien nv = new DTO.Nhanvien();
-                nv.MANV1 = ID;
-                if (nvb.Xoanhanvien(nv))
-                {
-                    Hienthinhanvien();
-                }
-                ResertControll();
-                btnSuanhanvien.Enabled = false;
-                btnXoanhanvien.Enabled = false;
-                btnThemnhanvien.Enabled = true;
-            }
+
         }
 
         public string Mahoa(string value)

@@ -205,14 +205,14 @@ namespace QuanLySieuThiMini
                 }
                 if(dem == index)
                 {
-                    MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     Trusoluong(dgvBanhang);
                     lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
                     Resert();
                 }
             }else
             {
-                MessageBox.Show("Chưa mua sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Chưa mua sản phẩm nào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // Hàm trừ số lương đã mua
