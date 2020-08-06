@@ -13,21 +13,25 @@ namespace QuanLySieuThiMini
     public partial class frmHienthihoadonban : Form
     {
         BUS.HoadonbanBUS hdxb;
+        int ID;
+
         public frmHienthihoadonban()
         {
             InitializeComponent();
             hdxb = new BUS.HoadonbanBUS();
         }
+
         public void Hienhoadonxuat()
         {
             DataTable dt = hdxb.Tablehoadonxuat();
             dgvDanhsachhoadonban.DataSource = dt;
         }
+
         private void frmHienthihoadonban_Load(object sender, EventArgs e)
         {
             Hienhoadonxuat();
         }
-        int ID;
+        
         private void dgvDanhsachhoadonban_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
