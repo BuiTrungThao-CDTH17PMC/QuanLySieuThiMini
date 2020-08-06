@@ -163,6 +163,8 @@ namespace QuanLySieuThiMini
 
         private void dgvHienthisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var s = Path.Combine("..\\..\\Resources\\Images\\");
+            s = Path.GetFullPath(s);
             int index = e.RowIndex;
             try 
             {
@@ -175,6 +177,9 @@ namespace QuanLySieuThiMini
                     cbbLoaisanpham.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MALOAI"].Value.ToString());
                     cbbNhacungcap.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MANCC"].Value.ToString());
                     txtGiamgia.Text = dgvHienthisanpham.Rows[index].Cells["GIAMGIA"].Value.ToString();
+                    txtTenanh.Text = dgvHienthisanpham.Rows[index].Cells["HINHANH"].Value.ToString();
+                    Image image = Image.FromFile(s + dgvHienthisanpham.Rows[index].Cells["HINHANH"].Value.ToString());
+                    ptbAnhsanpham.Image = image;
                     btnSuasp.Enabled = true;
                     btnXoasanpham.Enabled = true;
                     btnThemmoisp.Enabled = false;

@@ -184,6 +184,7 @@
             this.dgvNhacungcap.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvNhacungcap.Size = new System.Drawing.Size(713, 199);
             this.dgvNhacungcap.TabIndex = 0;
+            this.dgvNhacungcap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhacungcap_CellClick);
             // 
             // MANCC
             // 
@@ -268,6 +269,7 @@
             this.btnDongnhacungcap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDongnhacungcap.TabIndex = 11;
             this.btnDongnhacungcap.Text = "Đóng";
+            this.btnDongnhacungcap.Click += new System.EventHandler(this.btnDongnhacungcap_Click);
             // 
             // btnSuanhacungcap
             // 
@@ -280,6 +282,7 @@
             this.btnSuanhacungcap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSuanhacungcap.TabIndex = 9;
             this.btnSuanhacungcap.Text = "Sửa";
+            this.btnSuanhacungcap.Click += new System.EventHandler(this.btnSuanhacungcap_Click);
             // 
             // btnThemnhacungcap
             // 
@@ -292,6 +295,7 @@
             this.btnThemnhacungcap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThemnhacungcap.TabIndex = 7;
             this.btnThemnhacungcap.Text = "Thêm";
+            this.btnThemnhacungcap.Click += new System.EventHandler(this.btnThemnhacungcap_Click);
             // 
             // btnHuythaotac
             // 
@@ -304,6 +308,7 @@
             this.btnHuythaotac.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnHuythaotac.TabIndex = 10;
             this.btnHuythaotac.Text = "Hủy thao tác";
+            this.btnHuythaotac.Click += new System.EventHandler(this.btnHuynhacungcap_Click);
             // 
             // btnXoanhacungcap
             // 
@@ -316,6 +321,7 @@
             this.btnXoanhacungcap.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnXoanhacungcap.TabIndex = 8;
             this.btnXoanhacungcap.Text = "Xóa";
+            this.btnXoanhacungcap.Click += new System.EventHandler(this.btnXoanhacungcap_Click);
             // 
             // groupBox1
             // 

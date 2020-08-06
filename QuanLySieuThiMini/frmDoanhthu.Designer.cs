@@ -279,6 +279,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDoanhthu";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBaocaodoanhthu";
             this.panelEx1.ResumeLayout(false);

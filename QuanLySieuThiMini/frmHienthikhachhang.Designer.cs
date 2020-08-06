@@ -52,9 +52,9 @@
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.panel1);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Location = new System.Drawing.Point(-1, -4);
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(853, 483);
+            this.panelEx1.Size = new System.Drawing.Size(848, 476);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -71,7 +71,7 @@
             this.panel1.Controls.Add(this.txtTimkiemkhachhang);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(8, 9);
+            this.panel1.Location = new System.Drawing.Point(7, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(836, 464);
             this.panel1.TabIndex = 1;
