@@ -105,7 +105,7 @@
             this.txtTongdoanhthu.Location = new System.Drawing.Point(216, 571);
             this.txtTongdoanhthu.Name = "txtTongdoanhthu";
             this.txtTongdoanhthu.ReadOnly = true;
-            this.txtTongdoanhthu.Size = new System.Drawing.Size(278, 34);
+            this.txtTongdoanhthu.Size = new System.Drawing.Size(278, 29);
             this.txtTongdoanhthu.TabIndex = 8;
             // 
             // label1
@@ -113,7 +113,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 574);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 27);
+            this.label1.Size = new System.Drawing.Size(138, 21);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tổng doanh thu :";
             // 
@@ -229,7 +229,7 @@
             this.label5.Location = new System.Drawing.Point(9, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 27);
+            this.label5.Size = new System.Drawing.Size(113, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày kết thúc";
             // 
@@ -241,7 +241,7 @@
             this.label4.Location = new System.Drawing.Point(9, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 27);
+            this.label4.Size = new System.Drawing.Size(109, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày bắt đầu";
             // 
@@ -251,7 +251,7 @@
             this.dtpNgaybatdau.Location = new System.Drawing.Point(201, 16);
             this.dtpNgaybatdau.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dtpNgaybatdau.Name = "dtpNgaybatdau";
-            this.dtpNgaybatdau.Size = new System.Drawing.Size(331, 34);
+            this.dtpNgaybatdau.Size = new System.Drawing.Size(331, 29);
             this.dtpNgaybatdau.TabIndex = 1;
             // 
             // dtpNgayketthuc
@@ -260,7 +260,7 @@
             this.dtpNgayketthuc.Location = new System.Drawing.Point(201, 60);
             this.dtpNgayketthuc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dtpNgayketthuc.Name = "dtpNgayketthuc";
-            this.dtpNgayketthuc.Size = new System.Drawing.Size(331, 34);
+            this.dtpNgayketthuc.Size = new System.Drawing.Size(331, 29);
             this.dtpNgayketthuc.TabIndex = 0;
             // 
             // printDialog1
@@ -269,7 +269,7 @@
             // 
             // frmDoanhthu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 644);
             this.Controls.Add(this.panelEx1);
@@ -278,6 +278,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDoanhthu";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBaocaodoanhthu";
             this.panelEx1.ResumeLayout(false);

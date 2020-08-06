@@ -122,7 +122,7 @@
             this.dtpNgaylap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaylap.Location = new System.Drawing.Point(234, 13);
             this.dtpNgaylap.Name = "dtpNgaylap";
-            this.dtpNgaylap.Size = new System.Drawing.Size(258, 30);
+            this.dtpNgaylap.Size = new System.Drawing.Size(258, 26);
             this.dtpNgaylap.TabIndex = 4;
             this.dtpNgaylap.Value = new System.DateTime(2020, 7, 31, 0, 0, 0, 0);
             this.dtpNgaylap.ValueChanged += new System.EventHandler(this.dtpNgaylap_ValueChanged);
@@ -133,7 +133,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(56, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 27);
+            this.label1.Size = new System.Drawing.Size(148, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tìm kiếm hóa đơn";
             // 
@@ -317,7 +317,7 @@
             // 
             // frmHienthihoadonban
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(843, 751);
@@ -328,6 +328,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHienthihoadonban";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hiện thị hóa đơn bán hàng";
             this.Load += new System.EventHandler(this.frmHienthihoadonban_Load);

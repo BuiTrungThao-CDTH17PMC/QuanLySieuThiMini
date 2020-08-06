@@ -97,7 +97,6 @@
     <Compile Include="DTO\Nhanvien.cs" />
     <Compile Include="DTO\Quyennhanvien.cs" />
     <Compile Include="DTO\Sanpham.cs" />
-    <Compile Include="Excel.cs" />
     <Compile Include="frmBanhang.cs">
       <SubType>Form</SubType>
     </Compile>

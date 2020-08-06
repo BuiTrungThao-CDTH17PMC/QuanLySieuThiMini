@@ -50,6 +50,7 @@
             this.Label7 = new System.Windows.Forms.Label();
             this.lblEmpName = new System.Windows.Forms.Label();
             this.TotalAmount = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.vat = new System.Windows.Forms.Label();
             this.Cash = new System.Windows.Forms.Label();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,16 @@
             this.lblChange = new System.Windows.Forms.Label();
             this.lblOR = new System.Windows.Forms.Label();
             this.lblThank = new System.Windows.Forms.Label();
+=======
+            this.dgw = new System.Windows.Forms.DataGridView();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Panel1 = new System.Windows.Forms.Panel();
+            this.Label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
+>>>>>>> 7f8c63f59f4605f625a09ecaaf04540a8830047d
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.SuspendLayout();
@@ -337,6 +348,7 @@
             this.dgw.Size = new System.Drawing.Size(351, 55);
             this.dgw.TabIndex = 39;
             // 
+<<<<<<< HEAD
             // lblTotal
             // 
             this.lblTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,6 +370,9 @@
             this.lblVat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // subTotal
+=======
+            // Description
+>>>>>>> 7f8c63f59f4605f625a09ecaaf04540a8830047d
             // 
             this.subTotal.AutoSize = true;
             this.subTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -426,6 +441,49 @@
             this.lblThank.TabIndex = 45;
             this.lblThank.Text = "Cám ơn, Hẹn gặp lại";
             // 
+            // Panel1
+            // 
+            this.Panel1.BackColor = System.Drawing.Color.White;
+            this.Panel1.Controls.Add(this.lblThank);
+            this.Panel1.Controls.Add(this.lblOR);
+            this.Panel1.Controls.Add(this.lblChange);
+            this.Panel1.Controls.Add(this.lblSubtotal);
+            this.Panel1.Controls.Add(this.lblCash);
+            this.Panel1.Controls.Add(this.change);
+            this.Panel1.Controls.Add(this.subTotal);
+            this.Panel1.Controls.Add(this.Cash);
+            this.Panel1.Controls.Add(this.lblVat);
+            this.Panel1.Controls.Add(this.vat);
+            this.Panel1.Controls.Add(this.lblTotal);
+            this.Panel1.Controls.Add(this.TotalAmount);
+            this.Panel1.Controls.Add(this.dgw);
+            this.Panel1.Controls.Add(this.lblEmpName);
+            this.Panel1.Controls.Add(this.Label7);
+            this.Panel1.Controls.Add(this.Label6);
+            this.Panel1.Controls.Add(this.lblInvoice);
+            this.Panel1.Controls.Add(this.Label4);
+            this.Panel1.Controls.Add(this.lblCustomer);
+            this.Panel1.Controls.Add(this.Label16);
+            this.Panel1.Controls.Add(this.Label3);
+            this.Panel1.Controls.Add(this.Label2);
+            this.Panel1.Controls.Add(this.Label1);
+            this.Panel1.Controls.Add(this.lblLine);
+            this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel1.Location = new System.Drawing.Point(2, 3);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(358, 396);
+            this.Panel1.TabIndex = 2;
+            // 
+            // Label3
+            // 
+            this.Label3.AutoSize = true;
+            this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(117, 57);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(115, 13);
+            this.Label3.TabIndex = 0;
+            this.Label3.Text = "============";
+            // 
             // frmInhoadonbanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
@@ -438,6 +496,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInhoadonbanhang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "In hóa đơn bán hàng";
             this.Panel1.ResumeLayout(false);

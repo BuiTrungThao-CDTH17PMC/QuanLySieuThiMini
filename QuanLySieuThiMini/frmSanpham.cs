@@ -120,6 +120,7 @@ namespace QuanLySieuThiMini
                     if (spb.Themsanpham(sp))
                     {
                         Hienthisanpham();
+                        ResertCotroll();
                     }
                 }
             }catch(Exception ex)
@@ -147,10 +148,11 @@ namespace QuanLySieuThiMini
                     if (spb.Suasanpham(sp))
                     {
                         Hienthisanpham();
+                        btnThemmoisp.Enabled = true;
+                        btnSuasp.Enabled = false;
+                        btnXoasanpham.Enabled = false;
+                        ResertCotroll();
                     }
-                    btnThemmoisp.Enabled = true;
-                    btnSuasp.Enabled = false;
-                    btnXoasanpham.Enabled = false;
                 }
             }catch(Exception ex)
             {
@@ -215,6 +217,8 @@ namespace QuanLySieuThiMini
             txtDongia.Text = "";
             txtSoluong.Text = "";
             txtTensanpham.Text = "";
+            txtGiamgia.Text = "";
+            txtTenanh.Text = "";
         }
 
         private void btnHuythaotacsp_Click(object sender, EventArgs e)
@@ -236,12 +240,13 @@ namespace QuanLySieuThiMini
             btnThemmoisp.Enabled = true;
             btnSuasp.Enabled = false;
             btnXoasanpham.Enabled = false;
+            ResertCotroll();
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             open = new OpenFileDialog();
-            open.Filter = "Images(*.jpg)|*.jpg|PNG (*.png)|*.png";
+            open.Filter = "Images(*.jpg)|*.jpg|PNG (*.png)|*.png|All files (*.*)|*.*";
             if(open.ShowDialog() == DialogResult.OK)
             {
                 Image img = Image.FromFile(open.FileName);
@@ -266,21 +271,13 @@ namespace QuanLySieuThiMini
 
         private void dgvHienthisanpham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //try
-            //{
             if (dgvHienthisanpham.Columns[e.ColumnIndex].Name == "HINHANH")
             {
                 var s = Path.Combine("..\\..\\Resources\\Images\\");
                 s = Path.GetFullPath(s);
-                //MessageBox.Show(s + e.Value.ToString());
                 e.Value = Bitmap.FromFile(s + e.Value.ToString());
                 e.FormattingApplied = true;
             }
-            //}catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
         }
     }
 }
