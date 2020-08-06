@@ -67,9 +67,9 @@
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx1.Controls.Add(this.panel1);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Location = new System.Drawing.Point(-3, 0);
+            this.panelEx1.Location = new System.Drawing.Point(-1, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(847, 751);
+            this.panelEx1.Size = new System.Drawing.Size(845, 751);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -86,9 +86,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(7, 3);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 743);
+            this.panel1.Size = new System.Drawing.Size(835, 740);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -106,23 +106,24 @@
             // 
             this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Location = new System.Drawing.Point(550, 13);
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(542, 9);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(106, 26);
+            this.btnThoat.Size = new System.Drawing.Size(111, 29);
             this.btnThoat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextColor = System.Drawing.Color.Black;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // dtpNgaylap
             // 
             this.dtpNgaylap.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaylap.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaylap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaylap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaylap.Location = new System.Drawing.Point(234, 13);
+            this.dtpNgaylap.Location = new System.Drawing.Point(235, 9);
             this.dtpNgaylap.Name = "dtpNgaylap";
-            this.dtpNgaylap.Size = new System.Drawing.Size(258, 26);
+            this.dtpNgaylap.Size = new System.Drawing.Size(258, 29);
             this.dtpNgaylap.TabIndex = 4;
             this.dtpNgaylap.Value = new System.DateTime(2020, 7, 31, 0, 0, 0, 0);
             this.dtpNgaylap.ValueChanged += new System.EventHandler(this.dtpNgaylap_ValueChanged);
@@ -131,7 +132,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 15);
+            this.label1.Location = new System.Drawing.Point(55, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 21);
             this.label1.TabIndex = 3;
@@ -140,6 +141,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvChitiethoadonban);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 416);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(819, 322);
@@ -224,6 +226,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDanhsachhoadonban);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 65);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(819, 351);
@@ -245,12 +248,13 @@
             this.NGAYLAP,
             this.DIEMSUDUNG,
             this.TONGTIEN});
-            this.dgvDanhsachhoadonban.Location = new System.Drawing.Point(6, 25);
+            this.dgvDanhsachhoadonban.Location = new System.Drawing.Point(6, 24);
             this.dgvDanhsachhoadonban.Name = "dgvDanhsachhoadonban";
             this.dgvDanhsachhoadonban.ReadOnly = true;
             this.dgvDanhsachhoadonban.RowHeadersWidth = 51;
             this.dgvDanhsachhoadonban.Size = new System.Drawing.Size(807, 320);
             this.dgvDanhsachhoadonban.TabIndex = 0;
+            this.dgvDanhsachhoadonban.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhsachhoadonban_CellClick);
             // 
             // MAHDX
             // 

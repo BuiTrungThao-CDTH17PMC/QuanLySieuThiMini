@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanhang));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -262,14 +261,6 @@
             this.dgvBanhang.AllowUserToAddRows = false;
             this.dgvBanhang.AllowUserToDeleteRows = false;
             this.dgvBanhang.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBanhang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBanhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MASP,
@@ -353,7 +344,7 @@
             // 
             this.lblTenkhachhangbh.AutoSize = true;
             this.lblTenkhachhangbh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenkhachhangbh.Location = new System.Drawing.Point(104, 48);
+            this.lblTenkhachhangbh.Location = new System.Drawing.Point(93, 48);
             this.lblTenkhachhangbh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTenkhachhangbh.Name = "lblTenkhachhangbh";
             this.lblTenkhachhangbh.Size = new System.Drawing.Size(119, 21);
@@ -534,7 +525,7 @@
             // 
             this.lblTennhanvienbh.AutoSize = true;
             this.lblTennhanvienbh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTennhanvienbh.Location = new System.Drawing.Point(104, 41);
+            this.lblTennhanvienbh.Location = new System.Drawing.Point(92, 41);
             this.lblTennhanvienbh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTennhanvienbh.Name = "lblTennhanvienbh";
             this.lblTennhanvienbh.Size = new System.Drawing.Size(114, 21);
@@ -567,7 +558,7 @@
             // 
             this.lblTongtienbh.AutoSize = true;
             this.lblTongtienbh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongtienbh.Location = new System.Drawing.Point(81, 39);
+            this.lblTongtienbh.Location = new System.Drawing.Point(80, 39);
             this.lblTongtienbh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTongtienbh.Name = "lblTongtienbh";
             this.lblTongtienbh.Size = new System.Drawing.Size(19, 21);
