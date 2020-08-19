@@ -22,6 +22,7 @@ namespace QuanLySieuThiMini
         private VideoCaptureDevice cam;
         BUS.BanhangBUS bhb;
         BUS.HoadonbanBUS hdb;
+        Bitmap bmp;
 
         public frmBanhang()
         {
@@ -83,6 +84,7 @@ namespace QuanLySieuThiMini
             chaycamera();
             lblNgaymuahang.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
+   
         }
 
         void laydata(string tkh, string mkh)
@@ -172,54 +174,62 @@ namespace QuanLySieuThiMini
             }   
             lblTongtienbh.Text = Tinhtien().ToString();
         }
-        // Buton thanh toán
-        Bitmap bmp;
-        private void btnThanhtoan_Click(object sender, EventArgs e)
+
+        public void Inhoadon()
         {
             Graphics g = this.CreateGraphics();
             bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
             Graphics mg = Graphics.FromImage(bmp);
             mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
             printPreviewDialog1.ShowDialog();
-            //int index = dgvBanhang.RowCount;
-            //int dem = 0;
-            //if(index > 0)
-            //{
-            //    DTO.Hoadonxuat hdx = new DTO.Hoadonxuat();
-            //    hdx.MAKH1 = Int32.Parse(lblMakhachhangbh.Text);
-            //    hdx.MANV1 = Int32.Parse(lblManv.Text);
-            //    hdx.TENNV1 = lblTennhanvienbh.Text;
-            //    hdx.TONGTIEN1 = Int32.Parse(lblTongtienbh.Text);
-            //    hdx.TENNV1 = lblTennhanvienbh.Text;
-            //    hdx.NGAYLAP1 = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
-            //    if(hdb.Themhoadonxuat(hdx))
-            //    {
-            //        DTO.Chitiethoadonxuat cthdx = new DTO.Chitiethoadonxuat();
-            //        for (int i = 0; i < index; i++)
-            //        {
-            //            cthdx.MAHDX1 = Int32.Parse(lblMahoadonbh.Text);
-            //            cthdx.MASP1 = Int32.Parse(dgvBanhang.Rows[i].Cells["MASP"].Value.ToString());
-            //            cthdx.TENSP1 = dgvBanhang.Rows[i].Cells["TENSP"].Value.ToString();
-            //            cthdx.SOLUONG1 = Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
-            //            cthdx.GIATIEN1 = Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString());
-            //            cthdx.GIAMGIA1 = Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString());
-            //        }
-            //        if (hdb.Themchitiethoadonxuat(cthdx))
-            //        {
-            //            dem++;
-            //        }
-            //    }
-            //    if(dem == index)
-            //    {
-            //        MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            //        Trusoluong(dgvBanhang);
-            //        lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
-            //        Resert();
-            //    }
-            //}else
-            //{
-            //    MessageBox.Show("Chưa mua sản phẩm nào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+        }
+
+        // Buton thanh toán
+       
+        private void btnThanhtoan_Click(object sender, EventArgs e)
+        {
+
+            int index = dgvBanhang.RowCount;
+            int dem = 0;
+            if (index > 0)
+            {
+                DTO.Hoadonxuat hdx = new DTO.Hoadonxuat();
+                hdx.MAKH1 = Int32.Parse(lblMakhachhangbh.Text);
+                hdx.MANV1 = Int32.Parse(lblManv.Text);
+                hdx.TENNV1 = lblTennhanvienbh.Text;
+                hdx.TONGTIEN1 = Int32.Parse(lblTongtienbh.Text);
+                hdx.TENNV1 = lblTennhanvienbh.Text;
+                hdx.NGAYLAP1 = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
+                if (hdb.Themhoadonxuat(hdx))
+                {
+                    DTO.Chitiethoadonxuat cthdx = new DTO.Chitiethoadonxuat();
+                    for (int i = 0; i < index; i++)
+                    {
+                        cthdx.MAHDX1 = Int32.Parse(lblMahoadonbh.Text);
+                        cthdx.MASP1 = Int32.Parse(dgvBanhang.Rows[i].Cells["MASP"].Value.ToString());
+                        cthdx.TENSP1 = dgvBanhang.Rows[i].Cells["TENSP"].Value.ToString();
+                        cthdx.SOLUONG1 = Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
+                        cthdx.GIATIEN1 = Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString());
+                        cthdx.GIAMGIA1 = Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString());
+                    }
+                    if (hdb.Themchitiethoadonxuat(cthdx))
+                    {
+                        dem++;
+                    }
+                }
+                if (dem == index)
+                {
+                    MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    Trusoluong(dgvBanhang);
+                    Inhoadon();
+                    lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
+                    Resert();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa mua sản phẩm nào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
         // Hàm trừ số lương đã mua
@@ -277,5 +287,7 @@ namespace QuanLySieuThiMini
         {
             e.Graphics.DrawImage(bmp, 0, 0);
         }
+
+     
     }
 }
