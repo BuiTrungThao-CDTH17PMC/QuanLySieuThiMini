@@ -38,10 +38,14 @@
             this.btnTaomoi = new DevComponents.DotNetBar.ButtonX();
             this.btnThanhtoan = new DevComponents.DotNetBar.ButtonX();
             this.btnXoasanphammua = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.btnChonkhachhang = new DevComponents.DotNetBar.ButtonX();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dgvBanhang = new System.Windows.Forms.DataGridView();
+            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblMakhachhangbh = new System.Windows.Forms.Label();
             this.lblTenkhachhangbh = new System.Windows.Forms.Label();
@@ -67,11 +71,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.MASP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DONGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIAMGIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCamquetma)).BeginInit();
@@ -157,7 +156,6 @@
             this.panel10.Controls.Add(this.btnTaomoi);
             this.panel10.Controls.Add(this.btnThanhtoan);
             this.panel10.Controls.Add(this.btnXoasanphammua);
-            this.panel10.Controls.Add(this.buttonX4);
             this.panel10.Controls.Add(this.btnChonkhachhang);
             this.panel10.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel10.ForeColor = System.Drawing.Color.Black;
@@ -172,7 +170,7 @@
             this.btnDongbanhang.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDongbanhang.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDongbanhang.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDongbanhang.Location = new System.Drawing.Point(40, 344);
+            this.btnDongbanhang.Location = new System.Drawing.Point(40, 325);
             this.btnDongbanhang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDongbanhang.Name = "btnDongbanhang";
             this.btnDongbanhang.Size = new System.Drawing.Size(268, 44);
@@ -201,7 +199,7 @@
             this.btnThanhtoan.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnThanhtoan.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThanhtoan.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhtoan.Location = new System.Drawing.Point(40, 280);
+            this.btnThanhtoan.Location = new System.Drawing.Point(40, 250);
             this.btnThanhtoan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnThanhtoan.Name = "btnThanhtoan";
             this.btnThanhtoan.Size = new System.Drawing.Size(268, 44);
@@ -215,7 +213,7 @@
             this.btnXoasanphammua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnXoasanphammua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXoasanphammua.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoasanphammua.Location = new System.Drawing.Point(40, 218);
+            this.btnXoasanphammua.Location = new System.Drawing.Point(40, 172);
             this.btnXoasanphammua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnXoasanphammua.Name = "btnXoasanphammua";
             this.btnXoasanphammua.Size = new System.Drawing.Size(268, 44);
@@ -225,26 +223,12 @@
             this.btnXoasanphammua.Text = "Xóa";
             this.btnXoasanphammua.Click += new System.EventHandler(this.btnXoasanmua_Click);
             // 
-            // buttonX4
-            // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonX4.Location = new System.Drawing.Point(40, 154);
-            this.buttonX4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(268, 44);
-            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX4.TabIndex = 7;
-            this.buttonX4.Tag = "";
-            this.buttonX4.Text = "Giảm giá";
-            // 
             // btnChonkhachhang
             // 
             this.btnChonkhachhang.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnChonkhachhang.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnChonkhachhang.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonkhachhang.Location = new System.Drawing.Point(40, 91);
+            this.btnChonkhachhang.Location = new System.Drawing.Point(40, 99);
             this.btnChonkhachhang.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnChonkhachhang.Name = "btnChonkhachhang";
             this.btnChonkhachhang.Size = new System.Drawing.Size(268, 44);
@@ -283,6 +267,47 @@
             this.dgvBanhang.RowHeadersWidth = 51;
             this.dgvBanhang.Size = new System.Drawing.Size(1106, 418);
             this.dgvBanhang.TabIndex = 0;
+            // 
+            // MASP
+            // 
+            this.MASP.DataPropertyName = "MASP";
+            this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.MinimumWidth = 6;
+            this.MASP.Name = "MASP";
+            this.MASP.Visible = false;
+            this.MASP.Width = 125;
+            // 
+            // TENSP
+            // 
+            this.TENSP.DataPropertyName = "TENSP";
+            this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.MinimumWidth = 6;
+            this.TENSP.Name = "TENSP";
+            this.TENSP.Width = 350;
+            // 
+            // DONGIA
+            // 
+            this.DONGIA.DataPropertyName = "DONGIA";
+            this.DONGIA.HeaderText = "Giá tiền";
+            this.DONGIA.MinimumWidth = 6;
+            this.DONGIA.Name = "DONGIA";
+            this.DONGIA.Width = 225;
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.ToolTipText = "1";
+            this.SOLUONG.Width = 250;
+            // 
+            // GIAMGIA
+            // 
+            this.GIAMGIA.DataPropertyName = "GIAMGIA";
+            this.GIAMGIA.HeaderText = "Giảm giá";
+            this.GIAMGIA.MinimumWidth = 6;
+            this.GIAMGIA.Name = "GIAMGIA";
+            this.GIAMGIA.Width = 225;
             // 
             // panel8
             // 
@@ -569,47 +594,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐỒ ÁN TỐT NGHIỆP SIÊU THỊ MINI";
             // 
-            // MASP
-            // 
-            this.MASP.DataPropertyName = "MASP";
-            this.MASP.HeaderText = "Mã sản phẩm";
-            this.MASP.MinimumWidth = 6;
-            this.MASP.Name = "MASP";
-            this.MASP.Visible = false;
-            this.MASP.Width = 125;
-            // 
-            // TENSP
-            // 
-            this.TENSP.DataPropertyName = "TENSP";
-            this.TENSP.HeaderText = "Tên sản phẩm";
-            this.TENSP.MinimumWidth = 6;
-            this.TENSP.Name = "TENSP";
-            this.TENSP.Width = 350;
-            // 
-            // DONGIA
-            // 
-            this.DONGIA.DataPropertyName = "DONGIA";
-            this.DONGIA.HeaderText = "Giá tiền";
-            this.DONGIA.MinimumWidth = 6;
-            this.DONGIA.Name = "DONGIA";
-            this.DONGIA.Width = 225;
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            this.SOLUONG.ToolTipText = "1";
-            this.SOLUONG.Width = 250;
-            // 
-            // GIAMGIA
-            // 
-            this.GIAMGIA.DataPropertyName = "GIAMGIA";
-            this.GIAMGIA.HeaderText = "Giảm giá";
-            this.GIAMGIA.MinimumWidth = 6;
-            this.GIAMGIA.Name = "GIAMGIA";
-            this.GIAMGIA.Width = 225;
-            // 
             // frmBanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -663,7 +647,6 @@
         private DevComponents.DotNetBar.ButtonX btnTaomoi;
         private DevComponents.DotNetBar.ButtonX btnThanhtoan;
         private DevComponents.DotNetBar.ButtonX btnXoasanphammua;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
         private DevComponents.DotNetBar.ButtonX btnChonkhachhang;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dgvBanhang;

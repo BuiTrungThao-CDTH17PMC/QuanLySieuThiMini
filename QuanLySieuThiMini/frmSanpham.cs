@@ -153,6 +153,7 @@ namespace QuanLySieuThiMini
                         btnThemmoisp.Enabled = true;
                         btnSuasp.Enabled = false;
                         btnXoasanpham.Enabled = false;
+                        txtSoluong.Enabled = true;
                         ResertCotroll();
                     }
                 }
@@ -193,6 +194,7 @@ namespace QuanLySieuThiMini
                     btnSuasp.Enabled = true;
                     btnXoasanpham.Enabled = true;
                     btnThemmoisp.Enabled = false;
+                    txtSoluong.Enabled = false;
                 }
             }
             catch (Exception ex )
@@ -242,6 +244,7 @@ namespace QuanLySieuThiMini
             btnSuasp.Enabled = false;
             btnXoasanpham.Enabled = false;
             btnThemmoisp.Enabled =true;
+            txtSoluong.Enabled = true;
         }
 
         private void btnXoasanpham_Click(object sender, EventArgs e)
@@ -257,6 +260,7 @@ namespace QuanLySieuThiMini
                 btnThemmoisp.Enabled = true;
                 btnSuasp.Enabled = false;
                 btnXoasanpham.Enabled = false;
+                txtSoluong.Enabled = true;
                 ResertCotroll();
                 MessageBox.Show("Xóa sản phẩm thành công", "thông báo", MessageBoxButtons.OK);
             }

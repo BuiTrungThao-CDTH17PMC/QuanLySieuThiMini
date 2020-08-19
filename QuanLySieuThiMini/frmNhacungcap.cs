@@ -157,7 +157,7 @@ namespace QuanLySieuThiMini
 
         private void btnXoanhacungcap_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa nhà cung cấp này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DTO.Nhacungcap ncc = new DTO.Nhacungcap();
                 ncc.MANCC1 = ID;
