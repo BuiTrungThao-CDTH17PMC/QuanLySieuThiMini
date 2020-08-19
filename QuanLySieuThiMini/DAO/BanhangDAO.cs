@@ -32,7 +32,7 @@ namespace QuanLySieuThiMini.DAO
         public List<DTO.Chitiethoadonxuat> Laysanpham(int masp)
         {
             List<DTO.Chitiethoadonxuat> list = new List<DTO.Chitiethoadonxuat>();
-            string sql = "SELECT MASP,TENSP,DONGIA,GIAMGIA FROM SANPHAM WHERE MASP = " + masp;
+            string sql = "SELECT MASP,TENSP,DONGIA,GIAMGIA FROM SANPHAM WHERE  MASP = " + masp;
             SqlConnection con = dc.getConnect();
             cmd = new SqlCommand(sql, con);
             con.Open();
@@ -68,6 +68,20 @@ namespace QuanLySieuThiMini.DAO
             
         }
 
-        
+        public int Laysoluong(int masp)
+        {
+            int soluong = 0;
+            try
+            {
+                string sql = "SELECT SOLUONG FROM SANPHAM WHERE MASP = " + masp;
+                SqlConnection con = dc.getConnect();
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                soluong = (int)cmd.ExecuteScalar();
+                con.Close();
+            }
+            catch { }
+            return soluong;
+        }
     }
 }

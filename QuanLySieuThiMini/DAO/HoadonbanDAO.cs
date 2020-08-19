@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
        }
        public DataTable Tablehoadonxuat()
        {
-           string sql = "SELECT * FROM HOADONXUAT";
+           string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH ORDER BY MAHDX DESC";
            SqlConnection con = dc.getConnect();
            dr = new SqlDataAdapter(sql, con);
            con.Open();
@@ -28,6 +28,10 @@ namespace QuanLySieuThiMini.DAO
            con.Close();
            return dt;
        }
+<<<<<<< HEAD
+     
+=======
+>>>>>>> 218e7470891a097cabfa474d6a9f6dd85338f148
        public DataTable Tablechitietxuat(int ID)
        {
             string sql = "SELECT * FROM CHITIETHOADONXUAT WHERE MAHDX = '" + ID + "'";
@@ -39,18 +43,18 @@ namespace QuanLySieuThiMini.DAO
             con.Close();
             return dt;
        }
-       public DataTable Tabletheongay(string date)
-       {
-           string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
-           SqlConnection con = dc.getConnect();
-           dr = new SqlDataAdapter(sql, con);
-           con.Open();
-           DataTable dt = new DataTable();
-           dr.Fill(dt);
-           con.Close();
-           return dt;
-       }
-       public bool Themhoadonxuat(DTO.Hoadonxuat hdx)
+        public DataTable Tabletheongay(string date)
+        {
+            string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH AND NGAYLAP = '" + date + "'ORDER BY MAHDX DESC";
+            SqlConnection con = dc.getConnect();
+            dr = new SqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            dr.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public bool Themhoadonxuat(DTO.Hoadonxuat hdx)
        {
            string sql = "INSERT INTO HOADONXUAT(MANV,TENNV,NGAYLAP,SODIEMSUDUNG,TONGTIEN,MAKH)VALUES(@MANV, @TENNV, @NGAYLAP, @SODIEMSUDUNG, @TONGTIEN, @MAKH)";
            SqlConnection con = dc.getConnect();

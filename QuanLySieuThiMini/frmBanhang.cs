@@ -22,12 +22,14 @@ namespace QuanLySieuThiMini
         private VideoCaptureDevice cam;
         BUS.BanhangBUS bhb;
         BUS.HoadonbanBUS hdb;
+        BUS.KhachhangBUS khb;
 
         public frmBanhang()
         {
             InitializeComponent();
             bhb = new BUS.BanhangBUS();
             hdb = new BUS.HoadonbanBUS();
+            khb = new BUS.KhachhangBUS();
             camera = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo info in camera)
             {
@@ -77,7 +79,6 @@ namespace QuanLySieuThiMini
                 cam.Stop();
             }
         }
-       
         //  Load form
         private void frmBanhang_Load(object sender, EventArgs e)
         {
@@ -85,7 +86,7 @@ namespace QuanLySieuThiMini
             lblNgaymuahang.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
         }
-
+        // Lấy dữ liệu từ khách hàng
         void laydata(string tkh, string mkh)
         {
             lblTenkhachhangbh.Text = tkh;
@@ -98,31 +99,12 @@ namespace QuanLySieuThiMini
             htkh.truyen = new frmHienthikhachhang.truyendulieu(laydata);
             htkh.ShowDialog();
         }
-        // Hàm kiểm tra số
-        public bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if (Int32.TryParse(text, out num))
-                return true;
-            else
-                return false;
-        }
         // Hàm kiểm tra chung
         public bool Kiemtradulieu()
         {
             if(String.IsNullOrEmpty(txtTimsanphambh.Text))
             {
                 MessageBox.Show("Bạn chưa nhập mã sản phẩm cần tìm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                return false;
-            }
-            if(Kiemtraso(txtTimsanphambh.Text) == false)
-            {
-                MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                return false;
-            }
-            if (Kiemtraso(txtSoluong.Text) == false)
-            {
-                MessageBox.Show("Vui lòng nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return false;
             }
             if (String.IsNullOrEmpty(txtSoluong.Text))
@@ -132,63 +114,84 @@ namespace QuanLySieuThiMini
             }
             return true;
         }
+
+        public bool kiemtra()
+        {
+            for (int i = 0; i < dgvBanhang.RowCount; i++)
+            {
+                if (txtTimsanphambh.Text == dgvBanhang.Rows[i].Cells["MASP"].Value.ToString())
+                    return true;
+            }
+            return false;
+        }
+
         // Buton tìm sản phẩm
         private void btnTimsanphambh_Click(object sender, EventArgs e)
         {
             if (Kiemtradulieu())
             {
-                Laysanpham(Int32.Parse(txtTimsanphambh.Text));
-            }
-        }
-        // Kiểm tra trùng dòng dữ liệu trong dgvBanhang
-        public void Kiemtratrungsanpham()
-        {
-            int index = dgvBanhang.RowCount;
-            for (int i = 0; i < dgvBanhang.RowCount; i++)
-            {
-                if (dgvBanhang.Rows[index - 1].Cells["MASP"].Value.ToString() == txtTimsanphambh.Text && index > 0)
+                if(dgvBanhang.RowCount > 0 && kiemtra() && Kiemtrasoluong() == false)
                 {
-                    dgvBanhang.Rows[index - 1].Cells["SOLUONG"].Value = Int32.Parse(dgvBanhang.Rows[index - 1].Cells["SOLUONG"].Value.ToString()) + Int32.Parse(txtSoluong.Text);
-                }
+                    for (int i = 0; i < dgvBanhang.RowCount; i++)
+                    {
+                        if (txtTimsanphambh.Text == dgvBanhang.Rows[i].Cells["MASP"].Value.ToString())
+                        {
+                            dgvBanhang.Rows[i].Cells["SOLUONG"].Value = txtSoluong.Text;
+                            lblTongtienbh.Text = Tinhtien().ToString();
+                            lblTongtienbh.Text = string.Format("{0:n0}", decimal.Parse(lblTongtienbh.Text));
+                        }
+                    }           
+                }else
+                    Laysanpham(Int32.Parse(txtTimsanphambh.Text));              
             }
         }
         // Tìm sản phẩm
         public void Laysanpham(int Masp)
         {
-            List<DTO.Chitiethoadonxuat> List = bhb.Laysanpham(Masp);
-            dgvBanhang.Rows.Add();
-            int index = dgvBanhang.RowCount;
-            if (index >= 0)
+            dgvBanhang.Columns["GIAMGIA"].DefaultCellStyle.Format = "N";
+            dgvBanhang.Columns["DONGIA"].DefaultCellStyle.Format = "N";
+            if(Kiemtrasoluong() ==  false)
             {
-                foreach (DTO.Chitiethoadonxuat ls in List)
+                List<DTO.Chitiethoadonxuat> List = bhb.Laysanpham(Masp);
+                dgvBanhang.Rows.Add();
+                if (dgvBanhang.RowCount >= 0)
                 {
-                    dgvBanhang.Rows[index - 1].Cells["TENSP"].Value = ls.TENSP1;
-                    dgvBanhang.Rows[index - 1].Cells["MASP"].Value = ls.MASP1;
-                    dgvBanhang.Rows[index - 1].Cells["DONGIA"].Value = ls.GIATIEN1;
-                    dgvBanhang.Rows[index - 1].Cells["SOLUONG"].Value = txtSoluong.Text;
-                    dgvBanhang.Rows[index - 1].Cells["GIAMGIA"].Value = ls.GIAMGIA1;
+                    foreach (DTO.Chitiethoadonxuat ls in List)
+                    {
+                        dgvBanhang.Rows[dgvBanhang.RowCount - 1].Cells["TENSP"].Value = ls.TENSP1;
+                        dgvBanhang.Rows[dgvBanhang.RowCount - 1].Cells["MASP"].Value = ls.MASP1;
+                        dgvBanhang.Rows[dgvBanhang.RowCount - 1].Cells["DONGIA"].Value = ls.GIATIEN1;
+                        dgvBanhang.Rows[dgvBanhang.RowCount - 1].Cells["SOLUONG"].Value = txtSoluong.Text;
+                        dgvBanhang.Rows[dgvBanhang.RowCount - 1].Cells["GIAMGIA"].Value = ls.GIAMGIA1;
+                    }
+                    lblTongtienbh.Text = Tinhtien().ToString();
+                    lblTongtienbh.Text = string.Format("{0:n0}", decimal.Parse(lblTongtienbh.Text));
                 }
-            }   
-            lblTongtienbh.Text = Tinhtien().ToString();
+            }
+        }
+        public int chuyen(string la)
+        {
+            var lal = la;
+            var clear = lal.Replace(",", "");
+            return Int32.Parse(clear);
         }
         // Buton thanh toán
         private void btnThanhtoan_Click(object sender, EventArgs e)
         {
-            int index = dgvBanhang.RowCount;
             int dem = 0;
-            if(index > 0)
+            if (dgvBanhang.RowCount > 0)
             {
                 DTO.Hoadonxuat hdx = new DTO.Hoadonxuat();
                 hdx.MAKH1 = Int32.Parse(lblMakhachhangbh.Text);
                 hdx.MANV1 = Int32.Parse(lblManv.Text);
                 hdx.TENNV1 = lblTennhanvienbh.Text;
-                hdx.TONGTIEN1 = Int32.Parse(lblTongtienbh.Text);
+                hdx.TONGTIEN1 = chuyen(lblTongtienbh.Text);
                 hdx.TENNV1 = lblTennhanvienbh.Text;
                 hdx.NGAYLAP1 = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
                 if(hdb.Themhoadonxuat(hdx))
                 {
                     DTO.Chitiethoadonxuat cthdx = new DTO.Chitiethoadonxuat();
-                    for (int i = 0; i < index; i++)
+                    for (int i = 0; i < dgvBanhang.RowCount; i++)
                     {
                         cthdx.MAHDX1 = Int32.Parse(lblMahoadonbh.Text);
                         cthdx.MASP1 = Int32.Parse(dgvBanhang.Rows[i].Cells["MASP"].Value.ToString());
@@ -200,69 +203,126 @@ namespace QuanLySieuThiMini
                         {
                             dem++;
                         }
-
                     }
-                    if(dem == index)
-                    {
-                        MessageBox.Show("Đã thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                        Trusoluong(dgvBanhang);
-                        lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
-                        Resert();
-                    }
+                }
+                if (dem == dgvBanhang.RowCount)
+                {
+                    Trusoluong();
+                    Tichdiem();
+                    Luulichsutichdiem();
+                    Resert();
+                    MessageBox.Show("Thanh toán thành công", "Thông báo", MessageBoxButtons.OK);
+                    lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
                 }
             }else
             {
-                MessageBox.Show("Chưa mua sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Chưa mua sản phẩm nào", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        // Lưu lịch sử tích điểm
+        public void Luulichsutichdiem()
+        {
+            try
+            {
+                if(lblTenkhachhangbh.Text != "Khách vãng lai")
+                {
+                    BUS.LichsutichdiemBUS lstdb = new BUS.LichsutichdiemBUS();
+                    DTO.Lichsutichdiem ls = new DTO.Lichsutichdiem();
+                    ls.MAHDX1 = Int32.Parse(lblMahoadonbh.Text);
+                    ls.MAKH1 = Int32.Parse(lblMakhachhangbh.Text);
+                    ls.NGAY1 = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd"));
+                    lstdb.Luulichsutichdiem(ls);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+        // Tích điểm
+        public void Tichdiem()
+        {
+            if(lblTenkhachhangbh.Text != "Khách vãng lai")
+            {
+                khb.Tichdiem(chuyen(lblTongtienbh.Text) / 10, Int32.Parse(lblMakhachhangbh.Text));
             }
         }
         // Hàm trừ số lương đã mua
-        public void Trusoluong(DataGridView dgv)
+        public void Trusoluong()
         {
-            int index = dgv.RowCount;
-            for( int i = 0; i < index; i++)
+            for (int i = 0; i < dgvBanhang.RowCount; i++)
             {
-                bhb.Trusoluong(Int32.Parse(dgv.Rows[i].Cells["MASP"].Value.ToString()), Int32.Parse(dgv.Rows[i].Cells["SOLUONG"].Value.ToString()));
+                bhb.Trusoluong(Int32.Parse(dgvBanhang.Rows[i].Cells["MASP"].Value.ToString()), Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString()));
             }
         }
         // Tính tiền của hóa đơn
         public int Tinhtien()
         {
-            int gia, soluong, giamgia, tinhdem, tongtien = 0;
-            int index = dgvBanhang.RowCount;
-            for(int i = 0; i < index; i++)
+            int tinhdem, tongtien = 0;
+            try
             {
-                gia = Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString());
-                soluong = Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
-                giamgia = Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString());
-                tinhdem = (gia - giamgia) * soluong;
-                tongtien = tongtien + tinhdem;
+                if (dgvBanhang.RowCount > 0)
+                {
+                    for (int i = 0; i < dgvBanhang.RowCount; i++)
+                    {
+                        tinhdem = (Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString()) - Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString())) * Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
+                        tongtien = tongtien + tinhdem;
+                    }
+                }
             }
+            catch { }
             return tongtien;
         }
-
+        // Thoát chương trình
         private void btnDongbanhang_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        // Tạo hóa đơn mới
         private void btnTaomoi_Click(object sender, EventArgs e)
         {
             Resert();
         }
-
+        // Load lại tất cả các control
         public void Resert()
         {
             dgvBanhang.Rows.Clear();
             lblTongtienbh.Text = "0";
             lblTenkhachhangbh.Text = "Khách vãng lai";
-            lblMakhachhangbh.Text = "0";
+            lblMakhachhangbh.Text = "1";
             txtTimsanphambh.Clear();
         }
-
+        // Xóa từng đã chọn trong dgvChitietsanpham
         private void btnXoasanmua_Click(object sender, EventArgs e)
         {
-            dgvBanhang.Rows.Clear();
-            lblTongtienbh.Text = "0";
+            if (dgvBanhang.SelectedRows.Count > 0)
+            {
+                dgvBanhang.Rows.RemoveAt(this.dgvBanhang.SelectedRows[0].Index);
+            }
+            lblTongtienbh.Text = Tinhtien().ToString();
+            lblTongtienbh.Text = string.Format("{0:n0}", decimal.Parse(lblTongtienbh.Text));
+        }
+
+        private void txtTimsanphambh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        public bool Kiemtrasoluong()
+        {
+            if (Int32.Parse(txtSoluong.Text) > bhb.Laysoluong(Int32.Parse(txtTimsanphambh.Text)))
+            {
+                MessageBox.Show("Không đủ số lương", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            return false;
         }
     }
 }
