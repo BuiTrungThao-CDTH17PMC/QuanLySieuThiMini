@@ -285,8 +285,12 @@ namespace QuanLySieuThiMini
         // Xóa từng đã chọn trong dgvChitietsanpham
         private void btnXoasanmua_Click(object sender, EventArgs e)
         {
-            dgvBanhang.Rows.Clear();
-            lblTongtienbh.Text = "0";
+            if (dgvBanhang.SelectedRows.Count > 0)
+            {
+                dgvBanhang.Rows.RemoveAt(this.dgvBanhang.SelectedRows[0].Index);
+            }
+            lblTongtienbh.Text = Tinhtien().ToString();
+            lblTongtienbh.Text = string.Format("{0:n0}", decimal.Parse(lblTongtienbh.Text));
         }
 
         private void txtTimsanphambh_KeyPress(object sender, KeyPressEventArgs e)
