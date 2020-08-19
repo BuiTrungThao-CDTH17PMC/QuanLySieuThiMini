@@ -349,6 +349,7 @@
             this.txtSdtnhacungcap.Name = "txtSdtnhacungcap";
             this.txtSdtnhacungcap.Size = new System.Drawing.Size(268, 29);
             this.txtSdtnhacungcap.TabIndex = 5;
+            this.txtSdtnhacungcap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSdtnhacungcap_KeyPress);
             // 
             // txtDcnhacungcap
             // 

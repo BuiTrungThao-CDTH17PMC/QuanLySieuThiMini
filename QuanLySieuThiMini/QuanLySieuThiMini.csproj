@@ -74,6 +74,7 @@
     <Compile Include="BUS\KhachhangBUS.cs" />
     <Compile Include="BUS\LoainhanvienBUS.cs" />
     <Compile Include="BUS\LoaisanphamBUS.cs" />
+    <Compile Include="BUS\LichsutichdiemBUS.cs" />
     <Compile Include="BUS\NhacungcapBUS.cs" />
     <Compile Include="BUS\NhanvienBUS.cs" />
     <Compile Include="BUS\SanphamBUS.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="DAO\DoanhthuDAO.cs" />
     <Compile Include="DAO\HoadonbanDAO.cs" />
     <Compile Include="DAO\KhachhangDAO.cs" />
+    <Compile Include="DAO\LichsutichdiemDAO.cs" />
     <Compile Include="DAO\LoainhanvienDAO.cs" />
     <Compile Include="DAO\LoaisanphamDAO.cs" />
     <Compile Include="DAO\NhacungcapDAO.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="DTO\Chitiethoadonxuat.cs" />
     <Compile Include="DTO\Hoadonxuat.cs" />
     <Compile Include="DTO\Khachhang.cs" />
+    <Compile Include="DTO\Lichsutichdiem.cs" />
     <Compile Include="DTO\Loainhanvien.cs" />
     <Compile Include="DTO\Loaisanpham.cs" />
     <Compile Include="DTO\Nhacungcap.cs" />
@@ -236,18 +239,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -259,10 +262,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <None Include="Resources\Images\anhnen.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

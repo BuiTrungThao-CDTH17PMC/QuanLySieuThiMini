@@ -59,5 +59,15 @@ namespace QuanLySieuThiMini.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anhnen1 {
+            get {
+                object obj = ResourceManager.GetObject("anhnen1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

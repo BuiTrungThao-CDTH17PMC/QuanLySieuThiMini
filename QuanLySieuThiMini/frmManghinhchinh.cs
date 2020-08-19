@@ -32,9 +32,9 @@ namespace QuanLySieuThiMini
         {
             if(tenlnv != "Nhân viên trưởng")
             {
-                TSMI_Quanlynhanvien.Enabled = false;
-                TSMI_Quanlysanpham.Enabled = false;
-                TSMI_Baocaobanhang.Enabled = false;
+                TSMI_Quanlynhanvien.Visible = false;
+                TSMI_Quanlysanpham.Visible = false;
+                TSMI_Baocaobanhang.Visible = false;
             }
             
         }
@@ -100,10 +100,9 @@ namespace QuanLySieuThiMini
 
         private void TSMI_Dangxuat_Click(object sender, EventArgs e)
         {
-           
-            //this.Close();
-            //frmDangnhap dn = new frmDangnhap();
-            //dn.ShowDialog();
+            this.Close();
+            frmDangnhap dn = new frmDangnhap();
+            dn.ShowDialog();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
        }
        public DataTable Tablehoadonxuat()
        {
-           string sql = "SELECT * FROM HOADONXUAT";
+           string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH ORDER BY MAHDX DESC";
            SqlConnection con = dc.getConnect();
            dr = new SqlDataAdapter(sql, con);
            con.Open();
@@ -28,6 +28,29 @@ namespace QuanLySieuThiMini.DAO
            con.Close();
            return dt;
        }
+       //public List<DTO.Hoadonxuat> Laydanhsachhoadon()
+       //{
+       //    List<DTO.Hoadonxuat> list = new List<DTO.Hoadonxuat>();
+       //    string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,NGAYLAP FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH ORDER BY MAHDX DESC";
+       //    SqlConnection con = dc.getConnect();
+       //    cmd = new SqlCommand(sql, con);
+       //    con.Open();
+       //    SqlDataReader dr = cmd.ExecuteReader();
+       //    if(dr.Read())
+       //    {
+       //        DTO.Hoadonxuat hdx = new DTO.Hoadonxuat();
+       //        hdx.MAHDX1 = Int32.Parse(dr["MAHDX"].ToString());
+       //        hdx.MAKH1 = Int32.Parse(dr["MAKH"].ToString());
+       //        hdx.MANV1 = Int32.Parse(dr["MANV"].ToString());
+       //        hdx.NGAYLAP1 = DateTime.Parse(dr["NGAYLAP"].ToString());
+       //        hdx.SODIEMSUDUNG1 = Int32.Parse(dr["SODIEMSUDUNG"].ToString());
+       //        hdx.TENKH1 = dr["TENKH"].ToString();
+       //        hdx.TENNV1 = dr["TENNV"].ToString();
+       //        hdx.TONGTIEN1 = Int32.Parse(dr["TONGTIEN"].ToString());
+       //        list.Add(hdx);
+       //    }
+       //    return list;
+       //}
        public DataTable Tablechitietxuat(int ID)
        {
             string sql = "SELECT * FROM CHITIETHOADONXUAT WHERE MAHDX = '" + ID + "'";
@@ -41,7 +64,7 @@ namespace QuanLySieuThiMini.DAO
        }
         public DataTable Tabletheongay(string date)
         {
-            string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
+            string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH AND NGAYLAP = '" + date + "'ORDER BY MAHDX DESC";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

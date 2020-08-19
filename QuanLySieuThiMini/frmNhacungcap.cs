@@ -52,22 +52,22 @@ namespace QuanLySieuThiMini
                 MessageBox.Show("Bạn chưa nhập số điện thoại nha cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (Kiemtraso(txtSdtnhacungcap.Text)==false)
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại nha cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if (Kiemtraso(txtSdtnhacungcap.Text)==false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số điện thoại nha cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             return true;
         }
 
-        private bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if (Int32.TryParse(text, out num))
-                return true;
-            else
-                return false;
-        }
+        //private bool Kiemtraso(string text)
+        //{
+        //    int num = 0;
+        //    if (Int32.TryParse(text, out num))
+        //        return true;
+        //    else
+        //        return false;
+        //}
 
         private void btnThemnhacungcap_Click(object sender, EventArgs e)
         {
@@ -167,6 +167,12 @@ namespace QuanLySieuThiMini
                 btnSuanhacungcap.Enabled = false;
                 btnXoanhacungcap.Enabled = false;
                 btnThemnhacungcap.Enabled = true;
+        }
+
+        private void txtSdtnhacungcap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

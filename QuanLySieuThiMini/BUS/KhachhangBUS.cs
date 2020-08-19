@@ -34,5 +34,9 @@ namespace QuanLySieuThiMini.BUS
         {
             return khd.Xoakhachhang(kh);
         }
+        public bool Tichdiem(int diem,int Makh)
+        {
+            return khd.Tichdiem(diem, Makh);
+        }
     }
 }

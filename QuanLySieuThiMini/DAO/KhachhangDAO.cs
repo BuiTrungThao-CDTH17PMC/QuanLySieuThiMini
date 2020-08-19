@@ -100,5 +100,22 @@ namespace QuanLySieuThiMini.DAO
             }
             return true;
         }
+        public bool Tichdiem(int diem, int Makh)
+        {
+            string sql = "UPDATE KHACHHANG SET TICHDIEM = TICHDIEM +" + diem + " WHERE MAKH = " + Makh;
+            SqlConnection con = dc.getConnect();
+            try
+            {
+                cmd = new SqlCommand(sql, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

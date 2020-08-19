@@ -332,6 +332,7 @@
             this.txtSodienthoaikh.Name = "txtSodienthoaikh";
             this.txtSodienthoaikh.Size = new System.Drawing.Size(184, 29);
             this.txtSodienthoaikh.TabIndex = 5;
+            this.txtSodienthoaikh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSodienthoaikh_KeyPress);
             // 
             // label4
             // 

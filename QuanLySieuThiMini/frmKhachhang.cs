@@ -13,6 +13,7 @@ namespace QuanLySieuThiMini
     public partial class frmKhachhang : Form
     {
         BUS.KhachhangBUS khb;
+        int ID;
         public frmKhachhang()
         {
             InitializeComponent();
@@ -45,23 +46,23 @@ namespace QuanLySieuThiMini
                 MessageBox.Show("Bạn chưa điểm tên khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if(Kiemtraso(txtSodienthoaikh.Text)==false)
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if(Kiemtraso(txtSodienthoaikh.Text)==false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             return true;
 
         }
-        public bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if(Int32.TryParse(text,out num))
-            {
-                return true;
-            }
-            return false;
-        }
+        //public bool Kiemtraso(string text)
+        //{
+        //    int num = 0;
+        //    if(Int32.TryParse(text,out num))
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
         private void btnThemkh_Click(object sender, EventArgs e)
         {
             if(Kiemtradulieu())
@@ -83,7 +84,7 @@ namespace QuanLySieuThiMini
             btnSuakh.Enabled = false;
             btnXoakh.Enabled = false;
         }
-        int ID;
+       
         private void dgvHienthikhachhang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -128,6 +129,7 @@ namespace QuanLySieuThiMini
             txtTenkhachhang.Text = "";
             txtSodienthoaikh.Text = "";
             txtDiachikh.Text = "";
+            txtSodiemtich.Text = "100";
         }
         private void btnHuythaotac_Click(object sender, EventArgs e)
         {
@@ -168,6 +170,12 @@ namespace QuanLySieuThiMini
                 btnXoakh.Enabled = false;
                 ResertControll();
             }
+        }
+
+        private void txtSodienthoaikh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
 
     }

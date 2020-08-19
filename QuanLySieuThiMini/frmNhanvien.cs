@@ -88,22 +88,22 @@ namespace QuanLySieuThiMini
                MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                return false;
             }
-            if(Kiemtraso(txtSodienthoainv.Text)==false)
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if(Kiemtraso(txtSodienthoainv.Text)==false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             return true;
         }
 
-        public bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if (Int32.TryParse(text, out num))
-                return true; 
-            else 
-                return false;
-        }
+        //public bool Kiemtraso(string text)
+        //{
+        //    int num = 0;
+        //    if (Int32.TryParse(text, out num))
+        //        return true; 
+        //    else 
+        //        return false;
+        //}
 
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
@@ -219,6 +219,12 @@ namespace QuanLySieuThiMini
                 bd.Append(mahoa[i].ToString("X2"));
             }
             return bd.ToString();
+        }
+
+        private void txtSodienthoainv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
