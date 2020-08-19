@@ -151,7 +151,7 @@
             // 
             this.txtTenloainhanvien.Location = new System.Drawing.Point(174, 21);
             this.txtTenloainhanvien.Name = "txtTenloainhanvien";
-            this.txtTenloainhanvien.Size = new System.Drawing.Size(287, 29);
+            this.txtTenloainhanvien.Size = new System.Drawing.Size(287, 35);
             this.txtTenloainhanvien.TabIndex = 16;
             // 
             // dgvHienthiloainv
@@ -167,6 +167,7 @@
             this.dgvHienthiloainv.Location = new System.Drawing.Point(57, 66);
             this.dgvHienthiloainv.Name = "dgvHienthiloainv";
             this.dgvHienthiloainv.ReadOnly = true;
+            this.dgvHienthiloainv.RowHeadersWidth = 51;
             this.dgvHienthiloainv.Size = new System.Drawing.Size(404, 208);
             this.dgvHienthiloainv.TabIndex = 15;
             this.dgvHienthiloainv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthiloainv_CellClick);
@@ -175,6 +176,7 @@
             // 
             this.MALOAI.DataPropertyName = "MALOAI";
             this.MALOAI.HeaderText = "Mã loại";
+            this.MALOAI.MinimumWidth = 6;
             this.MALOAI.Name = "MALOAI";
             this.MALOAI.ReadOnly = true;
             this.MALOAI.Width = 120;
@@ -183,14 +185,17 @@
             // 
             this.XOA.DataPropertyName = "XOA";
             this.XOA.HeaderText = "Xóa loại nhân viên";
+            this.XOA.MinimumWidth = 6;
             this.XOA.Name = "XOA";
             this.XOA.ReadOnly = true;
             this.XOA.Visible = false;
+            this.XOA.Width = 125;
             // 
             // TENLOAI
             // 
             this.TENLOAI.DataPropertyName = "TENLOAI";
             this.TENLOAI.HeaderText = "Tên loại nhân viên";
+            this.TENLOAI.MinimumWidth = 6;
             this.TENLOAI.Name = "TENLOAI";
             this.TENLOAI.ReadOnly = true;
             this.TENLOAI.Width = 200;
@@ -203,7 +208,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(13, 21);
+            this.labelX2.Location = new System.Drawing.Point(9, 21);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(146, 25);
             this.labelX2.TabIndex = 14;
@@ -236,7 +241,7 @@
             // 
             // frmLoainhanvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(697, 381);

@@ -157,6 +157,9 @@ namespace QuanLySieuThiMini
 
         private void btnXoanhacungcap_Click(object sender, EventArgs e)
         {
+               
+            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
                 DTO.Nhacungcap ncc = new DTO.Nhacungcap();
                 ncc.MANCC1 = ID;
                 if (nccb.Xoanhacungcap(ncc))
@@ -167,6 +170,12 @@ namespace QuanLySieuThiMini
                 btnSuanhacungcap.Enabled = false;
                 btnXoanhacungcap.Enabled = false;
                 btnThemnhacungcap.Enabled = true;
+                MessageBox.Show("Xóa nhân viên thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
+            }
         }
     }
 }

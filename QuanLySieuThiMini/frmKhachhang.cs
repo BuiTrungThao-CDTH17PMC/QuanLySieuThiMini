@@ -75,6 +75,11 @@ namespace QuanLySieuThiMini
                 {
                     Hienthikhachhang();
                 }
+                MessageBox.Show("Thêm khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Thêm khách hàng không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void frmKhachhang_Load(object sender, EventArgs e)
@@ -155,18 +160,24 @@ namespace QuanLySieuThiMini
         }
         private void btnXoakh_Click(object sender, EventArgs e)
         {
-            if (Kiemtradulieu())
+            
+            if (MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                DTO.Khachhang kh = new DTO.Khachhang();
-                kh.MAKH1 = ID;
-                if (khb.Xoakhachhang(kh))
-                {
-                    Hienthikhachhang();
-                }
-                btnThemkh.Enabled = true;
-                btnSuakh.Enabled = false;
-                btnXoakh.Enabled = false;
-                ResertControll();
+                    DTO.Khachhang kh = new DTO.Khachhang();
+                    kh.MAKH1 = ID;
+                    if (khb.Xoakhachhang(kh))
+                    {
+                        Hienthikhachhang();
+                    }
+                    btnThemkh.Enabled = true;
+                    btnSuakh.Enabled = false;
+                    btnXoakh.Enabled = false;
+                    ResertControll();
+                MessageBox.Show("Xóa khách hhàng thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
             }
         }
 

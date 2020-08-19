@@ -86,16 +86,25 @@ namespace QuanLySieuThiMini
 
         private void btnXoaloaisp_Click(object sender, EventArgs e)
         {
-            if (Kiemtradulieu())
+            
+            if (MessageBox.Show("Bạn có muốn xóa loại sản phẩm này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                DTO.Loaisanpham lsp = new DTO.Loaisanpham();
-                lsp.MALOAI1 = ID;
-                if (lspb.Xoaloaisanpham(lsp))
-                    Hienthiloaisanpham();
-                btnThemloaisp.Enabled = true;
-                btnSualoaisp.Enabled = false;
-                btnXoaloaisp.Enabled = false;
-                txtTenloaisp.Text = "";
+                if (Kiemtradulieu())
+                {
+                    DTO.Loaisanpham lsp = new DTO.Loaisanpham();
+                    lsp.MALOAI1 = ID;
+                    if (lspb.Xoaloaisanpham(lsp))
+                        Hienthiloaisanpham();
+                    btnThemloaisp.Enabled = true;
+                    btnSualoaisp.Enabled = false;
+                    btnXoaloaisp.Enabled = false;
+                    txtTenloaisp.Text = "";
+                }
+                MessageBox.Show("Xóa loại sản phẩm thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
             }
         }
 

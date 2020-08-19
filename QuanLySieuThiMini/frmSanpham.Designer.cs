@@ -123,6 +123,7 @@
             this.dgvHienthisanpham.Location = new System.Drawing.Point(3, 25);
             this.dgvHienthisanpham.Name = "dgvHienthisanpham";
             this.dgvHienthisanpham.ReadOnly = true;
+            this.dgvHienthisanpham.RowHeadersWidth = 51;
             this.dgvHienthisanpham.Size = new System.Drawing.Size(795, 315);
             this.dgvHienthisanpham.TabIndex = 0;
             this.dgvHienthisanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthisanpham_CellClick);
@@ -132,6 +133,7 @@
             // 
             this.HINHANH.DataPropertyName = "HINHANH";
             this.HINHANH.HeaderText = "Hình ảnh";
+            this.HINHANH.MinimumWidth = 6;
             this.HINHANH.Name = "HINHANH";
             this.HINHANH.ReadOnly = true;
             this.HINHANH.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -141,6 +143,7 @@
             // 
             this.MASP.DataPropertyName = "MASP";
             this.MASP.HeaderText = "Mã sản phẩm";
+            this.MASP.MinimumWidth = 6;
             this.MASP.Name = "MASP";
             this.MASP.ReadOnly = true;
             this.MASP.Width = 150;
@@ -149,6 +152,7 @@
             // 
             this.TENSP.DataPropertyName = "TENSP";
             this.TENSP.HeaderText = "Tên sản phẩm";
+            this.TENSP.MinimumWidth = 6;
             this.TENSP.Name = "TENSP";
             this.TENSP.ReadOnly = true;
             this.TENSP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -159,6 +163,7 @@
             // 
             this.DONGIA.DataPropertyName = "DONGIA";
             this.DONGIA.HeaderText = "Đơn giá";
+            this.DONGIA.MinimumWidth = 6;
             this.DONGIA.Name = "DONGIA";
             this.DONGIA.ReadOnly = true;
             this.DONGIA.Width = 120;
@@ -167,13 +172,16 @@
             // 
             this.GIAMGIA.DataPropertyName = "GIAMGIA";
             this.GIAMGIA.HeaderText = "Giảm giá";
+            this.GIAMGIA.MinimumWidth = 6;
             this.GIAMGIA.Name = "GIAMGIA";
             this.GIAMGIA.ReadOnly = true;
+            this.GIAMGIA.Width = 125;
             // 
             // SOLUONG
             // 
             this.SOLUONG.DataPropertyName = "SOLUONG";
             this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.ReadOnly = true;
             this.SOLUONG.Width = 120;
@@ -182,6 +190,7 @@
             // 
             this.TENLOAI.DataPropertyName = "TENLOAI";
             this.TENLOAI.HeaderText = "Loại sản phẩm";
+            this.TENLOAI.MinimumWidth = 6;
             this.TENLOAI.Name = "TENLOAI";
             this.TENLOAI.ReadOnly = true;
             this.TENLOAI.Width = 150;
@@ -190,6 +199,7 @@
             // 
             this.TENNCC.DataPropertyName = "TENNCC";
             this.TENNCC.HeaderText = "Nhà cung cấp";
+            this.TENNCC.MinimumWidth = 6;
             this.TENNCC.Name = "TENNCC";
             this.TENNCC.ReadOnly = true;
             this.TENNCC.Width = 150;
@@ -198,17 +208,21 @@
             // 
             this.MALOAI.DataPropertyName = "MALOAI";
             this.MALOAI.HeaderText = "Mã loai sản phẩm";
+            this.MALOAI.MinimumWidth = 6;
             this.MALOAI.Name = "MALOAI";
             this.MALOAI.ReadOnly = true;
             this.MALOAI.Visible = false;
+            this.MALOAI.Width = 125;
             // 
             // MANCC
             // 
             this.MANCC.DataPropertyName = "MANCC";
             this.MANCC.HeaderText = "Mã nhà cung cấp";
+            this.MANCC.MinimumWidth = 6;
             this.MANCC.Name = "MANCC";
             this.MANCC.ReadOnly = true;
             this.MANCC.Visible = false;
+            this.MANCC.Width = 125;
             // 
             // groupBox3
             // 
@@ -224,7 +238,7 @@
             // 
             this.txtTimsanpham.Location = new System.Drawing.Point(231, 23);
             this.txtTimsanpham.Name = "txtTimsanpham";
-            this.txtTimsanpham.Size = new System.Drawing.Size(368, 29);
+            this.txtTimsanpham.Size = new System.Drawing.Size(368, 35);
             this.txtTimsanpham.TabIndex = 1;
             this.txtTimsanpham.TextChanged += new System.EventHandler(this.txtTimsanpham_TextChanged);
             // 
@@ -233,7 +247,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(25, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 21);
+            this.label4.Size = new System.Drawing.Size(200, 27);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tìm kiếm sản phẩm";
             // 
@@ -370,7 +384,7 @@
             this.txtGiamgia.Location = new System.Drawing.Point(193, 136);
             this.txtGiamgia.Margin = new System.Windows.Forms.Padding(5);
             this.txtGiamgia.Name = "txtGiamgia";
-            this.txtGiamgia.Size = new System.Drawing.Size(286, 29);
+            this.txtGiamgia.Size = new System.Drawing.Size(286, 35);
             this.txtGiamgia.TabIndex = 18;
             this.txtGiamgia.Text = "0";
             // 
@@ -381,7 +395,7 @@
             this.label8.Location = new System.Drawing.Point(26, 144);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 21);
+            this.label8.Size = new System.Drawing.Size(98, 27);
             this.label8.TabIndex = 17;
             this.label8.Text = "Giảm giá";
             // 
@@ -403,7 +417,7 @@
             this.txtTenanh.Margin = new System.Windows.Forms.Padding(5);
             this.txtTenanh.Name = "txtTenanh";
             this.txtTenanh.ReadOnly = true;
-            this.txtTenanh.Size = new System.Drawing.Size(286, 29);
+            this.txtTenanh.Size = new System.Drawing.Size(286, 35);
             this.txtTenanh.TabIndex = 9;
             // 
             // label7
@@ -413,7 +427,7 @@
             this.label7.Location = new System.Drawing.Point(26, 262);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 21);
+            this.label7.Size = new System.Drawing.Size(98, 27);
             this.label7.TabIndex = 8;
             this.label7.Text = "Link ảnh";
             // 
@@ -424,7 +438,7 @@
             this.label6.Location = new System.Drawing.Point(26, 223);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 21);
+            this.label6.Size = new System.Drawing.Size(144, 27);
             this.label6.TabIndex = 7;
             this.label6.Text = "Nhà cung cấp";
             // 
@@ -435,7 +449,7 @@
             this.label5.Location = new System.Drawing.Point(26, 184);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 21);
+            this.label5.Size = new System.Drawing.Size(153, 27);
             this.label5.TabIndex = 6;
             this.label5.Text = "Loại sản phẩm";
             // 
@@ -449,7 +463,7 @@
             this.cbbNhacungcap.Location = new System.Drawing.Point(193, 218);
             this.cbbNhacungcap.Margin = new System.Windows.Forms.Padding(5);
             this.cbbNhacungcap.Name = "cbbNhacungcap";
-            this.cbbNhacungcap.Size = new System.Drawing.Size(286, 29);
+            this.cbbNhacungcap.Size = new System.Drawing.Size(286, 35);
             this.cbbNhacungcap.TabIndex = 0;
             // 
             // cbbLoaisanpham
@@ -461,7 +475,7 @@
             this.cbbLoaisanpham.Location = new System.Drawing.Point(193, 179);
             this.cbbLoaisanpham.Margin = new System.Windows.Forms.Padding(5);
             this.cbbLoaisanpham.Name = "cbbLoaisanpham";
-            this.cbbLoaisanpham.Size = new System.Drawing.Size(286, 29);
+            this.cbbLoaisanpham.Size = new System.Drawing.Size(286, 35);
             this.cbbLoaisanpham.TabIndex = 1;
             // 
             // txtDongia
@@ -470,7 +484,7 @@
             this.txtDongia.Location = new System.Drawing.Point(193, 97);
             this.txtDongia.Margin = new System.Windows.Forms.Padding(5);
             this.txtDongia.Name = "txtDongia";
-            this.txtDongia.Size = new System.Drawing.Size(286, 29);
+            this.txtDongia.Size = new System.Drawing.Size(286, 35);
             this.txtDongia.TabIndex = 5;
             // 
             // label3
@@ -480,7 +494,7 @@
             this.label3.Location = new System.Drawing.Point(31, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 21);
+            this.label3.Size = new System.Drawing.Size(88, 27);
             this.label3.TabIndex = 4;
             this.label3.Text = "Đơn giá";
             // 
@@ -490,7 +504,7 @@
             this.txtSoluong.Location = new System.Drawing.Point(193, 61);
             this.txtSoluong.Margin = new System.Windows.Forms.Padding(5);
             this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(286, 29);
+            this.txtSoluong.Size = new System.Drawing.Size(286, 35);
             this.txtSoluong.TabIndex = 3;
             // 
             // label2
@@ -500,7 +514,7 @@
             this.label2.Location = new System.Drawing.Point(26, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 21);
+            this.label2.Size = new System.Drawing.Size(103, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số lượng ";
             // 
@@ -510,7 +524,7 @@
             this.txtTensanpham.Location = new System.Drawing.Point(193, 22);
             this.txtTensanpham.Margin = new System.Windows.Forms.Padding(5);
             this.txtTensanpham.Name = "txtTensanpham";
-            this.txtTensanpham.Size = new System.Drawing.Size(482, 29);
+            this.txtTensanpham.Size = new System.Drawing.Size(482, 35);
             this.txtTensanpham.TabIndex = 1;
             // 
             // label1
@@ -520,7 +534,7 @@
             this.label1.Location = new System.Drawing.Point(26, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 21);
+            this.label1.Size = new System.Drawing.Size(146, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên sản phẩm";
             // 
@@ -549,7 +563,7 @@
             // 
             // frmSanpham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(844, 855);

@@ -108,7 +108,7 @@
             this.txtTendangnhap.Location = new System.Drawing.Point(152, 8);
             this.txtTendangnhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTendangnhap.Name = "txtTendangnhap";
-            this.txtTendangnhap.Size = new System.Drawing.Size(268, 29);
+            this.txtTendangnhap.Size = new System.Drawing.Size(268, 35);
             this.txtTendangnhap.TabIndex = 0;
             // 
             // txtMatkhau
@@ -117,7 +117,7 @@
             this.txtMatkhau.Location = new System.Drawing.Point(152, 43);
             this.txtMatkhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(268, 29);
+            this.txtMatkhau.Size = new System.Drawing.Size(268, 35);
             this.txtMatkhau.TabIndex = 2;
             this.txtMatkhau.UseSystemPasswordChar = true;
             // 
@@ -125,10 +125,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 46);
+            this.label1.Location = new System.Drawing.Point(2, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 21);
+            this.label1.Size = new System.Drawing.Size(104, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "Mật khẩu";
             // 
@@ -136,10 +136,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 11);
+            this.label2.Location = new System.Drawing.Point(2, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 21);
+            this.label2.Size = new System.Drawing.Size(154, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên đăng nhập";
             // 
@@ -167,7 +167,7 @@
             // frmDangnhap
             // 
             this.AcceptButton = this.btnDangnhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
