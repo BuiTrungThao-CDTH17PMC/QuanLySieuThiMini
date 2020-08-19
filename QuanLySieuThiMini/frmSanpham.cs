@@ -246,16 +246,24 @@ namespace QuanLySieuThiMini
 
         private void btnXoasanpham_Click(object sender, EventArgs e)
         {
-            DTO.Sanpham sp = new DTO.Sanpham();
-            sp.MASP1 = ID;
-            if (spb.Xoasanpham(sp))
+            if (MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Hienthisanpham();
+                DTO.Sanpham sp = new DTO.Sanpham();
+                sp.MASP1 = ID;
+                if (spb.Xoasanpham(sp))
+                {
+                    Hienthisanpham();
+                }
+                btnThemmoisp.Enabled = true;
+                btnSuasp.Enabled = false;
+                btnXoasanpham.Enabled = false;
+                ResertCotroll();
+                MessageBox.Show("Xóa sản phẩm thành công", "thông báo", MessageBoxButtons.OK);
             }
-            btnThemmoisp.Enabled = true;
-            btnSuasp.Enabled = false;
-            btnXoasanpham.Enabled = false;
-            ResertCotroll();
+            else
+            {
+                this.Activate();
+            }
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

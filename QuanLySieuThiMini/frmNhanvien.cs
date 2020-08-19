@@ -205,7 +205,24 @@ namespace QuanLySieuThiMini
 
         private void btnXoanhanvien_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DTO.Nhanvien nv = new DTO.Nhanvien();
+                nv.MANV1 = ID;
+                if (nvb.Xoanhanvien(nv))
+                {
+                    Hienthinhanvien();
+                }
+                ResertControll();
+                btnThemnhanvien.Enabled = true;
+                btnSuanhanvien.Enabled = false;
+                btnXoanhanvien.Enabled = false;
+                MessageBox.Show("Xóa nhân viên thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
+            }
         }
 
         public string Mahoa(string value)

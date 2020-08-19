@@ -157,7 +157,7 @@ namespace QuanLySieuThiMini
         }
         private void btnXoakh_Click(object sender, EventArgs e)
         {
-            if (Kiemtradulieu())
+            if (MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DTO.Khachhang kh = new DTO.Khachhang();
                 kh.MAKH1 = ID;
@@ -169,6 +169,11 @@ namespace QuanLySieuThiMini
                 btnSuakh.Enabled = false;
                 btnXoakh.Enabled = false;
                 ResertControll();
+                MessageBox.Show("Xóa khách hhàng thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
             }
         }
 

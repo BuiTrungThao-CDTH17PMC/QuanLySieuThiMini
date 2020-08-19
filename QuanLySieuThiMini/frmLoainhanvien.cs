@@ -98,19 +98,27 @@ namespace QuanLySieuThiMini
 
         private void btnXoaloainv_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtTenloainhanvien.Text))
+            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                DTO.Loainhanvien lnv = new DTO.Loainhanvien();
-                lnv.TENLOAI1 = txtTenloainhanvien.Text;
-                lnv.MALOAI1 = ID;
-                if (lnvb.Xoaloainhanvien(lnv))
+                if (!String.IsNullOrEmpty(txtTenloainhanvien.Text))
                 {
-                    Hienthiloainhanvien();
-                    btnThemloainv.Enabled = true;
-                    btnSualoainv.Enabled = false;
-                    btnXoaloainv.Enabled = false;
-                    txtTenloainhanvien.Text = "";
-                }  
+                    DTO.Loainhanvien lnv = new DTO.Loainhanvien();
+                    lnv.TENLOAI1 = txtTenloainhanvien.Text;
+                    lnv.MALOAI1 = ID;
+                    if (lnvb.Xoaloainhanvien(lnv))
+                    {
+                        Hienthiloainhanvien();
+                        btnThemloainv.Enabled = true;
+                        btnSualoainv.Enabled = false;
+                        btnXoaloainv.Enabled = false;
+                        txtTenloainhanvien.Text = "";
+                    }
+                }
+                MessageBox.Show("Xóa nhân viên thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
             }
         }
         private void btnDongloainv_Click(object sender, EventArgs e)
