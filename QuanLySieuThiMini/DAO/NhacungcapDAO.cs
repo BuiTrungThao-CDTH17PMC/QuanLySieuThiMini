@@ -72,7 +72,8 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemnhacungcap(string tncc)
         {
-            string sql = "SELECT * FROM NHACUNGCAP WHERE TENNCC LIKE N'%" + tncc + "%'";
+            string sql = "DECLARE @query NVARCHAR(max)SELECT @query =  dbo.non_unicode_convert(N'"+ tncc +"')SELECT  * FROM NHACUNGCAP WHERE XOA = 0 AND dbo.non_unicode_convert(TENNCC) LIKE  '%' + @query+ '%'";
+            //string sql = "SELECT * FROM NHACUNGCAP WHERE TENNCC LIKE N'%" + tncc + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

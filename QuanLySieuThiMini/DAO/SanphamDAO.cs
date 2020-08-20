@@ -101,7 +101,8 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemsanpham(string tsp)
         {
-            string sql = "SELECT GIAMGIA, MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC AND TENSP LIKE N'%" + tsp + "%'";
+            string sql = "DECLARE @query NVARCHAR(max) SELECT @query =  dbo.non_unicode_convert(N'"+ tsp +"') SELECT  GIAMGIA, MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.XOA = 0 AND SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC AND dbo.non_unicode_convert(TENSP) LIKE  '%' + @query+ '%'";
+            //string sql = "SELECT GIAMGIA, MASP,TENSP,SP.MALOAI,TENLOAI,DONGIA,HINHANH,SOLUONG,SP.MANCC,TENNCC FROM SANPHAM SP,NHACUNGCAP NCC,LOAISANPHAM LSP WHERE SP.MALOAI = LSP.MALOAI AND SP.MANCC = NCC.MANCC AND TENSP LIKE N'%" + tsp + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
