@@ -88,22 +88,22 @@ namespace QuanLySieuThiMini
                MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                return false;
             }
-            if(Kiemtraso(txtSodienthoainv.Text)==false)
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            //if(Kiemtraso(txtSodienthoainv.Text)==false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số điện thoại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
             return true;
         }
 
-        public bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if (Int32.TryParse(text, out num))
-                return true; 
-            else 
-                return false;
-        }
+        //public bool Kiemtraso(string text)
+        //{
+        //    int num = 0;
+        //    if (Int32.TryParse(text, out num))
+        //        return true; 
+        //    else 
+        //        return false;
+        //}
 
         private void btnThemnhanvien_Click(object sender, EventArgs e)
         {
@@ -205,7 +205,24 @@ namespace QuanLySieuThiMini
 
         private void btnXoanhanvien_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DTO.Nhanvien nv = new DTO.Nhanvien();
+                nv.MANV1 = ID;
+                if (nvb.Xoanhanvien(nv))
+                {
+                    Hienthinhanvien();
+                }
+                ResertControll();
+                btnThemnhanvien.Enabled = true;
+                btnSuanhanvien.Enabled = false;
+                btnXoanhanvien.Enabled = false;
+                MessageBox.Show("Xóa nhân viên thành công", "thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.Activate();
+            }
         }
 
         public string Mahoa(string value)
@@ -219,6 +236,12 @@ namespace QuanLySieuThiMini
                 bd.Append(mahoa[i].ToString("X2"));
             }
             return bd.ToString();
+        }
+
+        private void txtSodienthoainv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

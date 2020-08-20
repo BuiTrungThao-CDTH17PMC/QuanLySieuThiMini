@@ -41,6 +41,7 @@
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIOITINH = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LOAINV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +92,7 @@
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(8, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 796);
+            this.panel1.Size = new System.Drawing.Size(861, 796);
             this.panel1.TabIndex = 0;
             // 
             // groupBox3
@@ -100,7 +101,7 @@
             this.groupBox3.Controls.Add(this.dgvHienthinhanvien);
             this.groupBox3.Location = new System.Drawing.Point(3, 479);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(726, 307);
+            this.groupBox3.Size = new System.Drawing.Size(853, 307);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhân viên";
@@ -128,6 +129,7 @@
             this.SDT,
             this.GIOITINH,
             this.LOAINV,
+            this.MALOAI,
             this.TENTK,
             this.MATKHAU,
             this.XOA});
@@ -142,7 +144,7 @@
             this.dgvHienthinhanvien.Location = new System.Drawing.Point(7, 28);
             this.dgvHienthinhanvien.Name = "dgvHienthinhanvien";
             this.dgvHienthinhanvien.ReadOnly = true;
-            this.dgvHienthinhanvien.Size = new System.Drawing.Size(712, 273);
+            this.dgvHienthinhanvien.Size = new System.Drawing.Size(841, 273);
             this.dgvHienthinhanvien.TabIndex = 4;
             this.dgvHienthinhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienthinhanvien_CellClick);
             // 
@@ -161,7 +163,7 @@
             this.TENNV.HeaderText = "Tên nhân viên";
             this.TENNV.Name = "TENNV";
             this.TENNV.ReadOnly = true;
-            this.TENNV.Width = 150;
+            this.TENNV.Width = 250;
             // 
             // DIACHI
             // 
@@ -188,11 +190,19 @@
             // 
             // LOAINV
             // 
-            this.LOAINV.DataPropertyName = "LOAINV";
+            this.LOAINV.DataPropertyName = "TENLOAI";
             this.LOAINV.HeaderText = "Là nhân viên";
             this.LOAINV.Name = "LOAINV";
             this.LOAINV.ReadOnly = true;
-            this.LOAINV.Width = 110;
+            this.LOAINV.Width = 200;
+            // 
+            // MALOAI
+            // 
+            this.MALOAI.DataPropertyName = "LOAINV";
+            this.MALOAI.HeaderText = "Mã loại";
+            this.MALOAI.Name = "MALOAI";
+            this.MALOAI.ReadOnly = true;
+            this.MALOAI.Visible = false;
             // 
             // TENTK
             // 
@@ -227,7 +237,7 @@
             this.panel3.Controls.Add(this.labelX1);
             this.panel3.Location = new System.Drawing.Point(3, 411);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(726, 64);
+            this.panel3.Size = new System.Drawing.Size(848, 64);
             this.panel3.TabIndex = 4;
             // 
             // txtTimnhanvien
@@ -267,7 +277,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 325);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(727, 80);
+            this.groupBox2.Size = new System.Drawing.Size(848, 80);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -352,7 +362,7 @@
             this.groupBox1.Controls.Add(this.txtTennhanvien);
             this.groupBox1.Location = new System.Drawing.Point(3, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 312);
+            this.groupBox1.Size = new System.Drawing.Size(848, 312);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
@@ -473,6 +483,7 @@
             this.txtSodienthoainv.Name = "txtSodienthoainv";
             this.txtSodienthoainv.Size = new System.Drawing.Size(224, 29);
             this.txtSodienthoainv.TabIndex = 4;
+            this.txtSodienthoainv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSodienthoainv_KeyPress);
             // 
             // label3
             // 
@@ -514,7 +525,7 @@
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Location = new System.Drawing.Point(-1, -1);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(756, 808);
+            this.panelEx1.Size = new System.Drawing.Size(872, 808);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -529,7 +540,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(754, 805);
+            this.ClientSize = new System.Drawing.Size(871, 805);
             this.Controls.Add(this.panelEx1);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -581,20 +592,21 @@
         private System.Windows.Forms.Panel panel3;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTimnhanvien;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn GIOITINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAINV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn XOA;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.ButtonX btnDongnhanvien;
         private DevComponents.DotNetBar.ButtonX btnHuythaotacnv;
         private DevComponents.DotNetBar.ButtonX btnXoanhanvien;
         private DevComponents.DotNetBar.ButtonX btnSuanhanvien;
         private DevComponents.DotNetBar.ButtonX btnThemnhanvien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GIOITINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAINV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn XOA;
     }
 }

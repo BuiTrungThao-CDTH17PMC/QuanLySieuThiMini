@@ -99,9 +99,8 @@ namespace QuanLySieuThiMini
         }
 
         private void btnXoaloainv_Click(object sender, EventArgs e)
-        {
-            
-            if (MessageBox.Show("Bạn có muốn xóa nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {          
+           if (MessageBox.Show("Bạn có muốn xóa loại nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!String.IsNullOrEmpty(txtTenloainhanvien.Text))
                 {

@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Tablenhanvien()
         {
-            string sql = "SELECT * FROM NHANVIEN WHERE XOA = 0";
+            string sql = "SELECT MANV,TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH,NV.XOA,TENLOAI FROM NHANVIEN NV, LOAINHANVIEN WHERE NV.XOA = 0 AND MALOAI = LOAINV";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql,con);
             con.Open();
@@ -78,7 +78,7 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemnhanvien (string tnv)
         {
-            string sql = "SELECT * FROM NHANVIEN WHERE XOA = 0 AND TENNV LIKE N'%" + tnv + "%'";
+            string sql = "SELECT MANV,TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH,NV.XOA,TENLOAI FROM NHANVIEN NV, LOAINHANVIEN WHERE NV.XOA = 0 AND MALOAI = LOAINV AND TENNV LIKE N'%" + tnv + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

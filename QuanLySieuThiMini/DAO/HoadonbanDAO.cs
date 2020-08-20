@@ -19,7 +19,7 @@ namespace QuanLySieuThiMini.DAO
        }
        public DataTable Tablehoadonxuat()
        {
-           string sql = "SELECT * FROM HOADONXUAT";
+           string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH ORDER BY MAHDX DESC";
            SqlConnection con = dc.getConnect();
            dr = new SqlDataAdapter(sql, con);
            con.Open();
@@ -28,6 +28,10 @@ namespace QuanLySieuThiMini.DAO
            con.Close();
            return dt;
        }
+<<<<<<< HEAD
+     
+=======
+>>>>>>> 218e7470891a097cabfa474d6a9f6dd85338f148
        public DataTable Tablechitietxuat(int ID)
        {
             string sql = "SELECT * FROM CHITIETHOADONXUAT WHERE MAHDX = '" + ID + "'";
@@ -41,7 +45,7 @@ namespace QuanLySieuThiMini.DAO
        }
         public DataTable Tabletheongay(string date)
         {
-            string sql = "SELECT * FROM HOADONXUAT WHERE NGAYLAP = '" + date + "'";
+            string sql = "SELECT MAHDX,MANV,TENNV,HD.MAKH,TENKH,SODIEMSUDUNG,TONGTIEN,CONVERT(varchar, NGAYLAP, 103) AS NGAY FROM HOADONXUAT HD, KHACHHANG KH WHERE HD.MAKH = KH.MAKH AND NGAYLAP = '" + date + "'ORDER BY MAHDX DESC";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

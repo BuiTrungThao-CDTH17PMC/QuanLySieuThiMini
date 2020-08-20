@@ -28,7 +28,8 @@ namespace QuanLySieuThiMini
         {
             DataTable dt = dtb.Danhsachhoadonxuat(dtpNgaybatdau.Value.Date.ToString("yyyy/MM/dd"), dtpNgayketthuc.Value.Date.ToString("yyyy/MM/dd"));
             dgvDanhsachhoadon.DataSource = dt;
-            txtTongdoanhthu.Text = Tinhtong().ToString();
+            dgvDanhsachhoadon.Columns["TONGTIEN"].DefaultCellStyle.Format = "N";
+            txtTongdoanhthu.Text = string.Format("{0:n0}", decimal.Parse (Tinhtong().ToString()));
         }
 
         public int Tinhtong()

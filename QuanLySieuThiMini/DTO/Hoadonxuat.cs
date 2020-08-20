@@ -60,5 +60,13 @@ namespace QuanLySieuThiMini.DTO
             get { return TONGTIEN; }
             set { TONGTIEN = value; }
         }
+
+        private string TENKH;
+
+        public string TENKH1
+        {
+            get { return TENKH; }
+            set { TENKH = value; }
+        }
     }
 }

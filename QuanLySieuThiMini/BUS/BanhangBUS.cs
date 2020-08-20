@@ -31,5 +31,10 @@ namespace QuanLySieuThiMini.BUS
         {
             return bhd.Trusoluong(masp, soluongmua);
         }
+
+        public int Laysoluong(int masp)
+        {
+            return bhd.Laysoluong(masp);
+        }
     }
 }

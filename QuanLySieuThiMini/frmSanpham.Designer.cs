@@ -387,6 +387,8 @@
             this.txtGiamgia.Size = new System.Drawing.Size(286, 35);
             this.txtGiamgia.TabIndex = 18;
             this.txtGiamgia.Text = "0";
+            this.txtGiamgia.TextChanged += new System.EventHandler(this.txtGiamgia_TextChanged);
+            this.txtGiamgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiamgia_KeyPress);
             // 
             // label8
             // 
@@ -486,6 +488,8 @@
             this.txtDongia.Name = "txtDongia";
             this.txtDongia.Size = new System.Drawing.Size(286, 35);
             this.txtDongia.TabIndex = 5;
+            this.txtDongia.TextChanged += new System.EventHandler(this.txtDongia_TextChanged);
+            this.txtDongia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDongia_KeyPress);
             // 
             // label3
             // 
@@ -506,6 +510,7 @@
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(286, 35);
             this.txtSoluong.TabIndex = 3;
+            this.txtSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoluong_KeyPress);
             // 
             // label2
             // 

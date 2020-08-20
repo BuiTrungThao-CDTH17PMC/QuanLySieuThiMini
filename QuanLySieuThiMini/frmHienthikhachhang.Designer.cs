@@ -121,6 +121,7 @@
             this.dgvChonkhachhang.RowHeadersWidth = 51;
             this.dgvChonkhachhang.Size = new System.Drawing.Size(814, 377);
             this.dgvChonkhachhang.TabIndex = 0;
+            this.dgvChonkhachhang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChonkhachhang_CellClick);
             // 
             // MAKH
             // 

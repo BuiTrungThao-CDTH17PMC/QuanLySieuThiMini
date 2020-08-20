@@ -28,6 +28,8 @@ namespace QuanLySieuThiMini
         {
             DataTable dt = spb.Tablesanpham();
             dgvHienthisanpham.DataSource = dt;
+            dgvHienthisanpham.Columns["GIAMGIA"].DefaultCellStyle.Format = "N";
+            dgvHienthisanpham.Columns["DONGIA"].DefaultCellStyle.Format = "N";
         }
 
         public void Hienloaisanpham()
@@ -55,18 +57,18 @@ namespace QuanLySieuThiMini
             btnXoasanpham.Enabled = false;
         }
 
-        public bool Kiemtraso(string text)
-        {
-            int num = 0;
-            if (Int32.TryParse(text, out num))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //public bool Kiemtraso(string text)
+        //{
+        //    int num = 0;
+        //    if (Int32.TryParse(text, out num))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public bool Kiemtraduulieu()
         {
@@ -85,16 +87,16 @@ namespace QuanLySieuThiMini
                 MessageBox.Show("Bạn chưa nhập giá sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 return false;
             }
-            if (Kiemtraso(txtSoluong.Text) == false)
-            {
-                MessageBox.Show("Vui lòng nhập số không nhập ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                return false;
-            }
-            if (Kiemtraso(txtDongia.Text) == false)
-            {
-                MessageBox.Show("Vui lòng nhập số không nhập ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                return false;
-            }
+            //if (Kiemtraso(txtSoluong.Text) == false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số không nhập ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            //    return false;
+            //}
+            //if (Kiemtraso(Chuyen(txtDongia).ToString()) == false)
+            //{
+            //    MessageBox.Show("Vui lòng nhập số không nhập ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            //    return false;
+            //}
             if (String.IsNullOrEmpty(txtTenanh.Text))
             {
                 MessageBox.Show("Bạn chưa chọn ảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -139,10 +141,10 @@ namespace QuanLySieuThiMini
                     sp.MASP1 = ID;
                     sp.TENSP1 = txtTensanpham.Text;
                     sp.SOLUONG1 = Int32.Parse(txtSoluong.Text);
-                    sp.DONGIA1 = Int32.Parse(txtDongia.Text);
+                    sp.DONGIA1 = Chuyen(txtDongia);
                     sp.MALOAI1 = Int32.Parse(cbbLoaisanpham.SelectedValue.ToString());
                     sp.MANCC1 = Int32.Parse(cbbNhacungcap.SelectedValue.ToString());
-                    sp.GIAMGIA1 = Int32.Parse(txtGiamgia.Text);
+                    sp.GIAMGIA1 = Chuyen(txtGiamgia);
                     sp.HINHANH1 = txtTenanh.Text;
                     Luuanh();
                     if (spb.Suasanpham(sp))
@@ -151,14 +153,23 @@ namespace QuanLySieuThiMini
                         btnThemmoisp.Enabled = true;
                         btnSuasp.Enabled = false;
                         btnXoasanpham.Enabled = false;
+                        txtSoluong.Enabled = true;
                         ResertCotroll();
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        public int Chuyen(TextBox text)
+        {
+            var te = text.Text;
+            var clear = te.Replace(",", "");
+            return Int32.Parse(clear);
         }
 
         private void dgvHienthisanpham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,16 +184,17 @@ namespace QuanLySieuThiMini
                     ID = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MASP"].Value.ToString());
                     txtTensanpham.Text = dgvHienthisanpham.Rows[index].Cells["TENSP"].Value.ToString();
                     txtSoluong.Text = dgvHienthisanpham.Rows[index].Cells["SOLUONG"].Value.ToString();
-                    txtDongia.Text = dgvHienthisanpham.Rows[index].Cells["DONGIA"].Value.ToString();
+                    txtDongia.Text = string.Format("{0:n0}",decimal.Parse( dgvHienthisanpham.Rows[index].Cells["DONGIA"].Value.ToString()));
                     cbbLoaisanpham.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MALOAI"].Value.ToString());
                     cbbNhacungcap.SelectedValue = Int32.Parse(dgvHienthisanpham.Rows[index].Cells["MANCC"].Value.ToString());
-                    txtGiamgia.Text = dgvHienthisanpham.Rows[index].Cells["GIAMGIA"].Value.ToString();
+                    txtGiamgia.Text = string.Format("{0:n0}",decimal.Parse( dgvHienthisanpham.Rows[index].Cells["GIAMGIA"].Value.ToString()));
                     txtTenanh.Text = dgvHienthisanpham.Rows[index].Cells["HINHANH"].Value.ToString();
                     Image image = Image.FromFile(s + dgvHienthisanpham.Rows[index].Cells["HINHANH"].Value.ToString());
                     ptbAnhsanpham.Image = image;
                     btnSuasp.Enabled = true;
                     btnXoasanpham.Enabled = true;
                     btnThemmoisp.Enabled = false;
+                    txtSoluong.Enabled = false;
                 }
             }
             catch (Exception ex )
@@ -232,11 +244,11 @@ namespace QuanLySieuThiMini
             btnSuasp.Enabled = false;
             btnXoasanpham.Enabled = false;
             btnThemmoisp.Enabled =true;
+            txtSoluong.Enabled = true;
         }
 
         private void btnXoasanpham_Click(object sender, EventArgs e)
-        {
-           
+        {          
             if (MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DTO.Sanpham sp = new DTO.Sanpham();
@@ -248,6 +260,7 @@ namespace QuanLySieuThiMini
                 btnThemmoisp.Enabled = true;
                 btnSuasp.Enabled = false;
                 btnXoasanpham.Enabled = false;
+                txtSoluong.Enabled = true;
                 ResertCotroll();
                 MessageBox.Show("Xóa sản phẩm thành công", "thông báo", MessageBoxButtons.OK);
             }
@@ -285,13 +298,57 @@ namespace QuanLySieuThiMini
 
         private void dgvHienthisanpham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dgvHienthisanpham.Columns[e.ColumnIndex].Name == "HINHANH")
+            try
             {
-                var s = Path.Combine("..\\..\\Resources\\Images\\");
-                s = Path.GetFullPath(s);
-                e.Value = Bitmap.FromFile(s + e.Value.ToString());
-                e.FormattingApplied = true;
+                if (dgvHienthisanpham.Columns[e.ColumnIndex].Name == "HINHANH")
+                {
+                    var s = Path.Combine("..\\..\\Resources\\Images\\");
+                    s = Path.GetFullPath(s);
+                    e.Value = Bitmap.FromFile(s + e.Value.ToString());
+                    e.FormattingApplied = true;
+                }
             }
+            catch { }
+        }
+
+        private void txtDongia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtDongia.Text = string.Format("{0:n0}", decimal.Parse(txtDongia.Text));
+                txtDongia.SelectionStart = txtDongia.Text.Length;
+            }
+            catch { }
+            
+        }
+
+        private void txtGiamgia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtGiamgia.Text = string.Format("{0:n0}", decimal.Parse(txtGiamgia.Text));
+                txtGiamgia.SelectionStart = txtGiamgia.Text.Length;
+            }
+            catch { }
+            
+        }
+
+        private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtDongia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtGiamgia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace QuanLySieuThiMini
         {
             DataTable dt = hdxb.Tablehoadonxuat();
             dgvDanhsachhoadonban.DataSource = dt;
+            dgvDanhsachhoadonban.Columns["TONGTIEN"].DefaultCellStyle.Format = "N";
         }
 
         private void frmHienthihoadonban_Load(object sender, EventArgs e)
@@ -40,6 +41,8 @@ namespace QuanLySieuThiMini
                 ID = Int32.Parse(dgvDanhsachhoadonban.Rows[index].Cells["MAHDX"].Value.ToString());
                 DataTable dt = hdxb.Tablechitiethoadonxuat(ID);
                 dgvChitiethoadonban.DataSource = dt;
+                dgvChitiethoadonban.Columns["GIATIEN"].DefaultCellStyle.Format = "N";
+                dgvChitiethoadonban.Columns["GIAMGIA"].DefaultCellStyle.Format = "N";
             }
         }
 
@@ -47,6 +50,7 @@ namespace QuanLySieuThiMini
         {
             DataTable dt = hdxb.Tabletheongay(dtpNgaylap.Value.ToString("yyyy/MM/dd"));
             dgvDanhsachhoadonban.DataSource = dt;
+            dgvDanhsachhoadonban.Columns["TONGTIEN"].DefaultCellStyle.Format = "N";
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

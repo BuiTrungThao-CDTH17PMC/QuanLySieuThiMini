@@ -41,5 +41,6 @@ namespace QuanLySieuThiMini.BUS
         {
             return hdxd.Tabletheongay(date);
         }
+
     }
 }
