@@ -104,5 +104,11 @@ namespace QuanLySieuThiMini
             frmDangnhap dn = new frmDangnhap();
             dn.ShowDialog();
         }
+
+        private void TSMI_Nhaphang_Click(object sender, EventArgs e)
+        {
+            frmNhaphang nh = new frmNhaphang();
+            nh.ShowDialog();
+        }
     }
 }

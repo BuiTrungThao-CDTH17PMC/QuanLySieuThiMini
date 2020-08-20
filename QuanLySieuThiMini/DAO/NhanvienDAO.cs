@@ -78,7 +78,8 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemnhanvien (string tnv)
         {
-            string sql = "SELECT MANV,TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH,NV.XOA,TENLOAI FROM NHANVIEN NV, LOAINHANVIEN WHERE NV.XOA = 0 AND MALOAI = LOAINV AND TENNV LIKE N'%" + tnv + "%'";
+            string sql = "DECLARE @query NVARCHAR(max)SELECT @query =  dbo.non_unicode_convert(N'"+ tnv +"')SELECT  MANV,TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH,NV.XOA,TENLOAI FROM NHANVIEN NV, LOAINHANVIEN WHERE NV.XOA = 0 AND MALOAI = LOAINV AND dbo.non_unicode_convert(TENNV) LIKE  '%' + @query+ '%'";
+            //string sql = "SELECT MANV,TENNV,DIACHI,LOAINV,TENTK,MATKHAU,SDT,GIOITINH,NV.XOA,TENLOAI FROM NHANVIEN NV, LOAINHANVIEN WHERE NV.XOA = 0 AND MALOAI = LOAINV AND TENNV LIKE N'%" + tnv + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();
