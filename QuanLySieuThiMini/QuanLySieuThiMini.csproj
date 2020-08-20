@@ -49,6 +49,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\..\Downloads\Microsoft.Vbe.Interop.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -77,6 +81,7 @@
     <Compile Include="BUS\LichsutichdiemBUS.cs" />
     <Compile Include="BUS\NhacungcapBUS.cs" />
     <Compile Include="BUS\NhanvienBUS.cs" />
+    <Compile Include="BUS\NhaphangBUS.cs" />
     <Compile Include="BUS\SanphamBUS.cs" />
     <Compile Include="DAO\BanhangDAO.cs" />
     <Compile Include="DAO\DangnhapDAO.cs" />
@@ -89,7 +94,9 @@
     <Compile Include="DAO\LoaisanphamDAO.cs" />
     <Compile Include="DAO\NhacungcapDAO.cs" />
     <Compile Include="DAO\NhanvienDAO.cs" />
+    <Compile Include="DAO\NhaphangDAO.cs" />
     <Compile Include="DAO\SanphamDAO.cs" />
+    <Compile Include="DTO\CartItem.cs" />
     <Compile Include="DTO\Chitiethoadonxuat.cs" />
     <Compile Include="DTO\Hoadonxuat.cs" />
     <Compile Include="DTO\Khachhang.cs" />

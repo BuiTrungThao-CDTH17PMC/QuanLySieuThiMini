@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
-
+using QuanLySieuThiMini.DTO;
 
 namespace QuanLySieuThiMini
 {
@@ -23,6 +23,7 @@ namespace QuanLySieuThiMini
         BUS.BanhangBUS bhb;
         BUS.HoadonbanBUS hdb;
         BUS.KhachhangBUS khb;
+        List<DTO.CartItem> Banhang = new List<DTO.CartItem>();
 
         public frmBanhang()
         {
@@ -210,6 +211,7 @@ namespace QuanLySieuThiMini
                     Trusoluong();
                     Tichdiem();
                     Luulichsutichdiem();
+                    Inhoahon();
                     Resert();
                     MessageBox.Show("Thanh toán thành công", "Thông báo", MessageBoxButtons.OK);
                     lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
@@ -317,12 +319,73 @@ namespace QuanLySieuThiMini
 
         public bool Kiemtrasoluong()
         {
+            int soluong = bhb.Laysoluong(Int32.Parse(txtTimsanphambh.Text));
+            int soluongnhap = Int32.Parse(txtSoluong.Text);
+            if(soluongnhap <= 0)
+            {
+                soluongnhap = 1;
+            }    
             if (Int32.Parse(txtSoluong.Text) > bhb.Laysoluong(Int32.Parse(txtTimsanphambh.Text)))
             {
                 MessageBox.Show("Không đủ số lương", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             return false;
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Đồ Án Tốt Nghiệp Quản Lý Siêu Thị Mini", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(255, 10));
+            e.Graphics.DrawString("Cao Đẳng Kỹ Thuật Cao Thắng", new Font("Arial", 14 ,FontStyle.Bold), Brushes.Black, new Point(288, 40));
+            e.Graphics.DrawString("================================================================================================================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 70));
+            e.Graphics.DrawString("Ngày thanh toán : " + DateTime.Now.ToString("dd/MM/yyyy"), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 100));
+            e.Graphics.DrawString("Người bán : " + lblTennhanvienbh.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 130));
+            e.Graphics.DrawString("Khách hàng : " + lblTenkhachhangbh.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black,new Point(0,160));
+            e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------------------------------------- ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 190));
+            e.Graphics.DrawString("Tên sản phẩm ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(10, 205));
+            e.Graphics.DrawString("Số lượng", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(300, 205));
+            e.Graphics.DrawString("Giá tiền ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(500, 205));
+            e.Graphics.DrawString("Giảm giá ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(700, 205));
+            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 215));
+            int yso = 250;
+            foreach(var i in Banhang)
+            {
+                e.Graphics.DrawString(i.Tensp, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(10, yso));
+                e.Graphics.DrawString(i.Soluong.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(300, yso));
+                e.Graphics.DrawString(i.Gia.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(500, yso));
+                e.Graphics.DrawString(i.Giamgia.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(700, yso));
+                yso += 30;
+            }
+            e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------------------------------------- ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, yso));
+            e.Graphics.DrawString("Tổng tiền: "+lblTongtienbh.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(650, yso+26));
+            e.Graphics.DrawString("=================================================", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(150, yso + 50));
+            e.Graphics.DrawString("Vui lòng kiểm tra hàng hóa và hóa đơn", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(253, yso + 65));
+            e.Graphics.DrawString("Cảm ơn, hẹn gặp lại", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(310, yso + 85));
+        }
+
+        private void printPreviewDialog1_Load()
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        public void Inhoahon()
+        {
+            Addlist();
+            printPreviewDialog1_Load();
+        }
+        
+        public void Addlist()
+        {
+            DTO.CartItem item = new DTO.CartItem();
+            for(int i = 0; i <= dgvBanhang.RowCount- 1; i ++)
+            {
+                item.Tensp = dgvBanhang.Rows[i].Cells["TENSP"].Value.ToString();
+                item.Soluong = Int32.Parse(dgvBanhang.Rows[i].Cells["SOLUONG"].Value.ToString());
+                item.Gia = Int32.Parse(dgvBanhang.Rows[i].Cells["DONGIA"].Value.ToString());
+                item.Giamgia = Int32.Parse(dgvBanhang.Rows[i].Cells["GIAMGIA"].Value.ToString());
+                Banhang.Add(item);
+            }  
         }
     }
 }

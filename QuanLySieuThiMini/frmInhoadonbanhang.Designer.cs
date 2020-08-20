@@ -37,16 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInhoadonbanhang));
-            this.lblEmpName = new System.Windows.Forms.Label();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.lblInvoice = new System.Windows.Forms.Label();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.lblCustomer = new System.Windows.Forms.Label();
-            this.Label16 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.lblLine = new System.Windows.Forms.Label();
+            this.Label3 = new System.Windows.Forms.Label();
+            this.Panel1 = new System.Windows.Forms.Panel();
             this.lblThank = new System.Windows.Forms.Label();
             this.lblOR = new System.Windows.Forms.Label();
             this.lblChange = new System.Windows.Forms.Label();
@@ -64,104 +56,62 @@
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.Label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
+            this.lblEmpName = new System.Windows.Forms.Label();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.Label6 = new System.Windows.Forms.Label();
+            this.lblInvoice = new System.Windows.Forms.Label();
+            this.Label4 = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.Label16 = new System.Windows.Forms.Label();
+            this.Label2 = new System.Windows.Forms.Label();
+            this.Label1 = new System.Windows.Forms.Label();
+            this.lblLine = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblEmpName
+            // Label3
             // 
-            this.lblEmpName.AutoSize = true;
-            this.lblEmpName.Location = new System.Drawing.Point(90, 127);
-            this.lblEmpName.Name = "lblEmpName";
-            this.lblEmpName.Size = new System.Drawing.Size(40, 13);
-            this.lblEmpName.TabIndex = 1;
-            this.lblEmpName.Text = "Name";
+            this.Label3.AutoSize = true;
+            this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label3.Location = new System.Drawing.Point(117, 57);
+            this.Label3.Name = "Label3";
+            this.Label3.Size = new System.Drawing.Size(140, 17);
+            this.Label3.TabIndex = 0;
+            this.Label3.Text = "============";
             // 
-            // Label7
+            // Panel1
             // 
-            this.Label7.Location = new System.Drawing.Point(193, 107);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(114, 14);
-            this.Label7.TabIndex = 1;
-            this.Label7.Text = "Ngày";
-            this.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Label6
-            // 
-            this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(3, 127);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(66, 13);
-            this.Label6.TabIndex = 1;
-            this.Label6.Text = "Người thu:";
-            // 
-            // lblInvoice
-            // 
-            this.lblInvoice.AutoSize = true;
-            this.lblInvoice.Location = new System.Drawing.Point(90, 108);
-            this.lblInvoice.Name = "lblInvoice";
-            this.lblInvoice.Size = new System.Drawing.Size(49, 13);
-            this.lblInvoice.TabIndex = 1;
-            this.lblInvoice.Text = "Invoice";
-            // 
-            // Label4
-            // 
-            this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(4, 108);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(48, 13);
-            this.Label4.TabIndex = 1;
-            this.Label4.Text = "Số HĐ:";
-            // 
-            // lblCustomer
-            // 
-            this.lblCustomer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(3, 88);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(280, 14);
-            this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Khách hàng";
-            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Label16
-            // 
-            this.Label16.AutoSize = true;
-            this.Label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label16.Location = new System.Drawing.Point(86, 74);
-            this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(0, 13);
-            this.Label16.TabIndex = 0;
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(73, 38);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(201, 13);
-            this.Label2.TabIndex = 0;
-            this.Label2.Text = "Cao Đẳng Kỹ Thuật Cao Thắng";
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1.Location = new System.Drawing.Point(68, 19);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(213, 14);
-            this.Label1.TabIndex = 0;
-            this.Label1.Text = "Đồ Án Tốt Nghiệp Siêu Thị Mini ";
-            // 
-            // lblLine
-            // 
-            this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(12, 324);
-            this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(295, 13);
-            this.lblLine.TabIndex = 44;
-            this.lblLine.Text = "================================";
+            this.Panel1.BackColor = System.Drawing.Color.White;
+            this.Panel1.Controls.Add(this.lblThank);
+            this.Panel1.Controls.Add(this.lblOR);
+            this.Panel1.Controls.Add(this.lblChange);
+            this.Panel1.Controls.Add(this.lblSubtotal);
+            this.Panel1.Controls.Add(this.lblCash);
+            this.Panel1.Controls.Add(this.change);
+            this.Panel1.Controls.Add(this.subTotal);
+            this.Panel1.Controls.Add(this.Cash);
+            this.Panel1.Controls.Add(this.lblVat);
+            this.Panel1.Controls.Add(this.vat);
+            this.Panel1.Controls.Add(this.lblTotal);
+            this.Panel1.Controls.Add(this.TotalAmount);
+            this.Panel1.Controls.Add(this.dgw);
+            this.Panel1.Controls.Add(this.lblEmpName);
+            this.Panel1.Controls.Add(this.Label7);
+            this.Panel1.Controls.Add(this.Label6);
+            this.Panel1.Controls.Add(this.lblInvoice);
+            this.Panel1.Controls.Add(this.Label4);
+            this.Panel1.Controls.Add(this.lblCustomer);
+            this.Panel1.Controls.Add(this.Label16);
+            this.Panel1.Controls.Add(this.Label3);
+            this.Panel1.Controls.Add(this.Label2);
+            this.Panel1.Controls.Add(this.Label1);
+            this.Panel1.Controls.Add(this.lblLine);
+            this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel1.Location = new System.Drawing.Point(2, 3);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(358, 396);
+            this.Panel1.TabIndex = 2;
             // 
             // lblThank
             // 
@@ -169,7 +119,7 @@
             this.lblThank.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThank.Location = new System.Drawing.Point(97, 357);
             this.lblThank.Name = "lblThank";
-            this.lblThank.Size = new System.Drawing.Size(136, 13);
+            this.lblThank.Size = new System.Drawing.Size(163, 17);
             this.lblThank.TabIndex = 45;
             this.lblThank.Text = "Cám ơn, Hẹn gặp lại";
             // 
@@ -178,7 +128,7 @@
             this.lblOR.AutoSize = true;
             this.lblOR.Location = new System.Drawing.Point(40, 342);
             this.lblOR.Name = "lblOR";
-            this.lblOR.Size = new System.Drawing.Size(251, 13);
+            this.lblOR.Size = new System.Drawing.Size(307, 17);
             this.lblOR.TabIndex = 45;
             this.lblOR.Text = "Xin vui lòng kiểm tra hàng hóa và hóa đơn";
             // 
@@ -218,7 +168,7 @@
             this.change.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.change.Location = new System.Drawing.Point(3, 279);
             this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(73, 18);
+            this.change.Size = new System.Drawing.Size(100, 23);
             this.change.TabIndex = 43;
             this.change.Text = "Hoàn lại";
             // 
@@ -228,7 +178,7 @@
             this.subTotal.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotal.Location = new System.Drawing.Point(3, 220);
             this.subTotal.Name = "subTotal";
-            this.subTotal.Size = new System.Drawing.Size(67, 13);
+            this.subTotal.Size = new System.Drawing.Size(83, 17);
             this.subTotal.TabIndex = 43;
             this.subTotal.Text = "Thành tiền";
             // 
@@ -238,7 +188,7 @@
             this.Cash.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cash.Location = new System.Drawing.Point(3, 259);
             this.Cash.Name = "Cash";
-            this.Cash.Size = new System.Drawing.Size(60, 13);
+            this.Cash.Size = new System.Drawing.Size(72, 17);
             this.Cash.TabIndex = 43;
             this.Cash.Text = "Tiền thu";
             // 
@@ -258,7 +208,7 @@
             this.vat.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vat.Location = new System.Drawing.Point(3, 203);
             this.vat.Name = "vat";
-            this.vat.Size = new System.Drawing.Size(75, 13);
+            this.vat.Size = new System.Drawing.Size(93, 17);
             this.vat.TabIndex = 41;
             this.vat.Text = "Thuế          ";
             // 
@@ -278,7 +228,7 @@
             this.TotalAmount.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalAmount.Location = new System.Drawing.Point(3, 240);
             this.TotalAmount.Name = "TotalAmount";
-            this.TotalAmount.Size = new System.Drawing.Size(74, 13);
+            this.TotalAmount.Size = new System.Drawing.Size(91, 17);
             this.TotalAmount.TabIndex = 41;
             this.TotalAmount.Text = "Tổng cộng";
             // 
@@ -341,6 +291,7 @@
             this.Description.DefaultCellStyle = dataGridViewCellStyle3;
             this.Description.FillWeight = 69.97607F;
             this.Description.HeaderText = "Tên SP";
+            this.Description.MinimumWidth = 6;
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             this.Description.Width = 130;
@@ -353,6 +304,7 @@
             this.UnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
             this.UnitPrice.FillWeight = 131.1945F;
             this.UnitPrice.HeaderText = "Giá";
+            this.UnitPrice.MinimumWidth = 6;
             this.UnitPrice.Name = "UnitPrice";
             this.UnitPrice.ReadOnly = true;
             this.UnitPrice.Width = 70;
@@ -363,6 +315,7 @@
             this.ItemQuantity.DefaultCellStyle = dataGridViewCellStyle5;
             this.ItemQuantity.FillWeight = 7.575758F;
             this.ItemQuantity.HeaderText = "SL";
+            this.ItemQuantity.MinimumWidth = 6;
             this.ItemQuantity.Name = "ItemQuantity";
             this.ItemQuantity.ReadOnly = true;
             this.ItemQuantity.Width = 25;
@@ -375,56 +328,107 @@
             this.Amount.DefaultCellStyle = dataGridViewCellStyle6;
             this.Amount.FillWeight = 191.2536F;
             this.Amount.HeaderText = "Tổng";
+            this.Amount.MinimumWidth = 6;
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
             this.Amount.Width = 70;
             // 
-            // Panel1
+            // lblEmpName
             // 
-            this.Panel1.BackColor = System.Drawing.Color.White;
-            this.Panel1.Controls.Add(this.lblThank);
-            this.Panel1.Controls.Add(this.lblOR);
-            this.Panel1.Controls.Add(this.lblChange);
-            this.Panel1.Controls.Add(this.lblSubtotal);
-            this.Panel1.Controls.Add(this.lblCash);
-            this.Panel1.Controls.Add(this.change);
-            this.Panel1.Controls.Add(this.subTotal);
-            this.Panel1.Controls.Add(this.Cash);
-            this.Panel1.Controls.Add(this.lblVat);
-            this.Panel1.Controls.Add(this.vat);
-            this.Panel1.Controls.Add(this.lblTotal);
-            this.Panel1.Controls.Add(this.TotalAmount);
-            this.Panel1.Controls.Add(this.dgw);
-            this.Panel1.Controls.Add(this.lblEmpName);
-            this.Panel1.Controls.Add(this.Label7);
-            this.Panel1.Controls.Add(this.Label6);
-            this.Panel1.Controls.Add(this.lblInvoice);
-            this.Panel1.Controls.Add(this.Label4);
-            this.Panel1.Controls.Add(this.lblCustomer);
-            this.Panel1.Controls.Add(this.Label16);
-            this.Panel1.Controls.Add(this.Label3);
-            this.Panel1.Controls.Add(this.Label2);
-            this.Panel1.Controls.Add(this.Label1);
-            this.Panel1.Controls.Add(this.lblLine);
-            this.Panel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panel1.Location = new System.Drawing.Point(2, 3);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(358, 396);
-            this.Panel1.TabIndex = 2;
+            this.lblEmpName.AutoSize = true;
+            this.lblEmpName.Location = new System.Drawing.Point(90, 127);
+            this.lblEmpName.Name = "lblEmpName";
+            this.lblEmpName.Size = new System.Drawing.Size(47, 17);
+            this.lblEmpName.TabIndex = 1;
+            this.lblEmpName.Text = "Name";
             // 
-            // Label3
+            // Label7
             // 
-            this.Label3.AutoSize = true;
-            this.Label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(117, 57);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(115, 13);
-            this.Label3.TabIndex = 0;
-            this.Label3.Text = "============";
+            this.Label7.Location = new System.Drawing.Point(193, 107);
+            this.Label7.Name = "Label7";
+            this.Label7.Size = new System.Drawing.Size(114, 14);
+            this.Label7.TabIndex = 1;
+            this.Label7.Text = "Ngày";
+            this.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Label6
+            // 
+            this.Label6.AutoSize = true;
+            this.Label6.Location = new System.Drawing.Point(3, 127);
+            this.Label6.Name = "Label6";
+            this.Label6.Size = new System.Drawing.Size(84, 17);
+            this.Label6.TabIndex = 1;
+            this.Label6.Text = "Người thu:";
+            // 
+            // lblInvoice
+            // 
+            this.lblInvoice.AutoSize = true;
+            this.lblInvoice.Location = new System.Drawing.Point(90, 108);
+            this.lblInvoice.Name = "lblInvoice";
+            this.lblInvoice.Size = new System.Drawing.Size(57, 17);
+            this.lblInvoice.TabIndex = 1;
+            this.lblInvoice.Text = "Invoice";
+            // 
+            // Label4
+            // 
+            this.Label4.AutoSize = true;
+            this.Label4.Location = new System.Drawing.Point(4, 108);
+            this.Label4.Name = "Label4";
+            this.Label4.Size = new System.Drawing.Size(59, 17);
+            this.Label4.TabIndex = 1;
+            this.Label4.Text = "Số HĐ:";
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(3, 88);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(280, 14);
+            this.lblCustomer.TabIndex = 0;
+            this.lblCustomer.Text = "Khách hàng";
+            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Label16
+            // 
+            this.Label16.AutoSize = true;
+            this.Label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label16.Location = new System.Drawing.Point(86, 74);
+            this.Label16.Name = "Label16";
+            this.Label16.Size = new System.Drawing.Size(0, 17);
+            this.Label16.TabIndex = 0;
+            // 
+            // Label2
+            // 
+            this.Label2.AutoSize = true;
+            this.Label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2.Location = new System.Drawing.Point(73, 38);
+            this.Label2.Name = "Label2";
+            this.Label2.Size = new System.Drawing.Size(247, 17);
+            this.Label2.TabIndex = 0;
+            this.Label2.Text = "Cao Đẳng Kỹ Thuật Cao Thắng";
+            // 
+            // Label1
+            // 
+            this.Label1.AutoSize = true;
+            this.Label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1.Location = new System.Drawing.Point(68, 19);
+            this.Label1.Name = "Label1";
+            this.Label1.Size = new System.Drawing.Size(261, 18);
+            this.Label1.TabIndex = 0;
+            this.Label1.Text = "Đồ Án Tốt Nghiệp Siêu Thị Mini ";
+            // 
+            // lblLine
+            // 
+            this.lblLine.AutoSize = true;
+            this.lblLine.Location = new System.Drawing.Point(12, 324);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(360, 17);
+            this.lblLine.TabIndex = 44;
+            this.lblLine.Text = "================================";
             // 
             // frmInhoadonbanhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 403);
             this.Controls.Add(this.Panel1);
@@ -437,26 +441,18 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "In hóa đơn bán hàng";
-            ((System.ComponentModel.ISupportInitialize)(this.dgw)).EndInit();
+            this.Text = "Hóa đơn bán hàng";
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal System.Windows.Forms.Label lblEmpName;
-        internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Label lblInvoice;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Label lblCustomer;
-        internal System.Windows.Forms.Label Label16;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.Label lblLine;
+        internal System.Windows.Forms.Label Label3;
+        internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.Label lblThank;
         internal System.Windows.Forms.Label lblOR;
         internal System.Windows.Forms.Label lblChange;
@@ -470,11 +466,19 @@
         internal System.Windows.Forms.Label lblTotal;
         internal System.Windows.Forms.Label TotalAmount;
         internal System.Windows.Forms.DataGridView dgw;
-        internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Label Label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        internal System.Windows.Forms.Label lblEmpName;
+        internal System.Windows.Forms.Label Label7;
+        internal System.Windows.Forms.Label Label6;
+        internal System.Windows.Forms.Label lblInvoice;
+        internal System.Windows.Forms.Label Label4;
+        internal System.Windows.Forms.Label lblCustomer;
+        internal System.Windows.Forms.Label Label16;
+        internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.Label lblLine;
     }
 }

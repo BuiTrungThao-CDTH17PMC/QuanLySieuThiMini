@@ -73,7 +73,8 @@ namespace QuanLySieuThiMini.DAO
         }
         public DataTable Timkiemkhachhang(string tkh)
         {
-            string sql = "SELECT * FROM KHACHHANG WHERE  XOA = 0 AND TENKH LIKE N'%" + tkh + "%'";
+            string sql = "DECLARE @query NVARCHAR(max)SELECT @query =  dbo.non_unicode_convert(N'" + tkh + "')SELECT  * FROM KHACHHANG WHERE XOA = 0 AND dbo.non_unicode_convert(TENKH) LIKE  '%' + @query+ '%'";
+            //string sql = "SELECT * FROM KHACHHANG WHERE  XOA = 0 AND TENKH LIKE N'%" + tkh + "%'";
             SqlConnection con = dc.getConnect();
             dr = new SqlDataAdapter(sql, con);
             con.Open();

@@ -49,11 +49,12 @@ namespace QuanLySieuThiMini
                     Hienthiloainhanvien();
                     txtTenloainhanvien.Text = "";
                 }
+                MessageBox.Show("Thêm loại nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         int ID;
@@ -72,10 +73,11 @@ namespace QuanLySieuThiMini
                     btnXoaloainv.Enabled = false;
                     txtTenloainhanvien.Text = "";
                 }
+                MessageBox.Show("Sửa loại nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập loại nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void dgvHienthiloainv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,8 +99,8 @@ namespace QuanLySieuThiMini
         }
 
         private void btnXoaloainv_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn xóa loại nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {          
+           if (MessageBox.Show("Bạn có muốn xóa loại nhân viên này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!String.IsNullOrEmpty(txtTenloainhanvien.Text))
                 {
