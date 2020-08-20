@@ -71,8 +71,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panelEx1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbCamquetma)).BeginInit();
@@ -106,7 +106,6 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
-
             // 
             // panel5
             // 
@@ -149,7 +148,7 @@
             this.cbbdscam.Location = new System.Drawing.Point(1208, 251);
             this.cbbdscam.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbbdscam.Name = "cbbdscam";
-            this.cbbdscam.Size = new System.Drawing.Size(222, 23);
+            this.cbbdscam.Size = new System.Drawing.Size(222, 27);
             this.cbbdscam.TabIndex = 9;
             // 
             // panel10
@@ -344,7 +343,7 @@
             this.lblTenkhachhangbh.Location = new System.Drawing.Point(101, 53);
             this.lblTenkhachhangbh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTenkhachhangbh.Name = "lblTenkhachhangbh";
-            this.lblTenkhachhangbh.Size = new System.Drawing.Size(141, 23);
+            this.lblTenkhachhangbh.Size = new System.Drawing.Size(184, 31);
             this.lblTenkhachhangbh.TabIndex = 7;
             this.lblTenkhachhangbh.Text = "Khách vãng lai";
             // 
@@ -354,7 +353,7 @@
             this.label14.Location = new System.Drawing.Point(16, 12);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(131, 24);
+            this.label14.Size = new System.Drawing.Size(171, 31);
             this.label14.TabIndex = 6;
             this.label14.Text = "Khách hàng :";
             // 
@@ -427,7 +426,7 @@
             this.txtTimsanphambh.Location = new System.Drawing.Point(220, 46);
             this.txtTimsanphambh.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtTimsanphambh.Name = "txtTimsanphambh";
-            this.txtTimsanphambh.Size = new System.Drawing.Size(252, 32);
+            this.txtTimsanphambh.Size = new System.Drawing.Size(252, 38);
             this.txtTimsanphambh.TabIndex = 2;
             this.txtTimsanphambh.Tag = "";
             this.txtTimsanphambh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTimsanphambh_KeyPress);
@@ -438,7 +437,7 @@
             this.label11.Location = new System.Drawing.Point(215, 12);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 24);
+            this.label11.Size = new System.Drawing.Size(198, 31);
             this.label11.TabIndex = 2;
             this.label11.Text = "Tìm sản phẩm :";
             // 
@@ -448,7 +447,7 @@
             this.txtSoluong.Location = new System.Drawing.Point(29, 45);
             this.txtSoluong.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(164, 32);
+            this.txtSoluong.Size = new System.Drawing.Size(164, 38);
             this.txtSoluong.TabIndex = 1;
             this.txtSoluong.Tag = "";
             this.txtSoluong.Text = "1";
@@ -460,7 +459,7 @@
             this.label10.Location = new System.Drawing.Point(24, 12);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 24);
+            this.label10.Size = new System.Drawing.Size(133, 31);
             this.label10.TabIndex = 0;
             this.label10.Text = "Số lượng :";
             // 
@@ -483,7 +482,7 @@
             this.lblNgaymuahang.Location = new System.Drawing.Point(291, 26);
             this.lblNgaymuahang.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNgaymuahang.Name = "lblNgaymuahang";
-            this.lblNgaymuahang.Size = new System.Drawing.Size(138, 23);
+            this.lblNgaymuahang.Size = new System.Drawing.Size(182, 31);
             this.lblNgaymuahang.TabIndex = 1;
             this.lblNgaymuahang.Text = "Ngày mua hàng";
             // 
@@ -493,7 +492,7 @@
             this.label4.Location = new System.Drawing.Point(112, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 24);
+            this.label4.Size = new System.Drawing.Size(148, 31);
             this.label4.TabIndex = 0;
             this.label4.Text = "Ngày mua :";
             // 
@@ -529,7 +528,7 @@
             this.lblTennhanvienbh.Location = new System.Drawing.Point(103, 45);
             this.lblTennhanvienbh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTennhanvienbh.Name = "lblTennhanvienbh";
-            this.lblTennhanvienbh.Size = new System.Drawing.Size(131, 23);
+            this.lblTennhanvienbh.Size = new System.Drawing.Size(172, 31);
             this.lblTennhanvienbh.TabIndex = 1;
             this.lblTennhanvienbh.Text = "Tên nhân viên";
             // 
@@ -539,7 +538,7 @@
             this.label2.Location = new System.Drawing.Point(16, 15);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 24);
+            this.label2.Size = new System.Drawing.Size(150, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nhân viên :";
             // 
@@ -562,7 +561,7 @@
             this.lblTongtienbh.Location = new System.Drawing.Point(96, 43);
             this.lblTongtienbh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTongtienbh.Name = "lblTongtienbh";
-            this.lblTongtienbh.Size = new System.Drawing.Size(21, 23);
+            this.lblTongtienbh.Size = new System.Drawing.Size(28, 31);
             this.lblTongtienbh.TabIndex = 5;
             this.lblTongtienbh.Text = "0";
             // 
@@ -572,7 +571,7 @@
             this.label8.Location = new System.Drawing.Point(8, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 24);
+            this.label8.Size = new System.Drawing.Size(141, 31);
             this.label8.TabIndex = 4;
             this.label8.Text = "Tổng tiền :";
             // 
@@ -593,13 +592,9 @@
             this.label1.Location = new System.Drawing.Point(109, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(496, 33);
+            this.label1.Size = new System.Drawing.Size(287, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = " SIÊU THỊ MINI";
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // printPreviewDialog1
             // 
@@ -611,9 +606,13 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // frmBanhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(1574, 734);
@@ -697,5 +696,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DONGIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

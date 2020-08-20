@@ -28,10 +28,6 @@ namespace QuanLySieuThiMini.DAO
            con.Close();
            return dt;
        }
-<<<<<<< HEAD
-     
-=======
->>>>>>> 218e7470891a097cabfa474d6a9f6dd85338f148
        public DataTable Tablechitietxuat(int ID)
        {
             string sql = "SELECT * FROM CHITIETHOADONXUAT WHERE MAHDX = '" + ID + "'";
