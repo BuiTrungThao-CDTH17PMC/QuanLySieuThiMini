@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
-
+using QuanLySieuThiMini.DTO;
 
 namespace QuanLySieuThiMini
 {
@@ -23,6 +23,7 @@ namespace QuanLySieuThiMini
         BUS.BanhangBUS bhb;
         BUS.HoadonbanBUS hdb;
         BUS.KhachhangBUS khb;
+        private List<CartItem> Banhang = new List<CartItem>();
 
         public frmBanhang()
         {
@@ -210,7 +211,10 @@ namespace QuanLySieuThiMini
                     Trusoluong();
                     Tichdiem();
                     Luulichsutichdiem();
+                    printPreviewDialog1_Load();
                     Resert();
+                   
+
                     MessageBox.Show("Thanh toán thành công", "Thông báo", MessageBoxButtons.OK);
                     lblMahoadonbh.Text = bhb.Laymahoadon().ToString();
                 }
@@ -317,12 +321,44 @@ namespace QuanLySieuThiMini
 
         public bool Kiemtrasoluong()
         {
+            int soluong = bhb.Laysoluong(Int32.Parse(txtTimsanphambh.Text));
+            int soluongnhap = Int32.Parse(txtSoluong.Text);
+            if(soluongnhap <= 0)
+            {
+                soluongnhap = 1;
+            }    
             if (Int32.Parse(txtSoluong.Text) > bhb.Laysoluong(Int32.Parse(txtTimsanphambh.Text)))
             {
                 MessageBox.Show("Không đủ số lương", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             return false;
+        }
+        public void laydanhsachchitiet()
+        {
+            
+        }
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Ngày thanh toán " + DateTime.Now, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 0));
+            e.Graphics.DrawString("người bán " + lblTennhanvienbh.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 30));
+            e.Graphics.DrawString("================================================================================================================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 60));
+            e.Graphics.DrawString("Tên sản phẩm ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 90));
+            e.Graphics.DrawString("Số lượng", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(130, 90));
+            e.Graphics.DrawString("Giá tiền ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(250, 90));
+            e.Graphics.DrawString("================================================================================================================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 120));
+
+            dgvBanhang.Show();
+            
+
+            e.Graphics.DrawString("================================================================================================================================== ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(0, 120));
+            e.Graphics.DrawString("tổng tiền " + lblTongtienbh.Text, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(350, 90));
+        }
+
+        private void printPreviewDialog1_Load()
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
         }
     }
 }

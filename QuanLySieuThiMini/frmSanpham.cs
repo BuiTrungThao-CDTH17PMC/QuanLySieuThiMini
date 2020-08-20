@@ -248,7 +248,7 @@ namespace QuanLySieuThiMini
         }
 
         private void btnXoasanpham_Click(object sender, EventArgs e)
-        {
+        {          
             if (MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DTO.Sanpham sp = new DTO.Sanpham();
