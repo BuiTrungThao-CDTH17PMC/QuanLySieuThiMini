@@ -55,7 +55,7 @@ namespace QuanLySieuThiMini
             cbbLoainhanvien.DisplayMember = "TENLOAI";
             cbbLoainhanvien.ValueMember = "MALOAI";
         }
-
+    
         public bool Kiemtradulieu()
         {
             if (string.IsNullOrEmpty(txtTennhanvien.Text))
