@@ -8,9 +8,9 @@ namespace QuanLySieuThiMini.DTO
 {
     public class CartItem
     {
-        public string ItemName { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal TotalPrice { get; set; }
+        public string Tensp { get; set; }
+        public int Soluong { get; set; }
+        public int Gia { get; set; }
+        public int Giamgia { get; set; }
     }
 }
